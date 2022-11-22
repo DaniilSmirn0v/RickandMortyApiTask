@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CharactersListViewController.swift
 //  RickandMortyApiTask
 //
 //  Created by Даниил Смирнов on 22.11.2022.
@@ -7,11 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CharactersListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .red
+
     }
 
 
