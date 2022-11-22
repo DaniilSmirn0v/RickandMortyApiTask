@@ -12,6 +12,8 @@
 		A5AA82E8292CCB9200B47692 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA82E7292CCB9200B47692 /* CharactersListViewController.swift */; };
 		A5AA82ED292CCB9500B47692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5AA82EC292CCB9500B47692 /* Assets.xcassets */; };
 		A5AA82F0292CCB9500B47692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5AA82EE292CCB9500B47692 /* LaunchScreen.storyboard */; };
+		A5AA8310292CE9E700B47692 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA830F292CE9E700B47692 /* EpisodeListViewController.swift */; };
+		A5AA8312292CEA1500B47692 /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA8311292CEA1500B47692 /* LocationListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		A5AA82EC292CCB9500B47692 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5AA82EF292CCB9500B47692 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5AA82F1292CCB9500B47692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5AA830F292CE9E700B47692 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
+		A5AA8311292CEA1500B47692 /* LocationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		DC0EF9EAEF2986BE69076A14 /* Pods-RickandMortyApiTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMortyApiTask.release.xcconfig"; path = "Target Support Files/Pods-RickandMortyApiTask/Pods-RickandMortyApiTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +147,7 @@
 		A5AA82FE292CCF3100B47692 /* LocationListModule */ = {
 			isa = PBXGroup;
 			children = (
+				A5AA8311292CEA1500B47692 /* LocationListViewController.swift */,
 			);
 			path = LocationListModule;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 		A5AA8300292CCFD100B47692 /* EpisodeListModule */ = {
 			isa = PBXGroup;
 			children = (
+				A5AA830F292CE9E700B47692 /* EpisodeListViewController.swift */,
 			);
 			path = EpisodeListModule;
 			sourceTree = "<group>";
@@ -168,8 +174,8 @@
 				A5AA82FD292CCF1800B47692 /* DetailCharacterModule */,
 				A5AA8300292CCFD100B47692 /* EpisodeListModule */,
 				A5AA8301292CCFD400B47692 /* EpisodeDetailModule */,
-				A5AA8304292CD1D100B47692 /* LocationDetailModule */,
 				A5AA82FE292CCF3100B47692 /* LocationListModule */,
+				A5AA8304292CD1D100B47692 /* LocationDetailModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -295,7 +301,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AA8310292CE9E700B47692 /* EpisodeListViewController.swift in Sources */,
 				A5AA82E8292CCB9200B47692 /* CharactersListViewController.swift in Sources */,
+				A5AA8312292CEA1500B47692 /* LocationListViewController.swift in Sources */,
 				A5AA82E4292CCB9200B47692 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
