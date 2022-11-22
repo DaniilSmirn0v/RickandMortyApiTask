@@ -95,12 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				A5AA82FB292CCD9500B47692 /* Application */,
-				A5AA82FC292CCD9800B47692 /* CharactersListModule */,
-				A5AA82FD292CCF1800B47692 /* DetailCharacterModule */,
-				A5AA82FE292CCF3100B47692 /* LocationListModule */,
-				A5AA82FF292CCFCE00B47692 /* LocationDetailModule */,
-				A5AA8300292CCFD100B47692 /* EpisodeListModule */,
-				A5AA8301292CCFD400B47692 /* EpisodeDetailModule */,
+				A5AA8302292CD13800B47692 /* Modules */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -152,13 +147,6 @@
 			path = LocationListModule;
 			sourceTree = "<group>";
 		};
-		A5AA82FF292CCFCE00B47692 /* LocationDetailModule */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LocationDetailModule;
-			sourceTree = "<group>";
-		};
 		A5AA8300292CCFD100B47692 /* EpisodeListModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +159,26 @@
 			children = (
 			);
 			path = EpisodeDetailModule;
+			sourceTree = "<group>";
+		};
+		A5AA8302292CD13800B47692 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A5AA82FC292CCD9800B47692 /* CharactersListModule */,
+				A5AA82FD292CCF1800B47692 /* DetailCharacterModule */,
+				A5AA8300292CCFD100B47692 /* EpisodeListModule */,
+				A5AA8301292CCFD400B47692 /* EpisodeDetailModule */,
+				A5AA8304292CD1D100B47692 /* LocationDetailModule */,
+				A5AA82FE292CCF3100B47692 /* LocationListModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A5AA8304292CD1D100B47692 /* LocationDetailModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocationDetailModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
