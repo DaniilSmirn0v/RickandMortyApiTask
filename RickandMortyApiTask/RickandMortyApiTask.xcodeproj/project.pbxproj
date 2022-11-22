@@ -14,6 +14,9 @@
 		A5AA82F0292CCB9500B47692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5AA82EE292CCB9500B47692 /* LaunchScreen.storyboard */; };
 		A5AA8310292CE9E700B47692 /* EpisodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA830F292CE9E700B47692 /* EpisodeListViewController.swift */; };
 		A5AA8312292CEA1500B47692 /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA8311292CEA1500B47692 /* LocationListViewController.swift */; };
+		A5AA8315292CEDED00B47692 /* CharactersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA8314292CEDED00B47692 /* CharactersCollectionCell.swift */; };
+		A5AA8317292CFD2C00B47692 /* CharactersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA8316292CFD2C00B47692 /* CharactersCollectionView.swift */; };
+		A5ACE65F292D16DF0066DC72 /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE65E292D16DF0066DC72 /* Characters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		A5AA82F1292CCB9500B47692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5AA830F292CE9E700B47692 /* EpisodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewController.swift; sourceTree = "<group>"; };
 		A5AA8311292CEA1500B47692 /* LocationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
+		A5AA8314292CEDED00B47692 /* CharactersCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCollectionCell.swift; sourceTree = "<group>"; };
+		A5AA8316292CFD2C00B47692 /* CharactersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersCollectionView.swift; sourceTree = "<group>"; };
+		A5ACE65E292D16DF0066DC72 /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
 		DC0EF9EAEF2986BE69076A14 /* Pods-RickandMortyApiTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMortyApiTask.release.xcconfig"; path = "Target Support Files/Pods-RickandMortyApiTask/Pods-RickandMortyApiTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +104,7 @@
 		A5AA82F8292CCD8900B47692 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A5ACE65C292D16BC0066DC72 /* Helpers */,
 				A5AA82FB292CCD9500B47692 /* Application */,
 				A5AA8302292CD13800B47692 /* Modules */,
 			);
@@ -133,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				A5AA82E7292CCB9200B47692 /* CharactersListViewController.swift */,
+				A5AA8313292CEDB500B47692 /* Views */,
 			);
 			path = CharactersListModule;
 			sourceTree = "<group>";
@@ -185,6 +193,31 @@
 			children = (
 			);
 			path = LocationDetailModule;
+			sourceTree = "<group>";
+		};
+		A5AA8313292CEDB500B47692 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5AA8314292CEDED00B47692 /* CharactersCollectionCell.swift */,
+				A5AA8316292CFD2C00B47692 /* CharactersCollectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A5ACE65C292D16BC0066DC72 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A5ACE65D292D16C90066DC72 /* Models */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A5ACE65D292D16C90066DC72 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A5ACE65E292D16DF0066DC72 /* Characters.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,10 +334,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AA8317292CFD2C00B47692 /* CharactersCollectionView.swift in Sources */,
+				A5ACE65F292D16DF0066DC72 /* Characters.swift in Sources */,
 				A5AA8310292CE9E700B47692 /* EpisodeListViewController.swift in Sources */,
 				A5AA82E8292CCB9200B47692 /* CharactersListViewController.swift in Sources */,
 				A5AA8312292CEA1500B47692 /* LocationListViewController.swift in Sources */,
 				A5AA82E4292CCB9200B47692 /* AppDelegate.swift in Sources */,
+				A5AA8315292CEDED00B47692 /* CharactersCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
