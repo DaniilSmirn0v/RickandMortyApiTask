@@ -16,6 +16,7 @@
 		A5AA8312292CEA1500B47692 /* LocationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA8311292CEA1500B47692 /* LocationListViewController.swift */; };
 		A5ACE662292D35000066DC72 /* EpisodeCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE661292D35000066DC72 /* EpisodeCustomCell.swift */; };
 		A5ACE664292D35130066DC72 /* EpisodeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE663292D35130066DC72 /* EpisodeTableView.swift */; };
+		A5ACE667292D4AEE0066DC72 /* EpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE666292D4AEE0066DC72 /* EpisodeDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		A5AA8311292CEA1500B47692 /* LocationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewController.swift; sourceTree = "<group>"; };
 		A5ACE661292D35000066DC72 /* EpisodeCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCustomCell.swift; sourceTree = "<group>"; };
 		A5ACE663292D35130066DC72 /* EpisodeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableView.swift; sourceTree = "<group>"; };
+		A5ACE666292D4AEE0066DC72 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		DC0EF9EAEF2986BE69076A14 /* Pods-RickandMortyApiTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMortyApiTask.release.xcconfig"; path = "Target Support Files/Pods-RickandMortyApiTask/Pods-RickandMortyApiTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,8 @@
 		A5AA8301292CCFD400B47692 /* EpisodeDetailModule */ = {
 			isa = PBXGroup;
 			children = (
+				A5ACE666292D4AEE0066DC72 /* EpisodeDetailViewController.swift */,
+				A5ACE665292D4ACE0066DC72 /* Views */,
 			);
 			path = EpisodeDetailModule;
 			sourceTree = "<group>";
@@ -197,6 +201,13 @@
 			children = (
 				A5ACE661292D35000066DC72 /* EpisodeCustomCell.swift */,
 				A5ACE663292D35130066DC72 /* EpisodeTableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A5ACE665292D4ACE0066DC72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,6 +328,7 @@
 			files = (
 				A5ACE662292D35000066DC72 /* EpisodeCustomCell.swift in Sources */,
 				A5AA8310292CE9E700B47692 /* EpisodeListViewController.swift in Sources */,
+				A5ACE667292D4AEE0066DC72 /* EpisodeDetailViewController.swift in Sources */,
 				A5AA82E8292CCB9200B47692 /* CharactersListViewController.swift in Sources */,
 				A5AA8312292CEA1500B47692 /* LocationListViewController.swift in Sources */,
 				A5AA82E4292CCB9200B47692 /* AppDelegate.swift in Sources */,
