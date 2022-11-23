@@ -11,15 +11,22 @@ extension UILabel {
 
     func setup(textAlignment: NSTextAlignment = .center,
                numberLines: Int = .zero,
-               font: UIFont,
-               text: String = "") -> UILabel {
+               font: CGFloat,
+               fontWeight: UIFont.Weight = .regular,
+               text: String = "",
+               color: UIColor,
+               backgroundColor: UIColor = .clear) -> UILabel {
         self.textAlignment = textAlignment
         self.numberOfLines = numberLines
         self.textColor = UIColor.white
-        self.font = font
+        self.backgroundColor =  backgroundColor
+        self.font = .systemFont(ofSize: font, weight: fontWeight)
         self.text = text
+        self.numberOfLines = 0
+        self.lineBreakMode = .byWordWrapping
         self.sizeToFit()
         return self
     }
 }
+
 

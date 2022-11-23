@@ -13,6 +13,7 @@ extension UIImageView {
         self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
         self.clipsToBounds = true
+        self.backgroundColor = .systemOrange
         return self
     }
 }

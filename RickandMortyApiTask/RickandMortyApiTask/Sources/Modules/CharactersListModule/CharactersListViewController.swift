@@ -26,7 +26,6 @@ class CharactersListViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemOrange
         charactersView?.collectionView.delegate = self
         title = "Characters"
         updateSnapshot(animatingChange: false, characters: characters)
