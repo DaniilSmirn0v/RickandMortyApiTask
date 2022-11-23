@@ -40,13 +40,16 @@ extension EpisodeListViewController: UITableViewDataSource {
         cell.accessoryType = .disclosureIndicator
         return cell
     }
-
 }
 
 //MARK: - UITableViewDelegate
 extension EpisodeListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         150
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(EpisodeDetailViewController(), animated: true)
     }
 }
 

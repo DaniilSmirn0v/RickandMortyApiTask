@@ -18,6 +18,8 @@
 		A5ACE66D292DCCB90066DC72 /* EpisodeDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE66C292DCCB90066DC72 /* EpisodeDetailHeaderView.swift */; };
 		A5ACE66F292DDE3D0066DC72 /* EpisodeDetailCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE66E292DDE3D0066DC72 /* EpisodeDetailCollectionView.swift */; };
 		A5ACE671292DDF6C0066DC72 /* EpisodeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE670292DDF6C0066DC72 /* EpisodeDetailCell.swift */; };
+		A5ACE676292DE6A50066DC72 /* EpisodeCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE675292DE6A50066DC72 /* EpisodeCustomCell.swift */; };
+		A5ACE678292DE6CC0066DC72 /* EpisodeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE677292DE6CC0066DC72 /* EpisodeTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		A5ACE66C292DCCB90066DC72 /* EpisodeDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailHeaderView.swift; sourceTree = "<group>"; };
 		A5ACE66E292DDE3D0066DC72 /* EpisodeDetailCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailCollectionView.swift; sourceTree = "<group>"; };
 		A5ACE670292DDF6C0066DC72 /* EpisodeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailCell.swift; sourceTree = "<group>"; };
+		A5ACE675292DE6A50066DC72 /* EpisodeCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCustomCell.swift; sourceTree = "<group>"; };
+		A5ACE677292DE6CC0066DC72 /* EpisodeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableView.swift; sourceTree = "<group>"; };
 		DC0EF9EAEF2986BE69076A14 /* Pods-RickandMortyApiTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMortyApiTask.release.xcconfig"; path = "Target Support Files/Pods-RickandMortyApiTask/Pods-RickandMortyApiTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,7 +167,7 @@
 		A5AA8300292CCFD100B47692 /* EpisodeListModule */ = {
 			isa = PBXGroup;
 			children = (
-				A5ACE660292D34E20066DC72 /* Views */,
+				A5ACE674292DE68E0066DC72 /* Views */,
 				A5AA830F292CE9E700B47692 /* EpisodeListViewController.swift */,
 			);
 			path = EpisodeListModule;
@@ -204,6 +208,15 @@
 				A5ACE66C292DCCB90066DC72 /* EpisodeDetailHeaderView.swift */,
 				A5ACE66E292DDE3D0066DC72 /* EpisodeDetailCollectionView.swift */,
 				A5ACE670292DDF6C0066DC72 /* EpisodeDetailCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		A5ACE674292DE68E0066DC72 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5ACE675292DE6A50066DC72 /* EpisodeCustomCell.swift */,
+				A5ACE677292DE6CC0066DC72 /* EpisodeTableView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -322,15 +335,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5ACE676292DE6A50066DC72 /* EpisodeCustomCell.swift in Sources */,
 				A5ACE669292DCA510066DC72 /* EpisodeDetailViewController.swift in Sources */,
 				A5AA8310292CE9E700B47692 /* EpisodeListViewController.swift in Sources */,
+				A5ACE678292DE6CC0066DC72 /* EpisodeTableView.swift in Sources */,
 				A5ACE66D292DCCB90066DC72 /* EpisodeDetailHeaderView.swift in Sources */,
 				A5AA82E8292CCB9200B47692 /* CharactersListViewController.swift in Sources */,
 				A5ACE66F292DDE3D0066DC72 /* EpisodeDetailCollectionView.swift in Sources */,
 				A5AA8312292CEA1500B47692 /* LocationListViewController.swift in Sources */,
 				A5ACE671292DDF6C0066DC72 /* EpisodeDetailCell.swift in Sources */,
 				A5AA82E4292CCB9200B47692 /* AppDelegate.swift in Sources */,
-				A5ACE664292D35130066DC72 /* EpisodeTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

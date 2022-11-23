@@ -19,6 +19,7 @@ class EpisodeDetailViewController: UIViewController {
         view = EpisodeDetailCollectionView()
         episodeDetailCollectionView?.collectionView.delegate = self
         episodeDetailCollectionView?.collectionView.dataSource = self
+        title = "Episode - "
     }
 
     override func viewDidLoad() {
@@ -27,7 +28,7 @@ class EpisodeDetailViewController: UIViewController {
 }
 
 extension EpisodeDetailViewController: UICollectionViewDelegate {
-
+   
 
 }
 
@@ -42,5 +43,14 @@ extension EpisodeDetailViewController: UICollectionViewDataSource {
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
+                                                                            withReuseIdentifier: EpisodeDetailHeaderView.reuseId,
+                                                                            for: indexPath)
+                as? EpisodeDetailHeaderView else { return EpisodeDetailHeaderView() }
+
+
+        return header
+    }
 
 }

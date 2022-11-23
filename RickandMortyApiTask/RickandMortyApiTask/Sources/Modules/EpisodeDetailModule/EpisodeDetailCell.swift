@@ -59,15 +59,11 @@ extension EpisodeDetailCell {
 
     private func setupLayout() {
         characterImageView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.bottom.equalToSuperview()
             make.left.right.equalToSuperview()
-            make.bottom.equalTo(characterNameLabel.snp.top)
         }
-
         characterNameLabel.snp.makeConstraints { make in
             make.bottom.left.right.equalToSuperview()
-            make.top.equalTo(characterImageView.snp.bottom)
         }
     }
-
 }
