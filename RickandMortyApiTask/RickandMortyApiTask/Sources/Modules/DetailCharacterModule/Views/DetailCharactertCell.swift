@@ -2,7 +2,7 @@
 //  DetailCharactertCell.swift
 //  RickandMortyApiTask
 //
-//  Created by Даниил Смирнов on 23.11.2022.
+//  Created by Elena Noack on 22.11.22.
 //
 
 import UIKit

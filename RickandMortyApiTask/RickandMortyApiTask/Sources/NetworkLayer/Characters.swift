@@ -23,6 +23,9 @@ struct Apple: Hashable {
     var name: String
 }
 
+struct Orange: Hashable {
+    var name: String
+}
 
 enum Section {
   case main

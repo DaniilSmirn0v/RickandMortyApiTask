@@ -2,7 +2,7 @@
 //  DetailCharactertHeader.swift
 //  RickandMortyApiTask
 //
-//  Created by Даниил Смирнов on 23.11.2022.
+//  Created by Elena Noack on 22.11.22.
 //
 
 import UIKit
@@ -12,10 +12,11 @@ class DetailCharactertHeader: UITableViewHeaderFooterView {
     // MARK: - Properties
 
     var title = UILabel().setup(textAlignment: .left,
-                                font: .systemFont(ofSize: 17, weight: .medium),
-                                text: "ссccccc").setupAutoLayout()
+                                font: 17,
+                                text: "ссccccc",
+                                color: .white).setupAutoLayout()
 
-    static let reuseId = "HeaderView"
+    static let reuseId = "DetailCharactertHeader"
 
     // MARK: - Initialization
 

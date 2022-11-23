@@ -39,6 +39,7 @@ final class DetailCharactertViewController: UIViewController {
         view = DetailCharactertView()
         detailCharactertView?.tableView.delegate = self
         updateSnapshot(animatingChange: false, characters: characters, apples: apples)
+        title = "DetailCharacter"
     }
 
 }
