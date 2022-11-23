@@ -23,19 +23,26 @@ var window: UIWindow?
         charactersViewController.tabBarItem.title = "Characters"
         let navCharactersViewController = UINavigationController(rootViewController: charactersViewController)
         navCharactersViewController.navigationBar.prefersLargeTitles = true
+        navCharactersViewController.navigationBar.isTranslucent = false
+        navCharactersViewController.navigationBar.tintColor = .systemOrange
 
         let episodeListViewController = EpisodeListViewController()
         episodeListViewController.tabBarItem.image = UIImage(systemName: "tv.fill")
         episodeListViewController.tabBarItem.title = "Episodes"
         let navEpisodeListViewController = UINavigationController(rootViewController: episodeListViewController)
-        navCharactersViewController.navigationBar.prefersLargeTitles = true
-
+        navEpisodeListViewController.navigationBar.prefersLargeTitles = true
+        navEpisodeListViewController.navigationBar.isTranslucent = false
+        navEpisodeListViewController.navigationBar.tintColor = .systemOrange
 
         let locationListViewController = LocationListViewController()
         locationListViewController.tabBarItem.image = UIImage(systemName: "map.fill")
         locationListViewController.tabBarItem.title = "Locations"
         let navLocationListViewController = UINavigationController(rootViewController: locationListViewController)
         navLocationListViewController.navigationBar.prefersLargeTitles = true
+        navLocationListViewController.navigationBar.isTranslucent = false
+        navLocationListViewController.navigationBar.tintColor = .systemOrange
+
+
 
         tabBarController.viewControllers = [navCharactersViewController, navLocationListViewController, navEpisodeListViewController]
         tabBarController.selectedViewController = navCharactersViewController

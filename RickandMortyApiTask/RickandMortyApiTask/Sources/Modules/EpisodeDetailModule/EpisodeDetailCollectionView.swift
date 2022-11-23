@@ -36,7 +36,7 @@ class EpisodeDetailCollectionView: UIView {
     //MARK: - Private methods
 extension EpisodeDetailCollectionView {
     private func setupCompositionalLayout() -> UICollectionViewLayout {
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100))
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(110))
 
         let headerElement = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
         headerElement.pinToVisibleBounds = true

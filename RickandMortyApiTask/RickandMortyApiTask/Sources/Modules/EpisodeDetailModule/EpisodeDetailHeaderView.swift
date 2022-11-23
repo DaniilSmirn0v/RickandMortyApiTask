@@ -62,6 +62,10 @@ class EpisodeDetailHeaderView: UICollectionReusableView {
         super.init(frame: frame)
         setupHierarchy()
         setupLayout()
+        backgroundColor = .black
+        self.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        self.layer.cornerRadius = 13
+        self.clipsToBounds = true
     }
 
     required init?(coder: NSCoder) {
@@ -83,7 +87,7 @@ extension EpisodeDetailHeaderView {
     private func setupLayout() {
         episodeLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(10)
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(10)
         }
 
         episodeNameLabel.snp.makeConstraints { make in
