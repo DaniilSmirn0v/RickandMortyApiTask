@@ -16,8 +16,7 @@ var window: UIWindow?
 
         let tabBarController = UITabBarController()
         tabBarController.tabBar.tintColor = .systemOrange
-        let transparentColor = UIColor(displayP3Red: 0, green: 0, blue: 0, alpha: 0.5)
-        tabBarController.tabBar.backgroundColor = transparentColor
+        tabBarController.tabBar.backgroundColor = .black.withAlphaComponent(0.5)
 
         let charactersViewController = CharactersListViewController()
         charactersViewController.tabBarItem.image = UIImage(systemName: "person.3.fill")
