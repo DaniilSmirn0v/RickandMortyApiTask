@@ -10,7 +10,7 @@ import Foundation
 struct Characters: Hashable {
 
     let name: String
-//    let id = UUID()
+    let id = UUID()
 //    func hash(into hasher: inout Hasher) {
 //      hasher.combine(name)
 //    }

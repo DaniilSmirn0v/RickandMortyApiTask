@@ -57,5 +57,7 @@ extension CharactersListViewController {
 
 //MARK: - UICollectionViewDelegate
 extension CharactersListViewController: UICollectionViewDelegate {
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        navigationController?.pushViewController(DetailCharactertViewController(), animated: true)
+    }
 }

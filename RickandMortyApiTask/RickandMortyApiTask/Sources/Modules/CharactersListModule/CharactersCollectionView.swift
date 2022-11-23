@@ -2,10 +2,11 @@
 //  CharactersCollectionView.swift
 //  RickandMortyApiTask
 //
-//  Created by Даниил Смирнов on 22.11.2022.
+//  Created by Даниил Смирнов on 23.11.2022.
 //
 
 import UIKit
+import SnapKit
 
 class CharactersCollectionView: UIView {
     //MARK: - Views
@@ -16,7 +17,7 @@ class CharactersCollectionView: UIView {
         collectionView.register(CharactersCollectionCell.self, forCellWithReuseIdentifier: CharactersCollectionCell.identifier)
         return collectionView
     }()
-    
+
     //MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)

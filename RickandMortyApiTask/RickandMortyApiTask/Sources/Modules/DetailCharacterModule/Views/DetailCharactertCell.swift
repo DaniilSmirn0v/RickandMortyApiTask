@@ -2,10 +2,11 @@
 //  DetailCharactertCell.swift
 //  RickandMortyApiTask
 //
-//  Created by Elena Noack on 22.11.22.
+//  Created by Даниил Смирнов on 23.11.2022.
 //
 
 import UIKit
+import SnapKit
 
 final class DetailCharactertCell: UITableViewCell {
     // MARK: - Properties
@@ -35,10 +36,4 @@ final class DetailCharactertCell: UITableViewCell {
         }
     }
 }
-
-
-
-
-
-
 
