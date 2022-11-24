@@ -20,6 +20,8 @@ final class DetailCharactertViewController: UIViewController {
         case info = "info"
      }
 
+    private var presenter: DetailCharacterViewOutputProtocol?
+
     private var detailCharactertView: DetailCharactertView? {
         guard isViewLoaded else { return nil }
         return view as? DetailCharactertView
@@ -27,16 +29,28 @@ final class DetailCharactertViewController: UIViewController {
 
     private lazy var dataSource = makeDataSource()
     private var characters = [
-        Characters(name: "square.and.arrow.up")]
+        Charact(name: "square.and.arrow.up")]
     private var apples = [
        Apple(name: "square.and.arrow.up"),
     Apple(name: "czczczcz")]
 
     // MARK: - Lifecycle
 
+    init(presenter: DetailCharacterViewOutputProtocol) {
+       super.init(nibName: nil, bundle: nil)
+       self.presenter = presenter
+    }
+
+    required init?(coder: NSCoder) {
+       fatalError("init(coder:) has not been implemented")
+    }
+
+    override func loadView() {
+        view = DetailCharactertView()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = DetailCharactertView()
         detailCharactertView?.tableView.delegate = self
         updateSnapshot(animatingChange: false, characters: characters, apples: apples)
         title = "DetailCharacter"
@@ -70,7 +84,7 @@ extension DetailCharactertViewController {
 
         return DataSource(tableView: detailCharactertView?.tableView ?? UITableView()) { tableView, indexPath, item in
 
-            if let character = item as? Characters {
+            if let character = item as? Charact {
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCharactertCell.reuseID, for: indexPath) as? DetailCharactertCell else { return UITableViewCell() }
                 cell.charactertImage.image = UIImage(systemName: character.name)
                 return cell
@@ -84,7 +98,7 @@ extension DetailCharactertViewController {
         }
     }
 
-    private func updateSnapshot(animatingChange: Bool = true, characters: [Characters], apples: [Apple]) {
+    private func updateSnapshot(animatingChange: Bool = true, characters: [Charact], apples: [Apple]) {
         var snapshot = Snapshot()
         snapshot.appendSections([.image, .info])
         snapshot.appendItems(characters, toSection: .image)
@@ -93,3 +107,8 @@ extension DetailCharactertViewController {
     }
 }
 
+// MARK: - DetailCharacterViewInputProtocol
+
+extension DetailCharactertViewController: DetailCharacterViewInputProtocol {
+    
+}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Characters: Hashable {
+struct Charact: Hashable {
 
     let name: String
     let id = UUID()

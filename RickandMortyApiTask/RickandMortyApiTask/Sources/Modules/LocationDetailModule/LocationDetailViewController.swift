@@ -10,8 +10,8 @@ import UIKit
 class LocationDetailViewController: UIViewController, UICollectionViewDelegate {
     // MARK: - Typealias
 
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Characters>
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, Characters>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Charact>
+    typealias DataSource = UICollectionViewDiffableDataSource<Section, Charact>
 
     // MARK: - Properties
 
@@ -22,7 +22,7 @@ class LocationDetailViewController: UIViewController, UICollectionViewDelegate {
 
     private lazy var dataSource = makeDataSource()
 
-    private var characters = [Characters(name: "Привет как дела "),Characters(name: "Привет как дела "),Characters(name: "Привет как дела "),Characters(name: "Привет как дела ")]
+    private var characters = [Charact(name: "Привет как дела "),Charact(name: "Привет как дела "),Charact(name: "Привет как дела "),Charact(name: "Привет как дела ")]
 
     // MARK: - Life Cycle
 
@@ -53,7 +53,7 @@ extension LocationDetailViewController {
         return dataSource
     }
 
-    func updateSnapshot(animatingChange: Bool = true, characters: [Characters]) {
+    func updateSnapshot(animatingChange: Bool = true, characters: [Charact]) {
 
         var snapshot = Snapshot()
         snapshot.appendSections([.main])

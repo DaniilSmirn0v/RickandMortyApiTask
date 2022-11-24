@@ -27,7 +27,6 @@ public class DefaultNetworkClient: NetworkClient {
 
         do {
             let data = try JSONDecoder().decode(T.self, from: data)
-            debugPrint(data)
             return data
         } catch {
             throw NetworkError.decoding(error)
