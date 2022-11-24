@@ -7,12 +7,18 @@
 
 import UIKit
 
+protocol CharactersListViewInputProtocol {
+    
+}
+
 class CharactersListViewController: UIViewController {
     //MARK: - Properties
     private var charactersView: CharactersCollectionView? {
         guard isViewLoaded else { return nil }
         return view as? CharactersCollectionView
     }
+
+    let urlsessiopn = DefaultNetworkClient()
 
     typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Characters>
     typealias DataSource = UICollectionViewDiffableDataSource<Section, Characters>
@@ -29,6 +35,19 @@ class CharactersListViewController: UIViewController {
         charactersView?.collectionView.delegate = self
         title = "Characters"
         updateSnapshot(animatingChange: false, characters: characters)
+        getData()
+    }
+
+    private func getData() {
+        Task {
+            do {
+                let request = RickAndMortyRequestFactory.characters.urlReques
+                let data: Welcome  = try await urlsessiopn.perform(request: request)
+                print(data)
+            } catch {
+                debugPrint(error)
+            }
+        }
     }
 
 }
