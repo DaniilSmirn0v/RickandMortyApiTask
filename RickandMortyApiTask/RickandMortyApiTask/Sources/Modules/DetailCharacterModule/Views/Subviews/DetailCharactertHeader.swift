@@ -15,7 +15,6 @@ class DetailCharactertHeader: UITableViewHeaderFooterView {
         textAlignment: .left,
         font: 18,
         fontWeight: .bold,
-        text: "ссccccc",
         color: .orange
     ).setupAutoLayout()
 
@@ -37,7 +36,8 @@ class DetailCharactertHeader: UITableViewHeaderFooterView {
     private func configure() {
         addSubview(title)
         title.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(20)
+            make.top.bottom.equalToSuperview().inset(12)
         }
     }
 }

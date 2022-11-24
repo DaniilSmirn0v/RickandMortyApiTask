@@ -21,6 +21,7 @@
 		0448A9AB292FB11E006F49DD /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9AA292FB11E006F49DD /* BaseRouter.swift */; };
 		0448A9AE292FC4C1006F49DD /* CharactersListPresenterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9AD292FC4C1006F49DD /* CharactersListPresenterInputProtocol.swift */; };
 		0448A9B0292FC55B006F49DD /* CharactersListViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9AF292FC55B006F49DD /* CharactersListViewProtocols.swift */; };
+		0448A9B2292FD685006F49DD /* CharactersListRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9B1292FD685006F49DD /* CharactersListRouterProtocol.swift */; };
 		29BDF4EB47A4D8EDA04D7224 /* Pods_RickandMortyApiTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAB6CEBF61FF0B4FEAB289A /* Pods_RickandMortyApiTask.framework */; };
 		A50319FD292E6A630098551F /* CharactersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50319FC292E6A630098551F /* CharactersCollectionView.swift */; };
 		A5031A05292E6B720098551F /* CharactersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5031A04292E6B720098551F /* CharactersCollectionCell.swift */; };
@@ -70,6 +71,7 @@
 		0448A9AA292FB11E006F49DD /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		0448A9AD292FC4C1006F49DD /* CharactersListPresenterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListPresenterInputProtocol.swift; sourceTree = "<group>"; };
 		0448A9AF292FC55B006F49DD /* CharactersListViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewProtocols.swift; sourceTree = "<group>"; };
+		0448A9B1292FD685006F49DD /* CharactersListRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListRouterProtocol.swift; sourceTree = "<group>"; };
 		04AB654B292D093000216DBE /* DetailCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterViewController.swift; sourceTree = "<group>"; };
 		04AB6550292D0CC300216DBE /* DetailCharactertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharactertView.swift; sourceTree = "<group>"; };
 		1CAB6CEBF61FF0B4FEAB289A /* Pods_RickandMortyApiTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickandMortyApiTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -330,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				A56DA0DC292FA23D004F5AB3 /* CharactersListRouter.swift */,
+				0448A9B1292FD685006F49DD /* CharactersListRouterProtocol.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				A5031A13292E6DD20098551F /* UILabel+Confgure.swift in Sources */,
 				A56DA0C6292F6DB3004F5AB3 /* Api.swift in Sources */,
 				A56DA0D7292FA17C004F5AB3 /* CharactersListPresenter.swift in Sources */,
+				0448A9B2292FD685006F49DD /* CharactersListRouterProtocol.swift in Sources */,
 				0448A9A1292FAE8E006F49DD /* DetailCharacterViewProtocols.swift in Sources */,
 				0448A99F292FAE73006F49DD /* DetailCharacterPresenter.swift in Sources */,
 				A5AA8310292CE9E700B47692 /* EpisodeListViewController.swift in Sources */,

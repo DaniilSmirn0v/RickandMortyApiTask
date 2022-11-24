@@ -18,12 +18,12 @@ class DetailCharacterInteractor {
         self.presenter = presenter
     }
 
-    func getCharactersModel() {
+    func getCharactersModel(id: Int) {
         Task {
             do {
-                let request = RickAndMortyRequestFactory.characters.urlReques
-                let data: Characterss = try await network.perform(request: request)
-                presenter?.pullCharactersData(data)
+                let request = RickAndMortyRequestFactory.detailCharacters(id: id).urlReques
+                let data: Results = try await network.perform(request: request)
+                presenter?.pullCharacterData(data)
             } catch {
                 debugPrint(error)
             }

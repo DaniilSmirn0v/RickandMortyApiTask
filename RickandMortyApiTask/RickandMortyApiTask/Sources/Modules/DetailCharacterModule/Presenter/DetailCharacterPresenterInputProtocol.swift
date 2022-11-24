@@ -8,5 +8,7 @@
 import Foundation
 
 protocol DetailCharacterPresenterInputProtocol {
-    func pullCharactersData(_ data: Characterss)
+    func pullCharacterData(_ data: Results)
 }
+
+

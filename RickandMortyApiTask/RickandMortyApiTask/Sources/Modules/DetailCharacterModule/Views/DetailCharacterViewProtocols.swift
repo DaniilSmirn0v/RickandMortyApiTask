@@ -8,7 +8,8 @@
 import Foundation
 
 protocol DetailCharacterViewOutputProtocol {
-
+    func getCharacterName() -> String?
+    func getCharacterInfo() -> Results?
 }
 
 protocol DetailCharacterViewInputProtocol {
