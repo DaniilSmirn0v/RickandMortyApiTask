@@ -7,63 +7,67 @@
 
 import UIKit
 
-protocol CharactersListViewInputProtocol {
-    
-}
-
 class CharactersListViewController: UIViewController {
-    //MARK: - Properties
+    // MARK: - Typealias
+
+    typealias Snapshot = NSDiffableDataSourceSnapshot<CharactersListSection, Results>
+    typealias DataSource = UICollectionViewDiffableDataSource<CharactersListSection, Results>
+
+    // MARK: - Properties
+
+    enum CharactersListSection {
+        case main
+    }
+
+    let urlsessiopn = DefaultNetworkClient()
+
     private var charactersView: CharactersCollectionView? {
         guard isViewLoaded else { return nil }
         return view as? CharactersCollectionView
     }
 
-    let urlsessiopn = DefaultNetworkClient()
+    private var presenter: CharactersListViewOutputProtocol?
 
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Characters>
-    typealias DataSource = UICollectionViewDiffableDataSource<Section, Characters>
     private lazy var dataSource = makeDataSource()
-    private var characters = [Characters(name: "Привет как дела "),Characters(name: "Привет как дела "),Characters(name: "Привет как дела "),Characters(name: "Привет как дела ")]
+    private var characters = [Results]()
 
-    //MARK: - Life Cycle
+    // MARK: - Life Cycle
+
     override func loadView() {
         view = CharactersCollectionView()
-
     }
+
+    init(presenter: CharactersListViewOutputProtocol) {
+        super.init(nibName: nil, bundle: nil)
+        self.presenter = presenter
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         charactersView?.collectionView.delegate = self
+        characters = self.presenter?.getCharacters() ?? [Results]()
         title = "Characters"
         updateSnapshot(animatingChange: false, characters: characters)
-        getData()
     }
-
-    private func getData() {
-        Task {
-            do {
-                let request = RickAndMortyRequestFactory.characters.urlReques
-                let data: Welcome  = try await urlsessiopn.perform(request: request)
-                print(data)
-            } catch {
-                debugPrint(error)
-            }
-        }
-    }
-
 }
 
-//MARK: - UICollectionViewDiffableDataSource
+// MARK: - UICollectionViewDiffableDataSource
+
 extension CharactersListViewController {
     private func makeDataSource() -> DataSource {
         let dataSource = DataSource(collectionView: charactersView!.collectionView) { collectionView, indexPath, character in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharactersCollectionCell.identifier, for: indexPath) as? CharactersCollectionCell else { return UICollectionViewCell() }
-            cell.characterNameLabel.text = character.name
+            cell.characterNameLabel.text = self.characters[indexPath.row].name
             return cell
         }
         return dataSource
     }
 
-    func updateSnapshot(animatingChange: Bool = true, characters: [Characters]) {
+    func updateSnapshot(animatingChange: Bool = true, characters: [Results]) {
 
         var snapshot = Snapshot()
         snapshot.appendSections([.main])
@@ -73,9 +77,17 @@ extension CharactersListViewController {
     }
 }
 
-//MARK: - UICollectionViewDelegate
+// MARK: - UICollectionViewDelegate
+
 extension CharactersListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        navigationController?.pushViewController(DetailCharactertViewController(), animated: true)
+        let sembler = AssemblerBuilder()
+        navigationController?.pushViewController(sembler.configureDetailCharactertModule(), animated: true)
     }
+}
+
+// MARK: - CharactersListViewInputProtocol
+
+extension CharactersListViewController: CharactersListViewInputProtocol {
+
 }

@@ -10,15 +10,21 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-var window: UIWindow?
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    let assembly = AssemblerBuilder()
+    var window: UIWindow?
+
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
 
         let tabBarController = UITabBarController()
         tabBarController.tabBar.tintColor = .systemOrange
         tabBarController.tabBar.backgroundColor = .black.withAlphaComponent(0.5)
 
-        let charactersViewController = CharactersListViewController()
+        let charactersViewController = assembly.configureCharactersListModule()
+
         charactersViewController.tabBarItem.image = UIImage(systemName: "person.3.fill")
         charactersViewController.tabBarItem.title = "Characters"
         let navCharactersViewController = UINavigationController(rootViewController: charactersViewController)

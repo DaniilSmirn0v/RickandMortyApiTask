@@ -7,10 +7,27 @@
 
 import Foundation
 
-protocol CharactersListViewOutputProtocol {
+class CharactersListPresenter: CharactersListViewOutputProtocol {
+
+    private var charactersData: Characterss?
+    var interactor: CharactersListInteractor? {
+       didSet {
+          interactor?.getCharactersModel()
+       }
+    }
+
+    var view: CharactersListViewInputProtocol?
+
+    func getCharacters() -> [Results]? {
+        charactersData?.results
+    }
     
 }
 
-class CharactersListPresenter {
+extension CharactersListPresenter:  CharactersListPresenterInputProtocol {
+
+    func pullCharactersData(_ data: Characterss) {
+        charactersData = data
+    }
 
 }
