@@ -6,24 +6,18 @@
 //
 
 import UIKit
-// MARK: - BaseRouterProtocol
 
-protocol BaseRouterProtocol {
-    var navigationController: UINavigationController? { get set }
-    var assemblyBuilder: AssemblyBuilderProtocol? { get set }
-}
-
-class BaseRouter: BaseRouterProtocol {
+class BaseRouter {
     // MARK: - Properties
 
     var assemblyBuilder: AssemblyBuilderProtocol?
-    var navigationController: UINavigationController?
+    var viewController: UIViewController?
 
     // MARK: - Initialization
 
-    init(navigationController: UINavigationController,
+    init(viewController: UIViewController,
          assemblyBuilder: AssemblyBuilderProtocol) {
-        self.navigationController = navigationController
+        self.viewController = viewController
         self.assemblyBuilder = assemblyBuilder
     }
 
