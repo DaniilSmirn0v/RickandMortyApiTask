@@ -81,8 +81,9 @@ extension CharactersListViewController {
 
 extension CharactersListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let sembler = AssemblerBuilder()
-        navigationController?.pushViewController(sembler.configureDetailCharactertModule(), animated: true)
+
+        let id = characters[indexPath.row].id
+        presenter?.didSelectItem(id)
     }
 }
 
@@ -90,4 +91,6 @@ extension CharactersListViewController: UICollectionViewDelegate {
 
 extension CharactersListViewController: CharactersListViewInputProtocol {
 
+   
+   
 }

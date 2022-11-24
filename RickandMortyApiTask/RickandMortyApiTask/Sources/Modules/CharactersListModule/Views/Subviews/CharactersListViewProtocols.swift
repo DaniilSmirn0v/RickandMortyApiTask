@@ -7,9 +7,14 @@
 
 import Foundation
 
+// MARK: - CharactersListViewOutputProtocol
+
 protocol CharactersListViewOutputProtocol {
     func getCharacters() -> [Results]?
+    func didSelectItem(_ id: Int)
 }
+
+// MARK: - CharactersListViewInputProtocol
 
 protocol CharactersListViewInputProtocol {
 

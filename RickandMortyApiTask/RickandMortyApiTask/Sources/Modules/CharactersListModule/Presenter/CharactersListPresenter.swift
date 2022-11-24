@@ -8,8 +8,8 @@
 import Foundation
 
 class CharactersListPresenter: CharactersListViewOutputProtocol {
+    // MARK: - Properties
 
-    private var charactersData: Characterss?
     var interactor: CharactersListInteractor? {
        didSet {
           interactor?.getCharactersModel()
@@ -17,6 +17,10 @@ class CharactersListPresenter: CharactersListViewOutputProtocol {
     }
 
     var view: CharactersListViewInputProtocol?
+    private var charactersData: Characterss?
+    var router: CharactersListRouterProtocol?
+
+    // MARK: - Methods
 
     func getCharacters() -> [Results]? {
         charactersData?.results
@@ -24,10 +28,16 @@ class CharactersListPresenter: CharactersListViewOutputProtocol {
     
 }
 
-extension CharactersListPresenter:  CharactersListPresenterInputProtocol {
+// MARK: - CharactersListPresenterInputProtocol
+
+extension CharactersListPresenter: CharactersListPresenterInputProtocol {
 
     func pullCharactersData(_ data: Characterss) {
         charactersData = data
+    }
+
+    func didSelectItem(_ id: Int) {
+        router?.openDetailCharactertVC(id)
     }
 
 }

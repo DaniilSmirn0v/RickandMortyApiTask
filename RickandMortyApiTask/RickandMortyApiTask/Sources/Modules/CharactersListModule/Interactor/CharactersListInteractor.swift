@@ -8,15 +8,20 @@
 import Foundation
 
 class CharactersListInteractor {
+    // MARK: - Properties
 
     private var charactersModel: Characterss?
     private let network: DefaultNetworkClient
     private var presenter: CharactersListPresenterInputProtocol?
 
+    // MARK: - Initialize
+
     init(network: DefaultNetworkClient, presenter: CharactersListPresenterInputProtocol) {
         self.network = network
         self.presenter = presenter
     }
+
+    // MARK: - Methods
 
     func getCharactersModel() {
         Task {
@@ -29,6 +34,5 @@ class CharactersListInteractor {
             }
         }
     }
-
 
 }
