@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - Welcome
 struct Characterss: Decodable {
@@ -28,6 +29,16 @@ struct Results: Decodable, Hashable {
     let species: Species
     let gender: Gender
     let image: String
+    var statusColor: String {
+        switch status {
+        case .alive:
+            return "🟢"
+        case .dead:
+            return "🔴"
+        case .unknown:
+            return "⚪️"
+        }
+    }
 }
 
 enum Gender: String, Decodable {
@@ -45,4 +56,11 @@ enum Status: String, Decodable {
     case alive = "Alive"
     case dead = "Dead"
     case unknown = "unknown"
+}
+
+// MARK: - CharactInfo  // НЕ УДАЛЯТЬ!!!!!!!!!!!!!!!!
+
+struct CharactInfo: Hashable {
+    var status: String
+    var info: String
 }
