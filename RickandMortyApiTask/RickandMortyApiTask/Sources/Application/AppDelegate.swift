@@ -42,8 +42,6 @@ var window: UIWindow?
         navLocationListViewController.navigationBar.isTranslucent = false
         navLocationListViewController.navigationBar.tintColor = .systemOrange
 
-
-
         tabBarController.viewControllers = [navCharactersViewController, navLocationListViewController, navEpisodeListViewController]
         tabBarController.selectedViewController = navCharactersViewController
 

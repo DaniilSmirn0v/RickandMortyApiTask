@@ -14,11 +14,11 @@ extension UILabel {
                font: CGFloat,
                fontWeight: UIFont.Weight = .regular,
                text: String = "",
-               color: UIColor,
+               color: UIColor = .white,
                backgroundColor: UIColor = .clear) -> UILabel {
         self.textAlignment = textAlignment
         self.numberOfLines = numberLines
-        self.textColor = UIColor.white
+        self.textColor = color
         self.backgroundColor =  backgroundColor
         self.font = .systemFont(ofSize: font, weight: fontWeight)
         self.text = text

@@ -11,10 +11,13 @@ import SnapKit
 class DetailCharactertHeader: UITableViewHeaderFooterView {
     // MARK: - Properties
 
-    var title = UILabel().setup(textAlignment: .left,
-                                font: 17,
-                                text: "ссccccc",
-                                color: .white).setupAutoLayout()
+    var title = UILabel().setup(
+        textAlignment: .left,
+        font: 18,
+        fontWeight: .bold,
+        text: "ссccccc",
+        color: .orange
+    ).setupAutoLayout()
 
     static let reuseId = "DetailCharactertHeader"
 

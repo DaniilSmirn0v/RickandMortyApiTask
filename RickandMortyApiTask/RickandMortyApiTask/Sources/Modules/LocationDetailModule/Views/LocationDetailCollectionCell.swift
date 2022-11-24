@@ -20,7 +20,6 @@ class LocationDetailCell: UICollectionViewCell {
     lazy var locationLabel = UILabel().setup(
         font:  17,
         text: "Привет как дела что нового илии не нового новейшего",
-        color: .black,
         backgroundColor: .black.withAlphaComponent(0.5)
     ).setupAutoLayout()
 

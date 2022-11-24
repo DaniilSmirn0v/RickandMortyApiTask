@@ -76,7 +76,7 @@ extension DetailCharactertViewController {
                 return cell
             } else if let apple = item as? Apple {
                 let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-                cell.textLabel?.text = "🟢   \(apple.name)"
+                cell.textLabel?.text = "🔸🟠🔶  \(apple.name)"
                 return cell
             } else {
                 fatalError("Unknown cell type")

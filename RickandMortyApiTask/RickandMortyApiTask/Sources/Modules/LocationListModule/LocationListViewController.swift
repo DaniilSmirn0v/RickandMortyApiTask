@@ -8,14 +8,14 @@
 import UIKit
 
 class LocationListViewController: UIViewController {
-    //MARK: - Properties
+    // MARK: - Properties
     
     private var locationListView: LocationListView? {
         guard isViewLoaded else { return nil }
         return view as? LocationListView
     }
 
-    //MARK: - LifeCycle
+    // MARK: - LifeCycle
 
     override func loadView() {
         view = LocationListView()

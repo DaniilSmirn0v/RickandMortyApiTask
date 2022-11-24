@@ -13,12 +13,11 @@ class LocationDetailView: UIView {
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setupCompositionalLayout())
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.register(LocationDetailCell.self, forCellWithReuseIdentifier: LocationDetailCell.identifier)
         collectionView.register(LocationDetailHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: LocationDetailHeader.reuseId)
         return collectionView
-    }()
+    }().setupAutoLayout()
 
     // MARK: - Initialization
 
@@ -49,9 +48,9 @@ extension LocationDetailView {
             alignment: .top
         )
 
-        headerElement.pinToVisibleBounds = true
+        headerElement.pinToVisibleBounds = false
 
-        let spacing: CGFloat = 10
+        let spacing: CGFloat = 12
 
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
@@ -59,8 +58,14 @@ extension LocationDetailView {
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
+        item.contentInsets = NSDirectionalEdgeInsets(
+            top: 4,
+            leading: .zero,
+            bottom: 4,
+            trailing: .zero)
+
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.5),
+            widthDimension: .fractionalWidth(0.51),
             heightDimension: .fractionalHeight(0.25)
         )
         let group = NSCollectionLayoutGroup.horizontal(
@@ -84,7 +89,8 @@ extension LocationDetailView {
 
     private func setupLayout() {
         collectionView.snp.makeConstraints { make in
-            make.top.left.bottom.right.equalToSuperview()
+            make.top.bottom.equalToSuperview()
+            make.left.right.equalTo(safeAreaLayoutGuide).inset(8)
         }
     }
 }

@@ -29,9 +29,10 @@ class LocationDetailHeader: UICollectionReusableView {
         return line
     }()
 
-    var infoTitle = UILabel().setup(textAlignment: .left,
-                                font: 32,
-                                text: "ссccccc",
+    var residentInfoLabel = UILabel().setup(textAlignment: .left,
+                                font: 30,
+                                fontWeight: .bold,
+                                text: "Resident in This Location",
                                 color: .white).setupAutoLayout()
 
     static let reuseId = "LocationDetailHeader"
@@ -54,35 +55,35 @@ class LocationDetailHeader: UICollectionReusableView {
          title,
          title1,
          lineSeparators,
-         infoTitle,
+         residentInfoLabel,
         ].forEach { addSubview($0) }
     }
 
     private func setupLayout() {
         charactertImage.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(0)
             make.top.equalToSuperview()
             make.height.equalTo(charactertImage.snp.width)
         }
 
         title.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(0)
             make.top.equalTo(charactertImage.snp.bottom).offset(8)
         }
 
         title1.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(0)
             make.top.equalTo(title.snp.bottom).offset(8)
         }
 
         lineSeparators.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(0)
             make.top.equalTo(title1.snp.bottom).offset(8)
-            make.height.equalTo(2)
+            make.height.equalTo(1)
         }
 
-        infoTitle.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(20)
+        residentInfoLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(0)
             make.top.equalTo(lineSeparators.snp.bottom).offset(8)
         }
     }

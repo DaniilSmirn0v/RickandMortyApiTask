@@ -36,6 +36,11 @@ extension CharactersCollectionView {
         let spacing: CGFloat = 10
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(
+            top: 2,
+            leading: 2,
+            bottom: 2,
+            trailing: 2)
 
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(0.25))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
@@ -55,7 +60,8 @@ extension CharactersCollectionView {
 
     private func setupLayout() {
         collectionView.snp.makeConstraints { make in
-            make.top.left.bottom.right.equalToSuperview()
+            make.top.bottom.equalToSuperview()
+            make.left.right.equalTo(safeAreaLayoutGuide).inset(8)
         }
     }
 }

@@ -12,12 +12,14 @@ final class DetailCharactertCell: UITableViewCell {
     // MARK: - Properties
 
     static let reuseID = "DetailCharactertCell"
-
     lazy var charactertImage = UIImageView().setup().setupAutoLayout()
 
     // MARK: - Initialization
 
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    override init(
+        style: UITableViewCell.CellStyle,
+        reuseIdentifier: String?
+    ) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         addSubview(charactertImage)
         setupLayout()
@@ -30,7 +32,6 @@ final class DetailCharactertCell: UITableViewCell {
     // MARK: - Private
 
     private func setupLayout() {
-
         charactertImage.snp.makeConstraints { make in
             make.top.right.left.bottom.equalToSuperview()
         }
