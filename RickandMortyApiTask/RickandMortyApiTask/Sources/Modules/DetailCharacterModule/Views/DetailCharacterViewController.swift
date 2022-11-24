@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class DetailCharactertViewController: UIViewController {
     // MARK: - Typealias
@@ -28,8 +29,7 @@ final class DetailCharactertViewController: UIViewController {
     }
 
     private lazy var dataSource = makeDataSource()
-    private var characters = [
-        Charact(name: "square.and.arrow.up")]
+    private var characters = [Results?]()
     private var character = [CharactInfo]()
     private var characterInfo: Results?
 
@@ -90,6 +90,7 @@ extension DetailCharactertViewController {
     private func configurate() {
         detailCharactertView?.tableView.delegate = self
         characterInfo = self.presenter?.getCharacterInfo()
+        characters = [self.presenter?.getCharacterInfo()]
         title = self.presenter?.getCharacterName()
         setupCharacterInfo()
         updateSnapshot(animatingChange: false, characters: characters, character: character)
@@ -103,8 +104,8 @@ extension DetailCharactertViewController {
 
         character = [
             CharactInfo(status: "\(statusColor)  Status", info: status),
-            CharactInfo(status: "🧬  gender", info: gender),
-            CharactInfo(status: "👤  species", info: species),
+            CharactInfo(status: "🧬  Gender", info: gender),
+            CharactInfo(status: "👤  Species", info: species),
         ]
     }
 
@@ -112,23 +113,31 @@ extension DetailCharactertViewController {
 
         return DataSource(tableView: detailCharactertView?.tableView ?? UITableView()) { tableView, indexPath, item in
 
-            if let character = item as? Charact {
-                guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCharactertCell.reuseID, for: indexPath) as? DetailCharactertCell else { return UITableViewCell() }
-                cell.charactertImage.image = UIImage(systemName: character.name)
+            if let character = item as? Results? {
+
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: DetailCharactertCell.reuseID,
+                    for: indexPath
+                ) as? DetailCharactertCell else { return UITableViewCell() }
+                let url = URL(string: character?.image ?? "")
+                cell.charactertImage.kf.setImage(with: url)
                 return cell
+
             } else if let characterInfo = item as? CharactInfo {
+
                 let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
                 cell.textLabel?.text = characterInfo.status
                 cell.detailTextLabel?.text = characterInfo.info
                 cell.detailTextLabel?.textColor = .systemOrange
                 return cell
+
             } else {
                 fatalError("Unknown cell type")
             }
         }
     }
 
-    private func updateSnapshot(animatingChange: Bool = true, characters: [Charact], character: [CharactInfo]) {
+    private func updateSnapshot(animatingChange: Bool = true, characters: [Results?], character: [CharactInfo]) {
         var snapshot = Snapshot()
         snapshot.appendSections([.image, .info])
         snapshot.appendItems(characters, toSection: .image)

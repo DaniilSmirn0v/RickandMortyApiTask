@@ -36,6 +36,11 @@ class DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
     func getCharacterInfo() -> Results? {
         characterData
     }
+
+//    func getImageURL() -> URL? {
+//        guard let stringURL = characterData?.image else { return nil }
+//        return URL(string: stringURL)
+//    }
 }
 
 // MARK: - DetailCharacterPresenterInputProtocol

@@ -10,6 +10,7 @@ import Foundation
 protocol DetailCharacterViewOutputProtocol {
     func getCharacterName() -> String?
     func getCharacterInfo() -> Results?
+//    func getImageURL() -> URL?
 }
 
 protocol DetailCharacterViewInputProtocol {

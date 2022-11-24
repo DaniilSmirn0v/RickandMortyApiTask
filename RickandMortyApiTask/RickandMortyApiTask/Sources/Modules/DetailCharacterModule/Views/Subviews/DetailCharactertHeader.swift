@@ -13,8 +13,8 @@ class DetailCharactertHeader: UITableViewHeaderFooterView {
 
     var title = UILabel().setup(
         textAlignment: .left,
-        font: 18,
-        fontWeight: .bold,
+        font: 20,
+        fontWeight: .regular,
         color: .orange
     ).setupAutoLayout()
 

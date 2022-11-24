@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharactersListViewController: UIViewController {
     // MARK: - Typealias
@@ -62,6 +63,9 @@ extension CharactersListViewController {
         let dataSource = DataSource(collectionView: charactersView!.collectionView) { collectionView, indexPath, character in
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharactersCollectionCell.identifier, for: indexPath) as? CharactersCollectionCell else { return UICollectionViewCell() }
             cell.characterNameLabel.text = self.characters[indexPath.row].name
+            let stringURL = self.characters[indexPath.row].image
+            let url = URL(string: stringURL)
+            cell.characterImageView.kf.setImage(with: url)
             return cell
         }
         return dataSource
