@@ -30,7 +30,6 @@
 		A5031A12292E6DD20098551F /* UIImageView+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5031A0E292E6DD20098551F /* UIImageView+Configure.swift */; };
 		A5031A13292E6DD20098551F /* UILabel+Confgure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5031A0F292E6DD20098551F /* UILabel+Confgure.swift */; };
 		A5031A14292E6DD20098551F /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5031A10292E6DD20098551F /* UIView+Autolayout.swift */; };
-		A5031A1A292E6E9F0098551F /* Charact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5031A19292E6E9F0098551F /* Charact.swift */; };
 		A56DA0AA292E7178004F5AB3 /* DetailCharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB654B292D093000216DBE /* DetailCharacterViewController.swift */; };
 		A56DA0AB292E717B004F5AB3 /* DetailCharactertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB6550292D0CC300216DBE /* DetailCharactertView.swift */; };
 		A56DA0C6292F6DB3004F5AB3 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0C5292F6DB3004F5AB3 /* Api.swift */; };
@@ -42,6 +41,15 @@
 		A56DA0D7292FA17C004F5AB3 /* CharactersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0D6292FA17C004F5AB3 /* CharactersListPresenter.swift */; };
 		A56DA0DA292FA1DF004F5AB3 /* CharactersListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0D9292FA1DF004F5AB3 /* CharactersListInteractor.swift */; };
 		A56DA0DD292FA23D004F5AB3 /* CharactersListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0DC292FA23D004F5AB3 /* CharactersListRouter.swift */; };
+		A56DA0E52930A4AB004F5AB3 /* EpisodeListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0E42930A4AB004F5AB3 /* EpisodeListAssembly.swift */; };
+		A56DA0E72930A4CF004F5AB3 /* EpisodeListRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0E62930A4CF004F5AB3 /* EpisodeListRouterProtocol.swift */; };
+		A56DA0E92930A4E1004F5AB3 /* EpisodeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0E82930A4E1004F5AB3 /* EpisodeListRouter.swift */; };
+		A56DA0EB2930A69D004F5AB3 /* EpisodeListInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0EA2930A69D004F5AB3 /* EpisodeListInteractorInputProtocol.swift */; };
+		A56DA0ED2930A6BF004F5AB3 /* EpisodeListInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0EC2930A6BF004F5AB3 /* EpisodeListInteractorOutputProtocol.swift */; };
+		A56DA0EF2930A6CF004F5AB3 /* EpisodeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0EE2930A6CF004F5AB3 /* EpisodeListInteractor.swift */; };
+		A56DA0F12930A6E9004F5AB3 /* EpisodeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0F02930A6E9004F5AB3 /* EpisodeListPresenter.swift */; };
+		A56DA0F32930A726004F5AB3 /* EpisodeListViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0F22930A726004F5AB3 /* EpisodeListViewInputProtocol.swift */; };
+		A56DA0F52930A762004F5AB3 /* EpisodeListViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0F42930A762004F5AB3 /* EpisodeListViewOutputProtocol.swift */; };
 		A5AA82E4292CCB9200B47692 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA82E3292CCB9200B47692 /* AppDelegate.swift */; };
 		A5AA82E8292CCB9200B47692 /* CharactersListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AA82E7292CCB9200B47692 /* CharactersListViewController.swift */; };
 		A5AA82ED292CCB9500B47692 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5AA82EC292CCB9500B47692 /* Assets.xcassets */; };
@@ -54,6 +62,8 @@
 		A5ACE671292DDF6C0066DC72 /* EpisodeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE670292DDF6C0066DC72 /* EpisodeDetailCell.swift */; };
 		A5ACE676292DE6A50066DC72 /* EpisodeCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE675292DE6A50066DC72 /* EpisodeCustomCell.swift */; };
 		A5ACE678292DE6CC0066DC72 /* EpisodeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE677292DE6CC0066DC72 /* EpisodeTableView.swift */; };
+		A5ED44942930FEC20065A0B0 /* Charact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED44932930FEC20065A0B0 /* Charact.swift */; };
+		A5F2E9402930AC2D001C171E /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E93F2930AC2D001C171E /* Episodes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,7 +93,6 @@
 		A5031A0E292E6DD20098551F /* UIImageView+Configure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Configure.swift"; sourceTree = "<group>"; };
 		A5031A0F292E6DD20098551F /* UILabel+Confgure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Confgure.swift"; sourceTree = "<group>"; };
 		A5031A10292E6DD20098551F /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
-		A5031A19292E6E9F0098551F /* Charact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Charact.swift; path = RickandMortyApiTask/Sources/Charact.swift; sourceTree = SOURCE_ROOT; };
 		A56DA0C5292F6DB3004F5AB3 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		A56DA0C8292F6F10004F5AB3 /* RickAndMortyRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyRequestFactory.swift; sourceTree = "<group>"; };
 		A56DA0CB292F7190004F5AB3 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
@@ -93,6 +102,15 @@
 		A56DA0D6292FA17C004F5AB3 /* CharactersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListPresenter.swift; sourceTree = "<group>"; };
 		A56DA0D9292FA1DF004F5AB3 /* CharactersListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListInteractor.swift; sourceTree = "<group>"; };
 		A56DA0DC292FA23D004F5AB3 /* CharactersListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListRouter.swift; sourceTree = "<group>"; };
+		A56DA0E42930A4AB004F5AB3 /* EpisodeListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListAssembly.swift; sourceTree = "<group>"; };
+		A56DA0E62930A4CF004F5AB3 /* EpisodeListRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListRouterProtocol.swift; sourceTree = "<group>"; };
+		A56DA0E82930A4E1004F5AB3 /* EpisodeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListRouter.swift; sourceTree = "<group>"; };
+		A56DA0EA2930A69D004F5AB3 /* EpisodeListInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		A56DA0EC2930A6BF004F5AB3 /* EpisodeListInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		A56DA0EE2930A6CF004F5AB3 /* EpisodeListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListInteractor.swift; sourceTree = "<group>"; };
+		A56DA0F02930A6E9004F5AB3 /* EpisodeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListPresenter.swift; sourceTree = "<group>"; };
+		A56DA0F22930A726004F5AB3 /* EpisodeListViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewInputProtocol.swift; sourceTree = "<group>"; };
+		A56DA0F42930A762004F5AB3 /* EpisodeListViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListViewOutputProtocol.swift; sourceTree = "<group>"; };
 		A5AA82E0292CCB9200B47692 /* RickandMortyApiTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickandMortyApiTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5AA82E3292CCB9200B47692 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5AA82E7292CCB9200B47692 /* CharactersListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +125,8 @@
 		A5ACE670292DDF6C0066DC72 /* EpisodeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailCell.swift; sourceTree = "<group>"; };
 		A5ACE675292DE6A50066DC72 /* EpisodeCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCustomCell.swift; sourceTree = "<group>"; };
 		A5ACE677292DE6CC0066DC72 /* EpisodeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableView.swift; sourceTree = "<group>"; };
+		A5ED44932930FEC20065A0B0 /* Charact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Charact.swift; path = RickandMortyApiTask/Charact.swift; sourceTree = SOURCE_ROOT; };
+		A5F2E93F2930AC2D001C171E /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		DC0EF9EAEF2986BE69076A14 /* Pods-RickandMortyApiTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMortyApiTask.release.xcconfig"; path = "Target Support Files/Pods-RickandMortyApiTask/Pods-RickandMortyApiTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				A56DA0D2292F774E004F5AB3 /* Characterss.swift */,
+				A5F2E93F2930AC2D001C171E /* Episodes.swift */,
 			);
 			path = NetworkModels;
 			sourceTree = "<group>";
@@ -250,6 +271,7 @@
 			children = (
 				A56DA0D4292FA12D004F5AB3 /* Subviews */,
 				A5AA82E7292CCB9200B47692 /* CharactersListViewController.swift */,
+				0448A9AF292FC55B006F49DD /* CharactersListViewProtocols.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -306,7 +328,6 @@
 			children = (
 				A50319FC292E6A630098551F /* CharactersCollectionView.swift */,
 				A5031A04292E6B720098551F /* CharactersCollectionCell.swift */,
-				0448A9AF292FC55B006F49DD /* CharactersListViewProtocols.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -335,6 +356,51 @@
 				0448A9B1292FD685006F49DD /* CharactersListRouterProtocol.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		A56DA0DF2930A3C2004F5AB3 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				A5ACE675292DE6A50066DC72 /* EpisodeCustomCell.swift */,
+				A5ACE677292DE6CC0066DC72 /* EpisodeTableView.swift */,
+			);
+			name = SubViews;
+			sourceTree = "<group>";
+		};
+		A56DA0E02930A3DD004F5AB3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A56DA0F02930A6E9004F5AB3 /* EpisodeListPresenter.swift */,
+				A56DA0F22930A726004F5AB3 /* EpisodeListViewInputProtocol.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		A56DA0E12930A3EC004F5AB3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A56DA0EA2930A69D004F5AB3 /* EpisodeListInteractorInputProtocol.swift */,
+				A56DA0EC2930A6BF004F5AB3 /* EpisodeListInteractorOutputProtocol.swift */,
+				A56DA0EE2930A6CF004F5AB3 /* EpisodeListInteractor.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		A56DA0E22930A424004F5AB3 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A56DA0E62930A4CF004F5AB3 /* EpisodeListRouterProtocol.swift */,
+				A56DA0E82930A4E1004F5AB3 /* EpisodeListRouter.swift */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		A56DA0E32930A42B004F5AB3 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				A56DA0E42930A4AB004F5AB3 /* EpisodeListAssembly.swift */,
+			);
+			name = Assembly;
 			sourceTree = "<group>";
 		};
 		A5AA82D7292CCB9200B47692 = {
@@ -376,10 +442,10 @@
 		A5AA82F8292CCD8900B47692 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				A5ED44932930FEC20065A0B0 /* Charact.swift */,
 				0448A9A9292FB108006F49DD /* Router */,
 				0448A997292FAA2C006F49DD /* Assembler */,
 				A56DA0C3292F6D80004F5AB3 /* Helpers */,
-				A5031A19292E6E9F0098551F /* Charact.swift */,
 				04AB654D292D0B2900216DBE /* UIKit  */,
 				A5AA82FB292CCD9500B47692 /* Application */,
 				A5AA8302292CD13800B47692 /* Modules */,
@@ -435,7 +501,10 @@
 		A5AA8300292CCFD100B47692 /* EpisodeListModule */ = {
 			isa = PBXGroup;
 			children = (
-				A5AA830F292CE9E700B47692 /* EpisodeListViewController.swift */,
+				A56DA0E32930A42B004F5AB3 /* Assembly */,
+				A56DA0E22930A424004F5AB3 /* Router */,
+				A56DA0E12930A3EC004F5AB3 /* Interactor */,
+				A56DA0E02930A3DD004F5AB3 /* Presenter */,
 				A5ACE674292DE68E0066DC72 /* Views */,
 			);
 			path = EpisodeListModule;
@@ -485,8 +554,9 @@
 		A5ACE674292DE68E0066DC72 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A5ACE675292DE6A50066DC72 /* EpisodeCustomCell.swift */,
-				A5ACE677292DE6CC0066DC72 /* EpisodeTableView.swift */,
+				A56DA0F42930A762004F5AB3 /* EpisodeListViewOutputProtocol.swift */,
+				A5AA830F292CE9E700B47692 /* EpisodeListViewController.swift */,
+				A56DA0DF2930A3C2004F5AB3 /* SubViews */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -608,11 +678,14 @@
 				A5ACE676292DE6A50066DC72 /* EpisodeCustomCell.swift in Sources */,
 				A5031A14292E6DD20098551F /* UIView+Autolayout.swift in Sources */,
 				0448A988292F5748006F49DD /* LocationDetailView.swift in Sources */,
+				A5F2E9402930AC2D001C171E /* Episodes.swift in Sources */,
 				0448A9AE292FC4C1006F49DD /* CharactersListPresenterInputProtocol.swift in Sources */,
+				A56DA0EF2930A6CF004F5AB3 /* EpisodeListInteractor.swift in Sources */,
 				A5031A05292E6B720098551F /* CharactersCollectionCell.swift in Sources */,
 				0448A999292FAA44006F49DD /* AssemblerBuilder.swift in Sources */,
 				A5ACE669292DCA510066DC72 /* EpisodeDetailViewController.swift in Sources */,
 				A56DA0D0292F723B004F5AB3 /* NetworkError.swift in Sources */,
+				A56DA0ED2930A6BF004F5AB3 /* EpisodeListInteractorOutputProtocol.swift in Sources */,
 				0448A9B0292FC55B006F49DD /* CharactersListViewProtocols.swift in Sources */,
 				A56DA0AA292E7178004F5AB3 /* DetailCharacterViewController.swift in Sources */,
 				0448A9AB292FB11E006F49DD /* BaseRouter.swift in Sources */,
@@ -625,7 +698,9 @@
 				0448A9A1292FAE8E006F49DD /* DetailCharacterViewProtocols.swift in Sources */,
 				0448A99F292FAE73006F49DD /* DetailCharacterPresenter.swift in Sources */,
 				A5AA8310292CE9E700B47692 /* EpisodeListViewController.swift in Sources */,
+				A56DA0F52930A762004F5AB3 /* EpisodeListViewOutputProtocol.swift in Sources */,
 				A5031A0B292E6C9D0098551F /* DetailCharactertHeader.swift in Sources */,
+				A56DA0EB2930A69D004F5AB3 /* EpisodeListInteractorInputProtocol.swift in Sources */,
 				0448A98D292F5752006F49DD /* LocationListView.swift in Sources */,
 				A5ACE678292DE6CC0066DC72 /* EpisodeTableView.swift in Sources */,
 				0448A9A7292FB046006F49DD /* DetailCharacterPresenterInputProtocol.swift in Sources */,
@@ -636,7 +711,10 @@
 				A5AA8312292CEA1500B47692 /* LocationListViewController.swift in Sources */,
 				0448A98C292F5752006F49DD /* LocationListCell.swift in Sources */,
 				0448A97F292F55BD006F49DD /* LocationDetailViewController.swift in Sources */,
+				A5ED44942930FEC20065A0B0 /* Charact.swift in Sources */,
 				A5031A0D292E6CC20098551F /* DetailCharactertCell.swift in Sources */,
+				A56DA0F12930A6E9004F5AB3 /* EpisodeListPresenter.swift in Sources */,
+				A56DA0E52930A4AB004F5AB3 /* EpisodeListAssembly.swift in Sources */,
 				A5ACE671292DDF6C0066DC72 /* EpisodeDetailCell.swift in Sources */,
 				A56DA0CE292F71C6004F5AB3 /* DefaultNetworkClient.swift in Sources */,
 				A56DA0DA292FA1DF004F5AB3 /* CharactersListInteractor.swift in Sources */,
@@ -644,11 +722,13 @@
 				A5AA82E4292CCB9200B47692 /* AppDelegate.swift in Sources */,
 				A5031A12292E6DD20098551F /* UIImageView+Configure.swift in Sources */,
 				A56DA0CC292F7190004F5AB3 /* NetworkClient.swift in Sources */,
+				A56DA0E92930A4E1004F5AB3 /* EpisodeListRouter.swift in Sources */,
 				A56DA0DD292FA23D004F5AB3 /* CharactersListRouter.swift in Sources */,
 				0448A986292F5748006F49DD /* LocationDetailHeader.swift in Sources */,
+				A56DA0E72930A4CF004F5AB3 /* EpisodeListRouterProtocol.swift in Sources */,
 				0448A9A5292FAF8B006F49DD /* DetailCharacterInteractor.swift in Sources */,
-				A5031A1A292E6E9F0098551F /* Charact.swift in Sources */,
 				A56DA0D3292F774E004F5AB3 /* Characterss.swift in Sources */,
+				A56DA0F32930A726004F5AB3 /* EpisodeListViewInputProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

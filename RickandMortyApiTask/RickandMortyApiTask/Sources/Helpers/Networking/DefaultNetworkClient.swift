@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class DefaultNetworkClient: NetworkClient {
+ class DefaultNetworkClient: NetworkClient {
 
     private static let decoder: JSONDecoder = {
         let decoder = JSONDecoder()

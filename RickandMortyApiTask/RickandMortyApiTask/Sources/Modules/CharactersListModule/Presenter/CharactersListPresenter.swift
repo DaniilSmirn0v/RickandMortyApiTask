@@ -16,13 +16,13 @@ class CharactersListPresenter: CharactersListViewOutputProtocol {
        }
     }
 
-    var view: CharactersListViewInputProtocol?
+    weak var view: CharactersListViewInputProtocol?
     private var charactersData: Characterss?
     var router: CharactersListRouterProtocol?
 
     // MARK: - Methods
 
-    func getCharacters() -> [Results]? {
+    func getCharacters() -> [Character]? {
         charactersData?.results
     }
     

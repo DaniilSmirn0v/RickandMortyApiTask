@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navCharactersViewController.navigationBar.isTranslucent = false
         navCharactersViewController.navigationBar.tintColor = .systemOrange
 
-        let episodeListViewController = EpisodeListViewController()
+        let episodeListViewController = EpisodeListAssembly.createEpisodeModule()
         episodeListViewController.tabBarItem.image = UIImage(systemName: "tv.fill")
         episodeListViewController.tabBarItem.title = "Episodes"
         let navEpisodeListViewController = UINavigationController(rootViewController: episodeListViewController)

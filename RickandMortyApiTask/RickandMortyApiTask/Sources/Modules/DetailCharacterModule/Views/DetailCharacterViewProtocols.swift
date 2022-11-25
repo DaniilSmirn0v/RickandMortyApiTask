@@ -9,7 +9,7 @@ import Foundation
 
 protocol DetailCharacterViewOutputProtocol {
     func getCharacterName() -> String?
-    func getCharacterInfo() -> Results?
+    func getCharacterInfo() -> Character?
 //    func getImageURL() -> URL?
 }
 

@@ -11,16 +11,14 @@ import Kingfisher
 class CharactersListViewController: UIViewController {
     // MARK: - Typealias
 
-    typealias Snapshot = NSDiffableDataSourceSnapshot<CharactersListSection, Results>
-    typealias DataSource = UICollectionViewDiffableDataSource<CharactersListSection, Results>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<CharactersListSection, Character>
+    typealias DataSource = UICollectionViewDiffableDataSource<CharactersListSection, Character>
 
     // MARK: - Properties
 
     enum CharactersListSection {
         case main
     }
-
-    let urlsessiopn = DefaultNetworkClient()
 
     private var charactersView: CharactersCollectionView? {
         guard isViewLoaded else { return nil }
@@ -30,7 +28,7 @@ class CharactersListViewController: UIViewController {
     private var presenter: CharactersListViewOutputProtocol?
 
     private lazy var dataSource = makeDataSource()
-    private var characters = [Results]()
+    private var characters = [Character]()
 
     // MARK: - Life Cycle
 
@@ -50,7 +48,7 @@ class CharactersListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         charactersView?.collectionView.delegate = self
-        characters = self.presenter?.getCharacters() ?? [Results]()
+        characters = self.presenter?.getCharacters() ?? [Character]()
         title = "Characters"
         updateSnapshot(animatingChange: false, characters: characters)
     }
@@ -71,7 +69,7 @@ extension CharactersListViewController {
         return dataSource
     }
 
-    func updateSnapshot(animatingChange: Bool = true, characters: [Results]) {
+    func updateSnapshot(animatingChange: Bool = true, characters: [Character]) {
 
         var snapshot = Snapshot()
         snapshot.appendSections([.main])

@@ -10,12 +10,12 @@ import Foundation
 // MARK: - CharactersListViewOutputProtocol
 
 protocol CharactersListViewOutputProtocol {
-    func getCharacters() -> [Results]?
+    func getCharacters() -> [Character]?
     func didSelectItem(_ id: Int)
 }
 
 // MARK: - CharactersListViewInputProtocol
 
-protocol CharactersListViewInputProtocol {
+protocol CharactersListViewInputProtocol: AnyObject  {
 
 }

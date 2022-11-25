@@ -8,6 +8,20 @@
 import UIKit
 import SnapKit
 
+
+protocol CellViewModel {}
+
+struct EpisodeListCellViewModel: CellViewModel {
+    let episodeNumberLable: String
+    let episodeNameLabel: String
+    let episodeLabel: String
+    let dateLabel: String
+}
+
+protocol CellConfigurable where Self: UITableViewCell {
+    func configure(with viewModel: CellViewModel)
+}
+
 class EpisodeCustomCell: UITableViewCell {
     //MARK: - Properties
     static let reuseId = "EpisodeCustomCell"
@@ -37,6 +51,8 @@ class EpisodeCustomCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.text = "Pilot"
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
         return label
     }()
 
@@ -85,13 +101,23 @@ extension EpisodeCustomCell {
             make.top.equalToSuperview().offset(13)
             make.bottom.equalToSuperview().offset(-13)
             make.left.equalToSuperview().offset(13)
-            make.width.lessThanOrEqualTo(140)
+            make.width.equalTo(140)
         }
         stackView.snp.makeConstraints { make in
             make.top.bottom.equalTo(episodeNumberLable)
-            make.left.equalTo(episodeNumberLable.snp.right).offset(16)
+            make.left.equalTo(episodeNumberLable.snp.right).offset(10)
             make.right.equalToSuperview().inset(13)
         }
     }
 }
 
+// MARK: - CellConfigurable
+extension EpisodeCustomCell: CellConfigurable {
+    func configure(with viewModel: CellViewModel) {
+        guard let vm = viewModel as? EpisodeListCellViewModel else { return }
+        episodeNumberLable.text = vm.episodeNumberLable
+        episodeNameLabel.text = vm.episodeNameLabel
+        episodeLabel.text = vm.episodeLabel
+        dateLabel.text = vm.dateLabel
+    }
+}
