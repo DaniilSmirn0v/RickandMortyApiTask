@@ -22,7 +22,7 @@ class DetailCharacterInteractor {
         Task {
             do {
                 let request = RickAndMortyRequestFactory.detailCharacters(id: id).urlReques
-                let data: Results = try await network.perform(request: request)
+                let data: Character = try await network.perform(request: request)
                 presenter?.pullCharacterData(data)
             } catch {
                 debugPrint(error)

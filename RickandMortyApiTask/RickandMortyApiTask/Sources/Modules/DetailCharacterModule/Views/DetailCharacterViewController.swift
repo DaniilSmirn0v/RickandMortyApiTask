@@ -29,9 +29,9 @@ final class DetailCharactertViewController: UIViewController {
     }
 
     private lazy var dataSource = makeDataSource()
-    private var characters = [Results?]()
+    private var characters = [Character?]()
     private var character = [CharactInfo]()
-    private var characterInfo: Results?
+    private var characterInfo: Character?
 
     private var status: String?
     private var statusColor: String?
@@ -113,7 +113,7 @@ extension DetailCharactertViewController {
 
         return DataSource(tableView: detailCharactertView?.tableView ?? UITableView()) { tableView, indexPath, item in
 
-            if let character = item as? Results? {
+            if let character = item as? Character? {
 
                 guard let cell = tableView.dequeueReusableCell(
                     withIdentifier: DetailCharactertCell.reuseID,
@@ -137,7 +137,7 @@ extension DetailCharactertViewController {
         }
     }
 
-    private func updateSnapshot(animatingChange: Bool = true, characters: [Results?], character: [CharactInfo]) {
+    private func updateSnapshot(animatingChange: Bool = true, characters: [Character?], character: [CharactInfo]) {
         var snapshot = Snapshot()
         snapshot.appendSections([.image, .info])
         snapshot.appendItems(characters, toSection: .image)

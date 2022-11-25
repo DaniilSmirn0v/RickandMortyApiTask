@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+protocol EpisodeListViewOutputProtocol: AnyObject {
+    func configure(with viewModels: [CellViewModel])
+    func failure(error: NetworkError)
+}

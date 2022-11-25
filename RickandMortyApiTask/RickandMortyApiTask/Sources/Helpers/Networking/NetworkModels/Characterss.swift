@@ -11,7 +11,7 @@ import UIKit
 // MARK: - Welcome
 struct Characterss: Decodable {
     let info: Info
-    let results: [Results]
+    let results: [Character]
 }
 
 // MARK: - Info
@@ -22,7 +22,7 @@ struct Info: Decodable {
 }
 
 // MARK: - Result
-struct Results: Decodable, Hashable {
+struct Character: Decodable, Hashable {
     let id: Int
     let name: String
     let status: Status

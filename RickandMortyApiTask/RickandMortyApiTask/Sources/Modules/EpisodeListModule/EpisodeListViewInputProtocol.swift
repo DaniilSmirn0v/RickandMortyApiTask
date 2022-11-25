@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol EpisodeListViewInputProtocol: AnyObject {
+    func getData()
+}

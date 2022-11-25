@@ -271,6 +271,7 @@
 			children = (
 				A56DA0D4292FA12D004F5AB3 /* Subviews */,
 				A5AA82E7292CCB9200B47692 /* CharactersListViewController.swift */,
+				0448A9AF292FC55B006F49DD /* CharactersListViewProtocols.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -327,7 +328,6 @@
 			children = (
 				A50319FC292E6A630098551F /* CharactersCollectionView.swift */,
 				A5031A04292E6B720098551F /* CharactersCollectionCell.swift */,
-				0448A9AF292FC55B006F49DD /* CharactersListViewProtocols.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";

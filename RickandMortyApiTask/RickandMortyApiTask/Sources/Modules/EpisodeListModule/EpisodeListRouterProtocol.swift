@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol EpisodeListRouterProtocol {
+    func pushToEpisodeDetail(id: Int)
+}

@@ -10,7 +10,7 @@ import Foundation
 class DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
     // MARK: - Properties
     
-    private var characterData: Results?
+    private var characterData: Character?
     var interactor: DetailCharacterInteractor? {
        didSet {
            interactor?.getCharactersModel(id: id ?? 0)
@@ -33,7 +33,7 @@ class DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
         characterData?.name
     }
 
-    func getCharacterInfo() -> Results? {
+    func getCharacterInfo() -> Character? {
         characterData
     }
 
@@ -47,7 +47,7 @@ class DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
 
 extension DetailCharacterPresenter: DetailCharacterPresenterInputProtocol {
 
-    func pullCharacterData(_ data: Results) {
+    func pullCharacterData(_ data: Character) {
         characterData = data
     }
 
