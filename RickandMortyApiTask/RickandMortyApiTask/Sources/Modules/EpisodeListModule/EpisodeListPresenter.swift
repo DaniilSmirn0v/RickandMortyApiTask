@@ -12,6 +12,7 @@ class EpisodeListPresenter: EpisodeListViewInputProtocol {
     weak var view: EpisodeListViewOutputProtocol?
     var interactor: EpisodeListInteractorInputProtocol
     var router: EpisodeListRouterProtocol
+    var episodes: [Episode] = []
 
 
     init(view: EpisodeListViewOutputProtocol? = nil, interactor: EpisodeListInteractorInputProtocol, router: EpisodeListRouterProtocol) {
@@ -27,13 +28,13 @@ class EpisodeListPresenter: EpisodeListViewInputProtocol {
 
 extension EpisodeListPresenter: EpisodeListInteractorOutputProtocol {
     func getEpisodesDataSuccess(data: Episodes) {
-        let episodes = data.results
+        episodes = data.results
         let cellViewModel: [CellViewModel] = episodes.map { episode in
             EpisodeListCellViewModel(
                 episodeNumberLable: String(episode.id),
                 episodeNameLabel: episode.name,
                 episodeLabel: episode.episode,
-                dateLabel: episode.air_date
+                dateLabel: episode.airDate
             )
         }
         view?.configure(with: cellViewModel)

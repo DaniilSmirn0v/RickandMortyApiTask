@@ -21,10 +21,15 @@ struct EpisodeInfo: Decodable {
 }
 
 // MARK: - Result
-struct Episode: Decodable {
+struct Episode: Decodable{
     let id: Int
     let name: String
-    let air_date: String
+    let airDate: String
     let episode: String
     let characters: [String]
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, episode, characters
+        case airDate = "air_date"
+    }
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 class EpisodeListViewController: UIViewController {
+
     //MARK: - Properties
     private var episodeTablelView: EpisodeTableView? {
         guard isViewLoaded else { return nil }
@@ -35,14 +36,14 @@ class EpisodeListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        episodeTablelView?.episodeTableView.dataSource = self
         episodeTablelView?.episodeTableView.delegate = self
+        episodeTablelView?.episodeTableView.dataSource = self
         title = "Episodes"
         navigationController?.navigationBar.prefersLargeTitles = true
         presenter.getData()
     }
 }
-
+// MARK: - UITableViewDataSource
 extension EpisodeListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         cellViewModel.count
@@ -56,6 +57,7 @@ extension EpisodeListViewController: UITableViewDataSource {
         return cell
     }
 }
+
 
 //MARK: - UITableViewDelegate
 extension EpisodeListViewController: UITableViewDelegate {
@@ -79,6 +81,4 @@ extension EpisodeListViewController: EpisodeListViewOutputProtocol {
     func failure(error: NetworkError) {
         print(error.localizedDescription)
     }
-
-
 }

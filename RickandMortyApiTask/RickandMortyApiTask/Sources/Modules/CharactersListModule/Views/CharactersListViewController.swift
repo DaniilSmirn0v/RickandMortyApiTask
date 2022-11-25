@@ -20,8 +20,6 @@ class CharactersListViewController: UIViewController {
         case main
     }
 
-    let urlsessiopn = DefaultNetworkClient()
-
     private var charactersView: CharactersCollectionView? {
         guard isViewLoaded else { return nil }
         return view as? CharactersCollectionView
