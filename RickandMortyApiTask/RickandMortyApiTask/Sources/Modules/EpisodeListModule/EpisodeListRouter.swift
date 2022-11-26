@@ -11,7 +11,6 @@ class EpisodeListRouter: EpisodeListRouterProtocol {
 
     var navigationController: UINavigationController?
 
-
     func pushToEpisodeDetail(id: Int) {
         if let navigationController = navigationController {
             let detailEpisodeViewController = EpisodeDetailViewController()

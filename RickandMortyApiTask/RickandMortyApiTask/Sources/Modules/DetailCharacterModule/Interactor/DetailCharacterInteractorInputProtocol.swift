@@ -12,5 +12,5 @@ protocol DetailCharacterInteractorInputProtocol: AnyObject {
 }
 
 protocol DetailCharactertInteractorOutputProtocol {
-    var characterData: Character? { get set }
+    func getCharacterDataSuccess(data: Character)
 }

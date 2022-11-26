@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CharactersListPresenter: CharactersListInteractorOutputProtocol {
+final class CharactersListPresenter {
 
     // MARK: - Properties
 
@@ -15,22 +15,29 @@ final class CharactersListPresenter: CharactersListInteractorOutputProtocol {
     weak var view: CharactersListViewInputProtocol?
     var router: CharactersListRouterProtocol?
 
-    var charactersData: Characterss?
-
-    // MARK: - Methods
-
-    func getCharacters() -> [Character]? {
-        charactersData?.results
-    }
-    
+    private var charactersData: [Character]?
 }
 
 // MARK: - CharactersListViewOutputProtocol
 
 extension CharactersListPresenter: CharactersListViewOutputProtocol {
 
+    func getCharacters() -> [Character]? {
+        charactersData
+    }
+
     func didSelectItem(_ id: Int) {
         router?.openDetailCharactertVC(id)
+    }
+
+}
+
+// MARK: - CharactersListInteractorOutputProtocol
+
+extension CharactersListPresenter: CharactersListInteractorOutputProtocol {
+
+    func getСharactersDataSuccess(data: Characterss) {
+        charactersData = data.results
     }
 
 }

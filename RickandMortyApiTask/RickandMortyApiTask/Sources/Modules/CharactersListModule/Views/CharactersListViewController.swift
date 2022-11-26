@@ -15,17 +15,18 @@ final class CharactersListViewController: UIViewController {
     private typealias DataSource = UICollectionViewDiffableDataSource<CharactersListSection, Character>
     
     // MARK: - Properties
-    
+
     private enum CharactersListSection {
         case main
     }
-    
+
+    var presenter: CharactersListViewOutputProtocol?
+
     private var charactersView: CharactersCollectionView? {
         guard isViewLoaded else { return nil }
         return view as? CharactersCollectionView
     }
-    
-    var presenter: CharactersListViewOutputProtocol?
+
     private lazy var dataSource = makeDataSource()
     private var characters = [Character]()
     

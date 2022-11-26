@@ -137,8 +137,3 @@ extension DetailCharactertViewController {
     }
 }
 
-// MARK: - DetailCharacterViewInputProtocol
-
-extension DetailCharactertViewController: DetailCharacterViewInputProtocol {
-    
-}

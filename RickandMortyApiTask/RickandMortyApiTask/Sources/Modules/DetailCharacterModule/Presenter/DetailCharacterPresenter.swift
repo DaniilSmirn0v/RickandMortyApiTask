@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class DetailCharacterPresenter: DetailCharactertInteractorOutputProtocol {
+final class DetailCharacterPresenter {
 
     // MARK: - Properties
 
@@ -16,31 +16,34 @@ final class DetailCharacterPresenter: DetailCharactertInteractorOutputProtocol {
 
     var characterData: Character?
 
-    // MARK: - Methods
-
-    func getCharacterName() -> String? {
-        characterData?.name
-    }
-
-    func getCharacterInfo() -> Character? {
-        characterData
-    }
-
-//    func getImageURL() -> URL? {
-//        guard let stringURL = characterData?.image else { return nil }
-//        return URL(string: stringURL)
-//    }
 }
 
 // MARK: - DetailCharacterViewOutputProtocol
 
 extension DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
 
-    func pullCharacterData(_ data: Character) {
-        characterData = data
+    func getCharacterInfo() -> Character? {
+        characterData
+    }
+
+    func getCharacterName() -> String {
+        characterData?.name ?? "Name"
     }
 
 }
 
+// MARK: - DetailCharactertInteractorOutputProtocol
+
+extension DetailCharacterPresenter: DetailCharactertInteractorOutputProtocol {
+
+    func getCharacterDataSuccess(data: Character) {
+        characterData = data
+        
+    }
+
+
+
+    
+}
 
 

@@ -11,11 +11,11 @@ protocol DetailCharacterViewOutputProtocol {
     var view: DetailCharacterViewInputProtocol? { get set }
     var interactor: DetailCharacterInteractorInputProtocol? { get set }
 
-    func getCharacterName() -> String?
     func getCharacterInfo() -> Character?
+    func getCharacterName() -> String
 }
 
 protocol DetailCharacterViewInputProtocol: AnyObject  {
-
+  
 }
 

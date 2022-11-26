@@ -8,16 +8,6 @@
 import UIKit
 import SnapKit
 
-protocol CharactersCellViewModel {}
-
-struct CharactersListCellViewModel: CharactersCellViewModel {
-    let characterNameLabel: String
-}
-
-protocol CharactersCellConfigurable where Self: UICollectionViewCell {
-    func configure(with viewModel: CharactersCellViewModel)
-}
-
 class CharactersCollectionCell: UICollectionViewCell {
     // MARK: - Properties
 
@@ -74,12 +64,3 @@ extension CharactersCollectionCell {
     }
 }
 
-// MARK: - CellConfigurable
-extension CharactersCollectionCell: CharactersCellConfigurable {
-
-    func configure(with viewModel: CharactersCellViewModel) {
-
-        guard let vm = viewModel as? CharactersListCellViewModel else { return }
-        self.characterNameLabel.text = vm.characterNameLabel
-    }
-}

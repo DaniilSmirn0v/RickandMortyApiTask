@@ -30,7 +30,7 @@ final class DetailCharacterInteractor: DetailCharacterInteractorInputProtocol {
             do {
                 let request = RickAndMortyRequestFactory.detailCharacters(id: id).urlReques
                 let data: Character = try await network.perform(request: request)
-                presenter?.characterData = data
+                presenter?.getCharacterDataSuccess(data: data)
                 print(data)
             } catch {
                 debugPrint(error)

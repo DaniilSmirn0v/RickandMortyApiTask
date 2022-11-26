@@ -12,5 +12,5 @@ protocol CharactersListInteractorInputProtocol {
 }
 
 protocol CharactersListInteractorOutputProtocol {
-    var charactersData: Characterss? { get set }
+    func getСharactersDataSuccess(data: Characterss)
 }
