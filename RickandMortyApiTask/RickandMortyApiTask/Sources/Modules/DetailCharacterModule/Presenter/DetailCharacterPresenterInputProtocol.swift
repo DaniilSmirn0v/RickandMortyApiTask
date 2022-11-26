@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DetailCharacterPresenterInputProtocol {
+protocol DetailCharacterPresenterInputProtocol: AnyObject {
     func pullCharacterData(_ data: Character)
 }
 

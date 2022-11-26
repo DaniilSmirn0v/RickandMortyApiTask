@@ -7,25 +7,14 @@
 
 import Foundation
 
-class DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
+final class DetailCharacterPresenter: DetailCharactertInteractorOutputProtocol {
+
     // MARK: - Properties
-    
-    private var characterData: Character?
-    var interactor: DetailCharacterInteractor? {
-       didSet {
-           interactor?.getCharactersModel(id: id ?? 0)
-       }
-    }
-    
-    var view: DetailCharacterViewInputProtocol?
 
-    private var id: Int?
+    weak var view: DetailCharacterViewInputProtocol?
+    var interactor: DetailCharacterInteractorInputProtocol?
 
-    // MARK: - Initializate
-
-    init(id: Int) {
-        self.id = id
-    }
+    var characterData: Character?
 
     // MARK: - Methods
 
@@ -43,12 +32,15 @@ class DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
 //    }
 }
 
-// MARK: - DetailCharacterPresenterInputProtocol
+// MARK: - DetailCharacterViewOutputProtocol
 
-extension DetailCharacterPresenter: DetailCharacterPresenterInputProtocol {
+extension DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
 
     func pullCharacterData(_ data: Character) {
         characterData = data
     }
 
 }
+
+
+

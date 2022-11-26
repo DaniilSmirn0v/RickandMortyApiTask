@@ -21,7 +21,7 @@ final class DetailCharactertViewController: UIViewController {
         case info = "info"
     }
 
-    private var presenter: DetailCharacterViewOutputProtocol?
+    var presenter: DetailCharacterViewOutputProtocol?
 
     private var detailCharactertView: DetailCharactertView? {
         guard isViewLoaded else { return nil }
@@ -39,15 +39,6 @@ final class DetailCharactertViewController: UIViewController {
     private var gender: String?
 
     // MARK: - Lifecycle
-
-    init(presenter: DetailCharacterViewOutputProtocol) {
-        super.init(nibName: nil, bundle: nil)
-        self.presenter = presenter
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     override func loadView() {
         view = DetailCharactertView()

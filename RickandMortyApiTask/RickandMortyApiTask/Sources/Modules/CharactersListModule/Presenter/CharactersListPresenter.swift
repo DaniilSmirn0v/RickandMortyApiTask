@@ -7,18 +7,15 @@
 
 import Foundation
 
-class CharactersListPresenter: CharactersListViewOutputProtocol {
+final class CharactersListPresenter: CharactersListInteractorOutputProtocol {
+
     // MARK: - Properties
 
-    var interactor: CharactersListInteractor? {
-       didSet {
-          interactor?.getCharactersModel()
-       }
-    }
-
+    var interactor: CharactersListInteractorInputProtocol?
     weak var view: CharactersListViewInputProtocol?
-    private var charactersData: Characterss?
     var router: CharactersListRouterProtocol?
+
+    var charactersData: Characterss?
 
     // MARK: - Methods
 
@@ -28,13 +25,9 @@ class CharactersListPresenter: CharactersListViewOutputProtocol {
     
 }
 
-// MARK: - CharactersListPresenterInputProtocol
+// MARK: - CharactersListViewOutputProtocol
 
-extension CharactersListPresenter: CharactersListPresenterInputProtocol {
-
-    func pullCharactersData(_ data: Characterss) {
-        charactersData = data
-    }
+extension CharactersListPresenter: CharactersListViewOutputProtocol {
 
     func didSelectItem(_ id: Int) {
         router?.openDetailCharactertVC(id)

@@ -7,18 +7,19 @@
 
 import Foundation
 
-class CharactersListInteractor {
+final class CharactersListInteractor: CharactersListInteractorInputProtocol {
     // MARK: - Properties
+
+    var presenter: CharactersListInteractorOutputProtocol?
 
     private var charactersModel: Characterss?
     private let network: DefaultNetworkClient
-    private var presenter: CharactersListPresenterInputProtocol?
 
     // MARK: - Initialize
 
-    init(network: DefaultNetworkClient, presenter: CharactersListPresenterInputProtocol) {
+    init(network: DefaultNetworkClient) {
         self.network = network
-        self.presenter = presenter
+        getCharactersModel()
     }
 
     // MARK: - Methods
@@ -28,7 +29,7 @@ class CharactersListInteractor {
             do {
                 let request = RickAndMortyRequestFactory.characters.urlReques
                 let data: Characterss = try await network.perform(request: request)
-                presenter?.pullCharactersData(data)
+                presenter?.charactersData = data
             } catch {
                 debugPrint(error)
             }

@@ -7,23 +7,31 @@
 
 import Foundation
 
-class DetailCharacterInteractor {
+final class DetailCharacterInteractor: DetailCharacterInteractorInputProtocol {
+    // MARK: - Properties
 
-    private var charactersModel: Characterss?
+    var presenter: DetailCharactertInteractorOutputProtocol?
+    private let id: Int
     private let network: DefaultNetworkClient
-    private var presenter: DetailCharacterPresenterInputProtocol?
 
-    init(network: DefaultNetworkClient, presenter: DetailCharacterPresenterInputProtocol) {
+    // MARK: - Initializate
+    
+    init(network: DefaultNetworkClient,
+         id: Int) {
         self.network = network
-        self.presenter = presenter
+        self.id = id
+        getCharactersModel(id: id)
     }
+
+    // MARK: - Methods
 
     func getCharactersModel(id: Int) {
         Task {
             do {
                 let request = RickAndMortyRequestFactory.detailCharacters(id: id).urlReques
                 let data: Character = try await network.perform(request: request)
-                presenter?.pullCharacterData(data)
+                presenter?.characterData = data
+                print(data)
             } catch {
                 debugPrint(error)
             }

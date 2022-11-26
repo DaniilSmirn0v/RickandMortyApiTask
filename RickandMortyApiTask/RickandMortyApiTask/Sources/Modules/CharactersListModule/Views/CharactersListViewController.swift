@@ -8,43 +8,33 @@
 import UIKit
 import Kingfisher
 
-class CharactersListViewController: UIViewController {
+final class CharactersListViewController: UIViewController {
     // MARK: - Typealias
-
-    typealias Snapshot = NSDiffableDataSourceSnapshot<CharactersListSection, Character>
-    typealias DataSource = UICollectionViewDiffableDataSource<CharactersListSection, Character>
-
+    
+    private typealias Snapshot = NSDiffableDataSourceSnapshot<CharactersListSection, Character>
+    private typealias DataSource = UICollectionViewDiffableDataSource<CharactersListSection, Character>
+    
     // MARK: - Properties
-
-    enum CharactersListSection {
+    
+    private enum CharactersListSection {
         case main
     }
-
+    
     private var charactersView: CharactersCollectionView? {
         guard isViewLoaded else { return nil }
         return view as? CharactersCollectionView
     }
-
-    private var presenter: CharactersListViewOutputProtocol?
-
+    
+    var presenter: CharactersListViewOutputProtocol?
     private lazy var dataSource = makeDataSource()
     private var characters = [Character]()
-
+    
     // MARK: - Life Cycle
-
+    
     override func loadView() {
         view = CharactersCollectionView()
     }
-
-    init(presenter: CharactersListViewOutputProtocol) {
-        super.init(nibName: nil, bundle: nil)
-        self.presenter = presenter
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         charactersView?.collectionView.delegate = self
@@ -68,13 +58,11 @@ extension CharactersListViewController {
         }
         return dataSource
     }
-
+    
     func updateSnapshot(animatingChange: Bool = true, characters: [Character]) {
-
         var snapshot = Snapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems(characters)
-
         dataSource.apply(snapshot, animatingDifferences: false)
     }
 }
@@ -83,9 +71,9 @@ extension CharactersListViewController {
 
 extension CharactersListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+        
         let id = characters[indexPath.row].id
-        presenter?.didSelectItem(id)
+        tapItem(id)
     }
 }
 
@@ -93,6 +81,8 @@ extension CharactersListViewController: UICollectionViewDelegate {
 
 extension CharactersListViewController: CharactersListViewInputProtocol {
 
-   
-   
+    func tapItem(_ id: Int) {
+        presenter?.didSelectItem(id)
+    }
+
 }

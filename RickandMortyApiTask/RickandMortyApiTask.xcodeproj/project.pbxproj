@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043943F8293143DD00AF8431 /* DetailCharacterInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043943F7293143DD00AF8431 /* DetailCharacterInteractorInputProtocol.swift */; };
 		0448A97F292F55BD006F49DD /* LocationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A97E292F55BD006F49DD /* LocationDetailViewController.swift */; };
 		0448A986292F5748006F49DD /* LocationDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A983292F5748006F49DD /* LocationDetailHeader.swift */; };
 		0448A987292F5748006F49DD /* LocationDetailCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A984292F5748006F49DD /* LocationDetailCollectionCell.swift */; };
@@ -22,6 +23,7 @@
 		0448A9AE292FC4C1006F49DD /* CharactersListPresenterInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9AD292FC4C1006F49DD /* CharactersListPresenterInputProtocol.swift */; };
 		0448A9B0292FC55B006F49DD /* CharactersListViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9AF292FC55B006F49DD /* CharactersListViewProtocols.swift */; };
 		0448A9B2292FD685006F49DD /* CharactersListRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9B1292FD685006F49DD /* CharactersListRouterProtocol.swift */; };
+		04A89CD32932056800B06410 /* CharactersListInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A89CD22932056800B06410 /* CharactersListInteractorInputProtocol.swift */; };
 		29BDF4EB47A4D8EDA04D7224 /* Pods_RickandMortyApiTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CAB6CEBF61FF0B4FEAB289A /* Pods_RickandMortyApiTask.framework */; };
 		A50319FD292E6A630098551F /* CharactersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50319FC292E6A630098551F /* CharactersCollectionView.swift */; };
 		A5031A05292E6B720098551F /* CharactersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5031A04292E6B720098551F /* CharactersCollectionCell.swift */; };
@@ -67,6 +69,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043943F7293143DD00AF8431 /* DetailCharacterInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		0448A97E292F55BD006F49DD /* LocationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewController.swift; sourceTree = "<group>"; };
 		0448A983292F5748006F49DD /* LocationDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailHeader.swift; sourceTree = "<group>"; };
 		0448A984292F5748006F49DD /* LocationDetailCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailCollectionCell.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 		0448A9AD292FC4C1006F49DD /* CharactersListPresenterInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListPresenterInputProtocol.swift; sourceTree = "<group>"; };
 		0448A9AF292FC55B006F49DD /* CharactersListViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewProtocols.swift; sourceTree = "<group>"; };
 		0448A9B1292FD685006F49DD /* CharactersListRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListRouterProtocol.swift; sourceTree = "<group>"; };
+		04A89CD22932056800B06410 /* CharactersListInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		04AB654B292D093000216DBE /* DetailCharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterViewController.swift; sourceTree = "<group>"; };
 		04AB6550292D0CC300216DBE /* DetailCharactertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharactertView.swift; sourceTree = "<group>"; };
 		1CAB6CEBF61FF0B4FEAB289A /* Pods_RickandMortyApiTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickandMortyApiTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				0448A9A4292FAF8B006F49DD /* DetailCharacterInteractor.swift */,
+				043943F7293143DD00AF8431 /* DetailCharacterInteractorInputProtocol.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				A56DA0D9292FA1DF004F5AB3 /* CharactersListInteractor.swift */,
+				04A89CD22932056800B06410 /* CharactersListInteractorInputProtocol.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -699,11 +705,13 @@
 				0448A99F292FAE73006F49DD /* DetailCharacterPresenter.swift in Sources */,
 				A5AA8310292CE9E700B47692 /* EpisodeListViewController.swift in Sources */,
 				A56DA0F52930A762004F5AB3 /* EpisodeListViewOutputProtocol.swift in Sources */,
+				04A89CD32932056800B06410 /* CharactersListInteractorInputProtocol.swift in Sources */,
 				A5031A0B292E6C9D0098551F /* DetailCharactertHeader.swift in Sources */,
 				A56DA0EB2930A69D004F5AB3 /* EpisodeListInteractorInputProtocol.swift in Sources */,
 				0448A98D292F5752006F49DD /* LocationListView.swift in Sources */,
 				A5ACE678292DE6CC0066DC72 /* EpisodeTableView.swift in Sources */,
 				0448A9A7292FB046006F49DD /* DetailCharacterPresenterInputProtocol.swift in Sources */,
+				043943F8293143DD00AF8431 /* DetailCharacterInteractorInputProtocol.swift in Sources */,
 				A56DA0C9292F6F10004F5AB3 /* RickAndMortyRequestFactory.swift in Sources */,
 				A5ACE66D292DCCB90066DC72 /* EpisodeDetailHeaderView.swift in Sources */,
 				A5AA82E8292CCB9200B47692 /* CharactersListViewController.swift in Sources */,
