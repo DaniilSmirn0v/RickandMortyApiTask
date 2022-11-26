@@ -9,11 +9,14 @@ import UIKit
 
 class EpisodeListAssembly {
     static func createEpisodeModule() -> UIViewController {
+        let navController = UINavigationController()
         let networkService = DefaultNetworkClient()
         let interactor = EpisodeListInteractor(networkService: networkService)
-        let router = EpisodeListRouter()
+        let view = EpisodeListViewController()
+        let router = EpisodeListRouter(navigationController: navController)
         let presenter = EpisodeListPresenter(interactor: interactor, router: router)
-        let view = EpisodeListViewController(presenter: presenter)
+        view.presenter = presenter
+        presenter.router = router
         presenter.view = view
         interactor.presenter = presenter
 

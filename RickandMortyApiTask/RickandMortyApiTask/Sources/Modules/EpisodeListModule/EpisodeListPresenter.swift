@@ -14,7 +14,6 @@ class EpisodeListPresenter: EpisodeListViewInputProtocol {
     var router: EpisodeListRouterProtocol
     var episodes: [Episode] = []
 
-
     init(view: EpisodeListViewOutputProtocol? = nil, interactor: EpisodeListInteractorInputProtocol, router: EpisodeListRouterProtocol) {
         self.view = view
         self.interactor = interactor
@@ -24,12 +23,20 @@ class EpisodeListPresenter: EpisodeListViewInputProtocol {
     func getData() {
         interactor.fetchEpisodes()
     }
+
+    func didSelectItem(_ id: Int) {
+        router.pushToEpisodeDetail(id: id)
+    }
+
+    func getEpisode() -> [Episode] {
+        return episodes
+    }
 }
 
 extension EpisodeListPresenter: EpisodeListInteractorOutputProtocol {
     func getEpisodesDataSuccess(data: Episodes) {
         episodes = data.results
-        let cellViewModel: [CellViewModel] = episodes.map { episode in
+        let cellViewModel: [ViewModel] = episodes.map { episode in
             EpisodeListCellViewModel(
                 episodeNumberLable: String(episode.id),
                 episodeNameLabel: episode.name,

@@ -8,6 +8,15 @@
 import UIKit
 import SnapKit
 
+struct EpisodeDetailCellViewModel: ViewModel {
+    let characterImageView: String
+    let characterNameLabel: String
+}
+
+protocol EpisodeCellConfigurable where Self: UICollectionViewCell {
+    func configure(with viewModel: ViewModel)
+}
+
 class EpisodeDetailCell: UICollectionViewCell {
     //MARK: - Properties
     static let reuseId = "EpisodeDetailCell"
@@ -65,5 +74,26 @@ extension EpisodeDetailCell {
         characterNameLabel.snp.makeConstraints { make in
             make.bottom.left.right.equalToSuperview()
         }
+    }
+}
+
+extension EpisodeDetailCell: EpisodeCellConfigurable {
+    func configure(with viewModel: ViewModel) {
+        guard let vm = viewModel as? EpisodeDetailCellViewModel  else { return }
+        let imageString = vm.characterImageView
+        guard let imageUrl = URL(string: imageString) else { return }
+
+         characterImageView.kf.setImage(with: imageUrl) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let value):
+                self.characterImageView.image = value.image
+                print(value.image)
+            case .failure(let error):
+                self.characterImageView.image = UIImage(named: "notFoundBlack")
+                print(error)
+            }
+        }
+        characterNameLabel.text = vm.characterNameLabel
     }
 }

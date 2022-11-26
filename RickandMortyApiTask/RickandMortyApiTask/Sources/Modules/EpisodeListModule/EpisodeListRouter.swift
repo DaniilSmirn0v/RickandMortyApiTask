@@ -9,13 +9,16 @@ import UIKit
 
 class EpisodeListRouter: EpisodeListRouterProtocol {
 
-    var navigationController: UINavigationController?
+    let navigationController: UINavigationController
 
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
+    }
 
     func pushToEpisodeDetail(id: Int) {
-        if let navigationController = navigationController {
-            let detailEpisodeViewController = EpisodeDetailViewController()
+
+            let detailEpisodeViewController = EpisodeDetailAssembly.createEpisodeModule(id)
             navigationController.pushViewController(detailEpisodeViewController, animated: true)
         }
     }
-}
+

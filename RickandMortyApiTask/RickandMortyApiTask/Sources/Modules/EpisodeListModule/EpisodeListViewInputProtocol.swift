@@ -9,4 +9,6 @@ import Foundation
 
 protocol EpisodeListViewInputProtocol: AnyObject {
     func getData()
+    func didSelectItem(_ id: Int)
+    func getEpisode() -> [Episode]
 }

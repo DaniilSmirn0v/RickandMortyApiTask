@@ -8,6 +8,16 @@
 import UIKit
 import SnapKit
 
+struct EpisodeDetailHeaderViewModel: ViewModel {
+    let episodeNameLabel: String
+    let episodeDateLabel: String
+    let titleHeader: String
+}
+
+protocol EpisodeDetailHeaderViewConfigurable where Self: UICollectionReusableView {
+    func configure(with viewModel: ViewModel)
+}
+
 class EpisodeDetailHeaderView: UICollectionReusableView {
     //MARK: - Properties
     static let reuseId = "EpisodeDetailHeaderView"
@@ -110,5 +120,16 @@ extension EpisodeDetailHeaderView {
             make.left.equalTo(airDateLabel.snp.left)
         }
     }
+
+}
+
+extension EpisodeDetailHeaderView: EpisodeDetailHeaderViewConfigurable {
+    func configure(with viewModel: ViewModel) {
+        guard let vm = viewModel as? EpisodeDetailHeaderViewModel else { return }
+        titleHeader.text = vm.titleHeader
+        episodeNameLabel.text = vm.episodeNameLabel
+        episodeDateLabel.text = vm.episodeDateLabel
+    }
+
 
 }
