@@ -7,48 +7,43 @@
 
 import Foundation
 
-class DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
+final class DetailCharacterPresenter {
+
     // MARK: - Properties
-    
-    private var characterData: Character?
-    var interactor: DetailCharacterInteractor? {
-       didSet {
-           interactor?.getCharactersModel(id: id ?? 0)
-       }
-    }
-    
-    var view: DetailCharacterViewInputProtocol?
 
-    private var id: Int?
+    weak var view: DetailCharacterViewInputProtocol?
+    var interactor: DetailCharacterInteractorInputProtocol?
 
-    // MARK: - Initializate
+    var characterData: Character?
 
-    init(id: Int) {
-        self.id = id
-    }
+}
 
-    // MARK: - Methods
+// MARK: - DetailCharacterViewOutputProtocol
 
-    func getCharacterName() -> String? {
-        characterData?.name
-    }
+extension DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
 
     func getCharacterInfo() -> Character? {
         characterData
     }
 
-//    func getImageURL() -> URL? {
-//        guard let stringURL = characterData?.image else { return nil }
-//        return URL(string: stringURL)
-//    }
-}
-
-// MARK: - DetailCharacterPresenterInputProtocol
-
-extension DetailCharacterPresenter: DetailCharacterPresenterInputProtocol {
-
-    func pullCharacterData(_ data: Character) {
-        characterData = data
+    func getCharacterName() -> String {
+        characterData?.name ?? "Name"
     }
 
 }
+
+// MARK: - DetailCharactertInteractorOutputProtocol
+
+extension DetailCharacterPresenter: DetailCharactertInteractorOutputProtocol {
+
+    func getCharacterDataSuccess(data: Character) {
+        characterData = data
+        
+    }
+
+
+
+    
+}
+
+

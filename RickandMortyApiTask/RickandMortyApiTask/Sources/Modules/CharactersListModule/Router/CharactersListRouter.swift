@@ -7,12 +7,12 @@
 
 import UIKit
 
-class CharactersListRouter: BaseRouter, CharactersListRouterProtocol {
+final class CharactersListRouter: BaseRouter, CharactersListRouterProtocol {
     // MARK: - Methods
-
+    
     func openDetailCharactertVC(_ id: Int) {
         guard let detailCharactertVC = assemblyBuilder?.configureDetailCharactertModule(id) else { return }
         viewController?.navigationController?.pushViewController(detailCharactertVC, animated: true)
     }
-
+    
 }

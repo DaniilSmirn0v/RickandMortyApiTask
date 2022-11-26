@@ -9,7 +9,8 @@ import UIKit
 import SnapKit
 
 class EpisodeTableView: UIView {
-    //MARK: - Views
+    // MARK: - Views
+
     lazy var episodeTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -19,7 +20,8 @@ class EpisodeTableView: UIView {
         return tableView
     }()
 
-    //MARK: - Initialize
+    // MARK: - Initialize
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupHierarchy()
@@ -30,7 +32,8 @@ class EpisodeTableView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-//MARK: - Private methods
+// MARK: - Private methods
+
 extension EpisodeTableView {
     private func setupHierarchy() {
         [

@@ -8,12 +8,14 @@
 import Foundation
 
 protocol DetailCharacterViewOutputProtocol {
-    func getCharacterName() -> String?
+    var view: DetailCharacterViewInputProtocol? { get set }
+    var interactor: DetailCharacterInteractorInputProtocol? { get set }
+
     func getCharacterInfo() -> Character?
-//    func getImageURL() -> URL?
+    func getCharacterName() -> String
 }
 
-protocol DetailCharacterViewInputProtocol {
-
+protocol DetailCharacterViewInputProtocol: AnyObject  {
+  
 }
 

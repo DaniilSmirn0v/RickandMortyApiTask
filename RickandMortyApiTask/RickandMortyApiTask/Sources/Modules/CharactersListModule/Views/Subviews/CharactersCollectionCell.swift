@@ -9,33 +9,26 @@ import UIKit
 import SnapKit
 
 class CharactersCollectionCell: UICollectionViewCell {
-    //MARK: - Properties
+    // MARK: - Properties
+
     static let identifier = "CharactersCollectionCell"
 
-    //MARK: - Views
-    var characterImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 13
-        imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .systemOrange
-        return imageView
-    }()
+    // MARK: - Views
 
-    var characterNameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.font = .systemFont(ofSize: 17, weight: .medium)
-        label.textAlignment = .center
-        label.backgroundColor = .black.withAlphaComponent(0.6)
-        label.text = "Привет как дела что нового илии не нового новейшего"
-        return label
-    }()
+    var characterImageView = UIImageView()
+        .setup(cornerRadius: 13)
+        .setupAutoLayout()
 
-    //MARK: - Initialize
+    var characterNameLabel = UILabel().setup(
+        textAlignment: .center,
+        font: 17,
+        fontWeight: .medium,
+        color: .white,
+        backgroundColor: .black.withAlphaComponent(0.6)
+    ).setupAutoLayout()
+
+    // MARK: - Initialize
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupHierarchy()
@@ -47,7 +40,8 @@ class CharactersCollectionCell: UICollectionViewCell {
     }
 }
 
-//MARK: - Private methods
+// MARK: - Private methods
+
 extension CharactersCollectionCell {
     private func setupHierarchy() {
         [

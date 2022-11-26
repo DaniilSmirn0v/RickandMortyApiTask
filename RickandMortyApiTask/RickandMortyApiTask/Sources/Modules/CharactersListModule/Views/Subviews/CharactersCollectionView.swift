@@ -9,7 +9,8 @@ import UIKit
 import SnapKit
 
 class CharactersCollectionView: UIView {
-    //MARK: - Views
+    // MARK: - Views
+
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: setupCompositionalLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -18,7 +19,7 @@ class CharactersCollectionView: UIView {
         return collectionView
     }()
 
-    //MARK: - Initialize
+    // MARK: - Initialize
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupHierarchy()
@@ -30,11 +31,14 @@ class CharactersCollectionView: UIView {
     }
 }
 
-//MARK: - Private methods
+// MARK: - Private methods
 extension CharactersCollectionView {
     private func setupCompositionalLayout() -> UICollectionViewLayout {
         let spacing: CGFloat = 10
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .fractionalHeight(1)
+        )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(
             top: 2,
@@ -42,8 +46,14 @@ extension CharactersCollectionView {
             bottom: 2,
             trailing: 2)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .fractionalHeight(0.25))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, repeatingSubitem: item, count: 2)
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.5),
+            heightDimension: .fractionalHeight(0.25)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            repeatingSubitem: item, count: 2
+        )
         group.interItemSpacing = .fixed(spacing)
 
         let section = NSCollectionLayoutSection(group: group)

@@ -10,6 +10,10 @@ import Foundation
 // MARK: - CharactersListViewOutputProtocol
 
 protocol CharactersListViewOutputProtocol {
+    var view: CharactersListViewInputProtocol? { get set }
+    var interactor: CharactersListInteractorInputProtocol? { get set }
+    var router: CharactersListRouterProtocol? { get set }
+
     func getCharacters() -> [Character]?
     func didSelectItem(_ id: Int)
 }
@@ -17,5 +21,5 @@ protocol CharactersListViewOutputProtocol {
 // MARK: - CharactersListViewInputProtocol
 
 protocol CharactersListViewInputProtocol: AnyObject  {
-
+    func tapItem(_ id: Int)
 }
