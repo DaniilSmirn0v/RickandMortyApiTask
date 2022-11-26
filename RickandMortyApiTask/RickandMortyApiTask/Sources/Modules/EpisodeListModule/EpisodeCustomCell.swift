@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 
 
-protocol CellViewModel {}
+protocol ViewModel {}
 
-struct EpisodeListCellViewModel: CellViewModel {
+struct EpisodeListCellViewModel: ViewModel {
     let episodeNumberLable: String
     let episodeNameLabel: String
     let episodeLabel: String
@@ -19,7 +19,7 @@ struct EpisodeListCellViewModel: CellViewModel {
 }
 
 protocol CellConfigurable where Self: UITableViewCell {
-    func configure(with viewModel: CellViewModel)
+    func configure(with viewModel: ViewModel)
 }
 
 class EpisodeCustomCell: UITableViewCell {
@@ -113,7 +113,7 @@ extension EpisodeCustomCell {
 
 // MARK: - CellConfigurable
 extension EpisodeCustomCell: CellConfigurable {
-    func configure(with viewModel: CellViewModel) {
+    func configure(with viewModel: ViewModel) {
         guard let vm = viewModel as? EpisodeListCellViewModel else { return }
         episodeNumberLable.text = vm.episodeNumberLable
         episodeNameLabel.text = vm.episodeNameLabel

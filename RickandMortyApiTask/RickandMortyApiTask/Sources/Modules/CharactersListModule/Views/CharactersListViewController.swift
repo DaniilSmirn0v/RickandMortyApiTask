@@ -85,6 +85,7 @@ extension CharactersListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let id = characters[indexPath.row].id
+        print(id)
         presenter?.didSelectItem(id)
     }
 }

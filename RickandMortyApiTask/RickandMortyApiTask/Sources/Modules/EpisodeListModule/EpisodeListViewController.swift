@@ -14,20 +14,22 @@ class EpisodeListViewController: UIViewController {
         guard isViewLoaded else { return nil }
         return view as? EpisodeTableView
     }
-    private var cellViewModel: [CellViewModel] = []
-    var presenter: EpisodeListViewInputProtocol
+    private var cellViewModel: [ViewModel] = []
+    private var episodes: [Episode] = []
+    var presenter: EpisodeListViewInputProtocol?
+
 
     //MARK: - Views
 
-    //MARK: - Initialize
-    init(presenter: EpisodeListViewInputProtocol) {
-        self.presenter = presenter
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    //MARK: - Initialize
+//    init(presenter: EpisodeListViewInputProtocol) {
+//        self.presenter = presenter
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
 
     //MARK: - LifeCycle
     override func loadView() {
@@ -40,7 +42,7 @@ class EpisodeListViewController: UIViewController {
         episodeTablelView?.episodeTableView.dataSource = self
         title = "Episodes"
         navigationController?.navigationBar.prefersLargeTitles = true
-        presenter.getData()
+        presenter?.getData()
     }
 }
 // MARK: - UITableViewDataSource
@@ -66,12 +68,16 @@ extension EpisodeListViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(EpisodeDetailViewController(), animated: true)
+        guard let ep  = presenter?.getEpisode() else { return }
+        let id = ep[indexPath.row].id
+        print(id)
+        tapItem(id: id)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 extension EpisodeListViewController: EpisodeListViewOutputProtocol {
-    func configure(with viewModels: [CellViewModel]) {
+    func configure(with viewModels: [ViewModel]) {
         Task {@MainActor in
             cellViewModel = viewModels
             episodeTablelView?.episodeTableView.reloadData()
@@ -80,5 +86,9 @@ extension EpisodeListViewController: EpisodeListViewOutputProtocol {
 
     func failure(error: NetworkError) {
         print(error.localizedDescription)
+    }
+
+    func tapItem(id: Int) {
+        presenter?.didSelectItem(id)
     }
 }
