@@ -7,15 +7,11 @@
 
 import UIKit
 
-class EpisodeDetailRouter:  EpisodeDetailRouterProtocol {
-//    let navigationController: UINavigationController
-//
-//    init(navigationController: UINavigationController) {
-//        self.navigationController = navigationController
-//    }
+class EpisodeDetailRouter: BaseRouter, EpisodeDetailRouterProtocol {
 
-    func openDetailCharactertVC(_ id: Int) {
-        //TODO: -
+    func pushToEpisodeDetail(_ id: Int) {
+        guard let detailCharacterViewController = assemblyBuilder?.configureDetailCharactertModule(id) else { return }
+        viewController?.navigationController?.present(detailCharacterViewController, animated: true)
     }
 
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol EpisodeDetailRouterProtocol {
-    func openDetailCharactertVC(_ id: Int)
+    func pushToEpisodeDetail(_ id: Int)
 }

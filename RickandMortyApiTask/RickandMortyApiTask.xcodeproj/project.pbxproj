@@ -43,7 +43,6 @@
 		A56DA0D7292FA17C004F5AB3 /* CharactersListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0D6292FA17C004F5AB3 /* CharactersListPresenter.swift */; };
 		A56DA0DA292FA1DF004F5AB3 /* CharactersListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0D9292FA1DF004F5AB3 /* CharactersListInteractor.swift */; };
 		A56DA0DD292FA23D004F5AB3 /* CharactersListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0DC292FA23D004F5AB3 /* CharactersListRouter.swift */; };
-		A56DA0E52930A4AB004F5AB3 /* EpisodeListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0E42930A4AB004F5AB3 /* EpisodeListAssembly.swift */; };
 		A56DA0E72930A4CF004F5AB3 /* EpisodeListRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0E62930A4CF004F5AB3 /* EpisodeListRouterProtocol.swift */; };
 		A56DA0E92930A4E1004F5AB3 /* EpisodeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0E82930A4E1004F5AB3 /* EpisodeListRouter.swift */; };
 		A56DA0EB2930A69D004F5AB3 /* EpisodeListInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56DA0EA2930A69D004F5AB3 /* EpisodeListInteractorInputProtocol.swift */; };
@@ -57,7 +56,6 @@
 		A590E78D293117D800D65037 /* EpisodeDetailInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590E78C293117D800D65037 /* EpisodeDetailInteractorOutputProtocol.swift */; };
 		A590E78F293117FB00D65037 /* EpisodeDetailInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590E78E293117FB00D65037 /* EpisodeDetailInteractorInputProtocol.swift */; };
 		A590E7912931180D00D65037 /* EpisodeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590E7902931180D00D65037 /* EpisodeDetailInteractor.swift */; };
-		A590E7932931182300D65037 /* EpisodeDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590E7922931182300D65037 /* EpisodeDetailAssembly.swift */; };
 		A590E7952931183500D65037 /* EpisodeDetailRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590E7942931183500D65037 /* EpisodeDetailRouterProtocol.swift */; };
 		A590E7972931184300D65037 /* EpisodeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590E7962931184300D65037 /* EpisodeDetailRouter.swift */; };
 		A590E7992931186E00D65037 /* EpisodeDetailViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A590E7982931186E00D65037 /* EpisodeDetailViewOutputProtocol.swift */; };
@@ -73,6 +71,7 @@
 		A5ACE671292DDF6C0066DC72 /* EpisodeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE670292DDF6C0066DC72 /* EpisodeDetailCell.swift */; };
 		A5ACE676292DE6A50066DC72 /* EpisodeCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE675292DE6A50066DC72 /* EpisodeCustomCell.swift */; };
 		A5ACE678292DE6CC0066DC72 /* EpisodeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE677292DE6CC0066DC72 /* EpisodeTableView.swift */; };
+		A5B5564E29335F120075DFDC /* DetailCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B5564D29335F120075DFDC /* DetailCharacter.swift */; };
 		A5ED44942930FEC20065A0B0 /* Charact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED44932930FEC20065A0B0 /* Charact.swift */; };
 		A5F2E9402930AC2D001C171E /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E93F2930AC2D001C171E /* Episodes.swift */; };
 /* End PBXBuildFile section */
@@ -115,7 +114,6 @@
 		A56DA0D6292FA17C004F5AB3 /* CharactersListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListPresenter.swift; sourceTree = "<group>"; };
 		A56DA0D9292FA1DF004F5AB3 /* CharactersListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListInteractor.swift; sourceTree = "<group>"; };
 		A56DA0DC292FA23D004F5AB3 /* CharactersListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListRouter.swift; sourceTree = "<group>"; };
-		A56DA0E42930A4AB004F5AB3 /* EpisodeListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListAssembly.swift; sourceTree = "<group>"; };
 		A56DA0E62930A4CF004F5AB3 /* EpisodeListRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListRouterProtocol.swift; sourceTree = "<group>"; };
 		A56DA0E82930A4E1004F5AB3 /* EpisodeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListRouter.swift; sourceTree = "<group>"; };
 		A56DA0EA2930A69D004F5AB3 /* EpisodeListInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListInteractorInputProtocol.swift; sourceTree = "<group>"; };
@@ -129,7 +127,6 @@
 		A590E78C293117D800D65037 /* EpisodeDetailInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailInteractorOutputProtocol.swift; sourceTree = "<group>"; };
 		A590E78E293117FB00D65037 /* EpisodeDetailInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		A590E7902931180D00D65037 /* EpisodeDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailInteractor.swift; sourceTree = "<group>"; };
-		A590E7922931182300D65037 /* EpisodeDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailAssembly.swift; sourceTree = "<group>"; };
 		A590E7942931183500D65037 /* EpisodeDetailRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailRouterProtocol.swift; sourceTree = "<group>"; };
 		A590E7962931184300D65037 /* EpisodeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailRouter.swift; sourceTree = "<group>"; };
 		A590E7982931186E00D65037 /* EpisodeDetailViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewOutputProtocol.swift; sourceTree = "<group>"; };
@@ -147,6 +144,7 @@
 		A5ACE670292DDF6C0066DC72 /* EpisodeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailCell.swift; sourceTree = "<group>"; };
 		A5ACE675292DE6A50066DC72 /* EpisodeCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCustomCell.swift; sourceTree = "<group>"; };
 		A5ACE677292DE6CC0066DC72 /* EpisodeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableView.swift; sourceTree = "<group>"; };
+		A5B5564D29335F120075DFDC /* DetailCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacter.swift; sourceTree = "<group>"; };
 		A5ED44932930FEC20065A0B0 /* Charact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Charact.swift; path = RickandMortyApiTask/Charact.swift; sourceTree = SOURCE_ROOT; };
 		A5F2E93F2930AC2D001C171E /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		DC0EF9EAEF2986BE69076A14 /* Pods-RickandMortyApiTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMortyApiTask.release.xcconfig"; path = "Target Support Files/Pods-RickandMortyApiTask/Pods-RickandMortyApiTask.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +222,7 @@
 			children = (
 				A56DA0D2292F774E004F5AB3 /* Characterss.swift */,
 				A5F2E93F2930AC2D001C171E /* Episodes.swift */,
+				A5B5564D29335F120075DFDC /* DetailCharacter.swift */,
 			);
 			path = NetworkModels;
 			sourceTree = "<group>";
@@ -419,14 +418,6 @@
 			name = Router;
 			sourceTree = "<group>";
 		};
-		A56DA0E32930A42B004F5AB3 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				A56DA0E42930A4AB004F5AB3 /* EpisodeListAssembly.swift */,
-			);
-			name = Assembly;
-			sourceTree = "<group>";
-		};
 		A590E7832931170700D65037 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,14 +435,6 @@
 				A590E7962931184300D65037 /* EpisodeDetailRouter.swift */,
 			);
 			name = Router;
-			sourceTree = "<group>";
-		};
-		A590E7852931173200D65037 /* Assembly */ = {
-			isa = PBXGroup;
-			children = (
-				A590E7922931182300D65037 /* EpisodeDetailAssembly.swift */,
-			);
-			name = Assembly;
 			sourceTree = "<group>";
 		};
 		A590E7862931174200D65037 /* Interactor */ = {
@@ -571,7 +554,6 @@
 		A5AA8300292CCFD100B47692 /* EpisodeListModule */ = {
 			isa = PBXGroup;
 			children = (
-				A56DA0E32930A42B004F5AB3 /* Assembly */,
 				A56DA0E22930A424004F5AB3 /* Router */,
 				A56DA0E12930A3EC004F5AB3 /* Interactor */,
 				A56DA0E02930A3DD004F5AB3 /* Presenter */,
@@ -585,7 +567,6 @@
 			children = (
 				A590E7872931174C00D65037 /* Presenter */,
 				A590E7862931174200D65037 /* Interactor */,
-				A590E7852931173200D65037 /* Assembly */,
 				A590E7842931171900D65037 /* Router */,
 				A5ACE66B292DCAEA0066DC72 /* Views */,
 			);
@@ -791,15 +772,14 @@
 				A5ACE66F292DDE3D0066DC72 /* EpisodeDetailCollectionView.swift in Sources */,
 				A5AA8312292CEA1500B47692 /* LocationListViewController.swift in Sources */,
 				0448A98C292F5752006F49DD /* LocationListCell.swift in Sources */,
-				A590E7932931182300D65037 /* EpisodeDetailAssembly.swift in Sources */,
 				0448A97F292F55BD006F49DD /* LocationDetailViewController.swift in Sources */,
 				A5ED44942930FEC20065A0B0 /* Charact.swift in Sources */,
 				A5031A0D292E6CC20098551F /* DetailCharactertCell.swift in Sources */,
 				A56DA0F12930A6E9004F5AB3 /* EpisodeListPresenter.swift in Sources */,
-				A56DA0E52930A4AB004F5AB3 /* EpisodeListAssembly.swift in Sources */,
 				A590E7892931179D00D65037 /* EpisodeDetailViewInputProtocol.swift in Sources */,
 				A5ACE671292DDF6C0066DC72 /* EpisodeDetailCell.swift in Sources */,
 				A56DA0CE292F71C6004F5AB3 /* DefaultNetworkClient.swift in Sources */,
+				A5B5564E29335F120075DFDC /* DetailCharacter.swift in Sources */,
 				A56DA0DA292FA1DF004F5AB3 /* CharactersListInteractor.swift in Sources */,
 				A56DA0AB292E717B004F5AB3 /* DetailCharactertView.swift in Sources */,
 				A5AA82E4292CCB9200B47692 /* AppDelegate.swift in Sources */,

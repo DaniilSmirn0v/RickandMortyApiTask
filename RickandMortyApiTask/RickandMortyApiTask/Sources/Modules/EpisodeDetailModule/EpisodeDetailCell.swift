@@ -35,7 +35,6 @@ class EpisodeDetailCell: UICollectionViewCell {
        let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .systemFont(ofSize: 17, weight: .regular)
-//        descriptionLabel.textColor = .systemOrange
         label.textAlignment = .center
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -88,10 +87,8 @@ extension EpisodeDetailCell: EpisodeCellConfigurable {
             switch result {
             case .success(let value):
                 self.characterImageView.image = value.image
-                print(value.image)
-            case .failure(let error):
+            case .failure(_):
                 self.characterImageView.image = UIImage(named: "notFoundBlack")
-                print(error)
             }
         }
         characterNameLabel.text = vm.characterNameLabel

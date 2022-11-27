@@ -7,18 +7,11 @@
 
 import UIKit
 
-class EpisodeListRouter: EpisodeListRouterProtocol {
+class EpisodeListRouter: BaseRouter, EpisodeListRouterProtocol {
 
-    let navigationController: UINavigationController
-
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
-
-    func pushToEpisodeDetail(id: Int) {
-
-            let detailEpisodeViewController = EpisodeDetailAssembly.createEpisodeModule(id)
-            navigationController.pushViewController(detailEpisodeViewController, animated: true)
+    func pushToEpisodeListModule(id: Int) {
+        guard let episodeDetailViewController = assemblyBuilder?.configureEpisodeDetailModule(id) else { return }
+        viewController?.navigationController?.pushViewController(episodeDetailViewController, animated: true)
         }
     }
 
