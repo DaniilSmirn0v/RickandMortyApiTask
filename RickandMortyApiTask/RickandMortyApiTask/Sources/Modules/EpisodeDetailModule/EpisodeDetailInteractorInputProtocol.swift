@@ -8,5 +8,5 @@
 import Foundation
 
 protocol EpisodeDetailInteractorInputProtocol {
-    func fetchDetailEpisode(with id: Int)
+    func fetchDetailEpisode() 
 }

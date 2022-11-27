@@ -45,11 +45,11 @@ extension EpisodeDetailCollectionView {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)
 
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.5))
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.8))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
-        section.supplementaryContentInsetsReference = .automatic
+        section.supplementaryContentInsetsReference = .safeArea
         section.boundarySupplementaryItems = [headerElement]
 
         let layout = UICollectionViewCompositionalLayout(section: section)
@@ -62,7 +62,7 @@ extension EpisodeDetailCollectionView {
 
     private func setupLayout() {
         collectionView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalToSuperview().inset(16)
+            make.top.left.right.bottom.equalToSuperview()
         }
     }
 }

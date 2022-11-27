@@ -8,8 +8,8 @@
 import Foundation
 
 protocol EpisodeDetailViewInputProtocol {
-    func getData()
+    func getData() 
     func selectCell(id: Int)
-    func getCharacters() -> [Character]
+    func getCharacters() -> [DetailCharacter]
 
 }

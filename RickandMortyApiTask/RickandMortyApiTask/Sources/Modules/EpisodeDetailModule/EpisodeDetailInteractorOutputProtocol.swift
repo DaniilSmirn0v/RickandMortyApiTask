@@ -8,6 +8,6 @@
 import Foundation
 
 protocol EpisodeDetailInteractorOutputProtocol: AnyObject {
-    func getEpisodeDataSuccess(data: Episode, characters: [Character])
+    func getEpisodeDataSuccess(data: Episode, characters: [DetailCharacter])
     func getEpisodeDataFailure(error: NetworkError)
 }

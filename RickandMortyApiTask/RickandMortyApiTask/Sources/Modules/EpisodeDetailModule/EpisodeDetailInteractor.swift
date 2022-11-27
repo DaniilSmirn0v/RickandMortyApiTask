@@ -11,35 +11,35 @@ class EpisodeDetailInteractor: EpisodeDetailInteractorInputProtocol {
 
     weak var presenter: EpisodeDetailInteractorOutputProtocol?
     let networkService: NetworkClient
+    let id: Int
 
-    init(networkService: NetworkClient) {
+    init(networkService: NetworkClient, id: Int) {
         self.networkService = networkService
+        self.id = id
     }
 
-    func fetchDetailEpisode(with id: Int) {
+    func fetchDetailEpisode() {
         Task {
-            let request = RickAndMortyRequestFactory.detailEpisodes(id: id).urlReques
             do {
+                let request = RickAndMortyRequestFactory.detailEpisodes(id: self.id).urlReques
                 let episodeData: Episode = try await networkService.perform(request: request)
-                let charData = episodeData.characters
-                let characters = try await withThrowingTaskGroup(of: [Character].self, returning: [Character].self) { group in
-                    charData.forEach { char in
+
+                let characters = try await withThrowingTaskGroup(of: DetailCharacter.self) { group in
+                    episodeData.characters.forEach { char in
                         guard let urlSting = URL(string: char) else { return }
-                        let request = URLRequest(url: urlSting, timeoutInterval: 10)
                         group.addTask {
+                            let request = URLRequest(url: urlSting, timeoutInterval: 10)
                             return try await self.networkService.perform(request: request)
                         }
                     }
 
-                    var models: [Character] = []
+                    var models: [DetailCharacter] = []
 
                     for try await result in group {
-                        models.append(contentsOf: result)
+                        models.append(result)
                     }
                     return models
                 }
-                debugPrint(episodeData)
-                debugPrint(characters)
                 presenter?.getEpisodeDataSuccess(data: episodeData, characters: characters)
             } catch {
                 guard let locerror = error as? NetworkError else { return }

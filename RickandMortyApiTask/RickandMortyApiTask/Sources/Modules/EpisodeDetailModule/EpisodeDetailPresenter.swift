@@ -12,31 +12,29 @@ class EpisodeDetailPresenter: EpisodeDetailViewInputProtocol {
     weak var view: EpisodeDetailViewOutputProtocol?
     var interactor: EpisodeDetailInteractorInputProtocol
     var router: EpisodeDetailRouterProtocol
-    private var id: Int
-    private var charactersData: [Character] = []
+    private var charactersData: [DetailCharacter] = []
 
-    init(view: EpisodeDetailViewOutputProtocol? = nil, interactor: EpisodeDetailInteractorInputProtocol, router: EpisodeDetailRouterProtocol, id: Int) {
+    init(view: EpisodeDetailViewOutputProtocol? = nil, interactor: EpisodeDetailInteractorInputProtocol, router: EpisodeDetailRouterProtocol) {
         self.view = view
         self.interactor = interactor
         self.router = router
-        self.id = id
     }
 
-    func getData() {
-        interactor.fetchDetailEpisode(with: 1)
+    func getData()  {
+        interactor.fetchDetailEpisode()
     }
 
     func selectCell(id: Int) {
-        router.openDetailCharactertVC(id)
+        router.pushToEpisodeDetail(id)
     }
-
-    func getCharacters() -> [Character] {
+    
+    func getCharacters() -> [DetailCharacter] {
         charactersData
     }
 }
 
 extension EpisodeDetailPresenter: EpisodeDetailInteractorOutputProtocol {
-    func getEpisodeDataSuccess(data: Episode, characters: [Character]) {
+    func getEpisodeDataSuccess(data: Episode, characters: [DetailCharacter]) {
         charactersData = characters
         let cellViewModel = characters.map { char in
             EpisodeDetailCellViewModel(
@@ -46,9 +44,9 @@ extension EpisodeDetailPresenter: EpisodeDetailInteractorOutputProtocol {
         }
         let headerViewModel: ViewModel = EpisodeDetailHeaderViewModel(
             episodeNameLabel: data.name,
-            episodeDateLabel: data.airDate,
-            titleHeader: data.episode
+            episodeDateLabel: data.airDate
         )
+        
         view?.configure(with: cellViewModel, viewModelHeader: headerViewModel, data: data)
     }
 
