@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class DetailCharacterPresenter {
 
@@ -15,14 +16,8 @@ final class DetailCharacterPresenter {
     weak var interactor: DetailCharacterInteractorInputProtocol?
     var router: DetailCharacterRouterProtocol?
 
-    var characterData = Character(
-        id: 2,
-        name: "Нет",
-        status: .alive,
-        species: .human,
-        gender: .male,
-        image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
-    )
+    var characterData: Character?
+
 
 }
 
@@ -34,27 +29,6 @@ extension DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
         characterData
     }
 
-    func getCharacterName() -> String {
-         return characterData.name
-    }
-
-   func getCharacterInfo() -> [CharactInfo] {
-        return [
-            CharactInfo(
-                status: "\(characterData.statusColor)  Status",
-                info: characterData.status.rawValue
-            ),
-            CharactInfo(
-                status: "🧬  Gender",
-                info: characterData.gender.rawValue
-            ),
-            CharactInfo(
-                status: "👤  Species",
-                info: characterData.species.rawValue
-            ),
-        ]
-    }
-
 }
 
 // MARK: - DetailCharactertInteractorOutputProtocol
@@ -63,6 +37,31 @@ extension DetailCharacterPresenter: DetailCharactertInteractorOutputProtocol {
     
     func getCharacterDataSuccess(data: Character) {
         characterData = data
+
+        let cellViewModel: ViewModel = DetailCharactertCellViewModel(
+            charactertImage: data.image)
+
+        let character = [
+            CharactInfo(
+                status: "\(data.statusColor)  Status",
+                info: "\(data.status)"
+            ),
+            CharactInfo(
+                status: "🧬  Gender",
+                info: "\(data.gender)"
+            ),
+            CharactInfo(
+                status: "👤  Species",
+                info: "\(data.species)"
+            )]
+
+        let cellTableViewModel: [ViewModel] = character.map { character in
+           return DetailTableCellViewModel(
+                textInfo: character.status,
+                detailTextInfo: character.info
+            )
+        } 
+        view?.configure(with: cellViewModel, data: data, with: cellTableViewModel)
     }
 
 }

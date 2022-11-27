@@ -29,7 +29,6 @@ final class CharactersListInteractor: CharactersListInteractorInputProtocol {
                 let request = RickAndMortyRequestFactory.characters.urlReques
                 let data: Characterss = try await network.perform(request: request)
                 presenter?.getСharactersDataSuccess(data: data)
-                presenter?.getСharactersDataSuccess(data: data)
             } catch {
                 debugPrint(error)
             }

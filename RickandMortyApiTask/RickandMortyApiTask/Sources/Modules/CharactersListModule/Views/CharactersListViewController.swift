@@ -9,16 +9,7 @@ import UIKit
 import Kingfisher
 
 final class CharactersListViewController: UIViewController {
-    // MARK: - Typealias
-    
-    private typealias Snapshot = NSDiffableDataSourceSnapshot<CharactersListSection, Character>
-    private typealias DataSource = UICollectionViewDiffableDataSource<CharactersListSection, Character>
-    
     // MARK: - Properties
-
-    private enum CharactersListSection {
-        case main
-    }
 
     var presenter: CharactersListViewOutputProtocol?
 
@@ -27,8 +18,7 @@ final class CharactersListViewController: UIViewController {
         return view as? CharactersCollectionView
     }
 
-    private lazy var dataSource = makeDataSource()
-    private var characters = [Character]()
+    private var cellViewModels = [ViewModel]()
     
     // MARK: - Life Cycle
     
@@ -43,40 +33,39 @@ final class CharactersListViewController: UIViewController {
 
     private func setupView() {
         charactersView?.collectionView.delegate = self
-        characters = self.presenter?.getCharacters() ?? [Character]()
+        charactersView?.collectionView.dataSource = self
         title = "Characters"
-        updateSnapshot(animatingChange: false, characters: characters)
     }
 }
 
-// MARK: - UICollectionViewDiffableDataSource
+// MARK: - UICollectionViewDataSource
 
-extension CharactersListViewController {
-    private func makeDataSource() -> DataSource {
-        let dataSource = DataSource(collectionView: charactersView!.collectionView) { collectionView, indexPath, character in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharactersCollectionCell.identifier, for: indexPath) as? CharactersCollectionCell else { return UICollectionViewCell() }
-            cell.characterNameLabel.text = self.characters[indexPath.row].name
-            let stringURL = self.characters[indexPath.row].image
-            cell.characterImageView.loadImage(with: stringURL)
-            return cell
-        }
-        return dataSource
+extension CharactersListViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        cellViewModels.count
     }
-    
-    func updateSnapshot(animatingChange: Bool = true, characters: [Character]) {
-        var snapshot = Snapshot()
-        snapshot.appendSections([.main])
-        snapshot.appendItems(characters)
-        dataSource.apply(snapshot, animatingDifferences: false)
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharactersCollectionCell.identifier, for: indexPath) as? CharactersCollectionCell else { return UICollectionViewCell() }
+
+        let model = self.cellViewModels[indexPath.row]
+        cell.configure(with: model)
+
+        return cell
     }
+
 }
+
 
 // MARK: - UICollectionViewDelegate
 
 extension CharactersListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let id = characters[indexPath.row].id
+
+        let id = presenter?.getCharacters()[indexPath.row].id
+        guard let id = id else { return }
         tapItem(id)
     }
 }
@@ -89,4 +78,12 @@ extension CharactersListViewController: CharactersListViewInputProtocol {
         presenter?.didSelectItem(id)
     }
 
+    func configure(with viewModels: [ViewModel]) {
+        Task { @MainActor in
+            cellViewModels = viewModels
+            charactersView?.collectionView.reloadData()
+        }
+    }
+    
 }
+

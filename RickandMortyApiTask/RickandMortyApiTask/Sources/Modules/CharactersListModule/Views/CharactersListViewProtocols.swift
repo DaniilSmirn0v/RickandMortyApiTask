@@ -23,4 +23,5 @@ protocol CharactersListViewOutputProtocol {
 protocol CharactersListViewInputProtocol: AnyObject  {
     var presenter: CharactersListViewOutputProtocol?  { get set }
     func tapItem(_ id: Int)
+    func configure(with viewModels: [ViewModel])
 }

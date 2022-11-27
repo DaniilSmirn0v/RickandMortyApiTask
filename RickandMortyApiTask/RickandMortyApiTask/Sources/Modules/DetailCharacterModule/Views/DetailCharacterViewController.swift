@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class DetailCharactertViewController: UIViewController, DetailCharacterViewInputProtocol {
+final class DetailCharactertViewController: UIViewController {
     // MARK: - Typealias
 
     typealias Snapshot = NSDiffableDataSourceSnapshot<TableViewSection, AnyHashable>
@@ -22,7 +22,12 @@ final class DetailCharactertViewController: UIViewController, DetailCharacterVie
     }
 
     var presenter: DetailCharacterViewOutputProtocol?
-
+    var character = [
+        CharactInfo(status: "Status", info: ""),
+        CharactInfo(status: "Gender", info: ""),
+        CharactInfo(status: "Species", info: ""),
+    ]
+    
     private var detailCharactertView: DetailCharactertView? {
         guard isViewLoaded else { return nil }
         return view as? DetailCharactertView
@@ -30,12 +35,8 @@ final class DetailCharactertViewController: UIViewController, DetailCharacterVie
 
     private lazy var dataSource = makeDataSource()
     private var characters = [Character?]()
-    private var character = [CharactInfo]()
-
-    private var status: String?
-    private var statusColor: String?
-    private var species: String?
-    private var gender: String?
+    private var cellViewModel: ViewModel?
+    private var tableViewModelCell = [ViewModel]()
 
     // MARK: - Lifecycle
 
@@ -47,7 +48,6 @@ final class DetailCharactertViewController: UIViewController, DetailCharacterVie
         super.viewDidLoad()
         configurate()
     }
-
 }
 
 // MARK: - UITableViewDelegate
@@ -80,31 +80,33 @@ extension DetailCharactertViewController {
     private func configurate() {
         detailCharactertView?.tableView.delegate = self
         guard let presenter = presenter else { return }
-        character = presenter.getCharacterInfo()
         characters = [presenter.getCharacter()]
-        title = self.presenter?.getCharacterName()
         updateSnapshot(animatingChange: false, characters: characters, character: character)
     }
 
     private func makeDataSource() -> DataSource {
 
-        return DataSource(tableView: detailCharactertView?.tableView ?? UITableView()) { tableView, indexPath, item in
+        let dataSource = DataSource(tableView: detailCharactertView?.tableView ?? UITableView()) { tableView, indexPath, item in
 
-            if let character = item as? Character? {
+            if item is Character? {
 
                 guard let cell = tableView.dequeueReusableCell(
                     withIdentifier: DetailCharactertCell.reuseID,
                     for: indexPath
                 ) as? DetailCharactertCell else { return UITableViewCell() }
-                
-                cell.charactertImage.loadImage(with: character?.image)
+
+                guard let vm = self.cellViewModel else { return UITableViewCell() }
+
+                cell.configure(with: vm)
                 return cell
 
-            } else if let characterInfo = item as? CharactInfo {
+            } else if item is CharactInfo {
 
                 let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
-                cell.textLabel?.text = characterInfo.status
-                cell.detailTextLabel?.text = characterInfo.info
+
+                let model = self.tableViewModelCell[indexPath.row]
+
+                cell.configureCell(with: model)
                 cell.detailTextLabel?.textColor = .systemOrange
                 
                 return cell
@@ -112,6 +114,7 @@ extension DetailCharactertViewController {
                 fatalError("Unknown cell type")
             }
         }
+        return dataSource
     }
 
     private func updateSnapshot(animatingChange: Bool = true, characters: [Character?], character: [CharactInfo]) {
@@ -119,7 +122,21 @@ extension DetailCharactertViewController {
         snapshot.appendSections([.image, .info])
         snapshot.appendItems(characters, toSection: .image)
         snapshot.appendItems(character, toSection: .info)
-        dataSource.apply(snapshot, animatingDifferences: false)
+        dataSource.apply(snapshot, animatingDifferences: true)
     }
 }
 
+// MARK: - DetailCharacterViewInputProtocol
+
+extension DetailCharactertViewController:
+    DetailCharacterViewInputProtocol {
+
+    func configure(with viewModelsCell: ViewModel, data: Character, with tableViewModelCell: [ViewModel]) {
+        Task { @MainActor in
+            title = "\(data.name)"
+            cellViewModel = viewModelsCell
+            self.tableViewModelCell = tableViewModelCell
+//            detailCharactertView?.tableView.reloadData()
+        }
+    }
+}

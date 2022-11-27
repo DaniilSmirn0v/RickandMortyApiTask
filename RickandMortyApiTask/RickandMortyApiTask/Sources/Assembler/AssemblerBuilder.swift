@@ -24,10 +24,12 @@ class AssemblerBuilder: AssemblyBuilderProtocol {
         let view = CharactersListViewController()
         let router = CharactersListRouter(viewController: view, assemblyBuilder: self)
         let presenter = CharactersListPresenter()
+        let interactor = CharactersListInteractor(network: network)
         view.presenter = presenter
-        view.presenter?.router = router
-        view.presenter?.interactor = CharactersListInteractor(network: network)
-        view.presenter?.interactor?.presenter = presenter
+        presenter.router = router
+        presenter.view = view
+        presenter.interactor = interactor
+        interactor.presenter = presenter
         return view
     }
     

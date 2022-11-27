@@ -7,6 +7,15 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
+
+struct DetailCharactertCellViewModel: ViewModel {
+    let charactertImage: String
+}
+
+protocol DetailCharactertCellConfigurable where Self: UITableViewCell {
+    func configure(with viewModel: ViewModel)
+}
 
 final class DetailCharactertCell: UITableViewCell {
     // MARK: - Properties
@@ -22,6 +31,7 @@ final class DetailCharactertCell: UITableViewCell {
     ) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
         addSubview(charactertImage)
+        bringSubviewToFront(charactertImage)
         setupLayout()
     }
 
@@ -37,5 +47,19 @@ final class DetailCharactertCell: UITableViewCell {
         }
     }
 }
+
+// MARK: - DetailCharactertCellConfigurable
+
+extension DetailCharactertCell: DetailCharactertCellConfigurable {
+    
+    func configure(with viewModel: ViewModel) {
+        guard let vm = viewModel as? DetailCharactertCellViewModel else { return }
+        let imageString = vm.charactertImage
+        charactertImage.loadImage(with: imageString)
+    }
+    
+}
+
+
 
 

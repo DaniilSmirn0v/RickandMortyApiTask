@@ -36,9 +36,16 @@ extension CharactersListPresenter: CharactersListViewOutputProtocol {
 // MARK: - CharactersListInteractorOutputProtocol
 
 extension CharactersListPresenter: CharactersListInteractorOutputProtocol {
-
+    
     func getСharactersDataSuccess(data: Characterss) {
         charactersData = data.results
-    }
+        
+        let cellViewModel: [ViewModel] = data.results.map { character in
+            return CharactersCellViewModel(charactertImage: character.image, characterNameLabel: character.name,
+                id: character.id)
+        }
 
+        view?.configure(with: cellViewModel)
+    }
+    
 }

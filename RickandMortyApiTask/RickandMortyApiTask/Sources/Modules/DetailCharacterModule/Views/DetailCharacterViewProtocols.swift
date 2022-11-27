@@ -12,12 +12,11 @@ protocol DetailCharacterViewOutputProtocol {
     var interactor: DetailCharacterInteractorInputProtocol? { get set }
     var router: DetailCharacterRouterProtocol? { get set }
   
-    func getCharacterInfo() -> [CharactInfo]
     func getCharacter() -> Character?
-    func getCharacterName() -> String
 }
 
 protocol DetailCharacterViewInputProtocol: AnyObject  {
     var presenter: DetailCharacterViewOutputProtocol? { get set }
+    func configure(with viewModelsCell: ViewModel, data: Character, with tableViewModelCell: [ViewModel])
 }
 
