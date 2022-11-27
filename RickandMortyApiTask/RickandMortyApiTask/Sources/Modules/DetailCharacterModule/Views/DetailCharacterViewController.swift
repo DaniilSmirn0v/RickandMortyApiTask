@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class DetailCharactertViewController: UIViewController {
+final class DetailCharactertViewController: UIViewController, DetailCharacterViewInputProtocol {
     // MARK: - Typealias
 
     typealias Snapshot = NSDiffableDataSourceSnapshot<TableViewSection, AnyHashable>
@@ -31,7 +31,6 @@ final class DetailCharactertViewController: UIViewController {
     private lazy var dataSource = makeDataSource()
     private var characters = [Character?]()
     private var character = [CharactInfo]()
-    private var characterInfo: Character?
 
     private var status: String?
     private var statusColor: String?
@@ -80,24 +79,11 @@ extension DetailCharactertViewController {
 
     private func configurate() {
         detailCharactertView?.tableView.delegate = self
-        characterInfo = self.presenter?.getCharacterInfo()
-        characters = [self.presenter?.getCharacterInfo()]
+        guard let presenter = presenter else { return }
+        character = presenter.getCharacterInfo()
+        characters = [presenter.getCharacter()]
         title = self.presenter?.getCharacterName()
-        setupCharacterInfo()
         updateSnapshot(animatingChange: false, characters: characters, character: character)
-    }
-
-    private func setupCharacterInfo() {
-        guard let status = characterInfo?.status.rawValue,
-              let statusColor = characterInfo?.statusColor,
-              let gender = characterInfo?.gender.rawValue,
-              let species = characterInfo?.species.rawValue else { return }
-
-        character = [
-            CharactInfo(status: "\(statusColor)  Status", info: status),
-            CharactInfo(status: "🧬  Gender", info: gender),
-            CharactInfo(status: "👤  Species", info: species),
-        ]
     }
 
     private func makeDataSource() -> DataSource {
@@ -110,8 +96,8 @@ extension DetailCharactertViewController {
                     withIdentifier: DetailCharactertCell.reuseID,
                     for: indexPath
                 ) as? DetailCharactertCell else { return UITableViewCell() }
-                let url = URL(string: character?.image ?? "")
-                cell.charactertImage.kf.setImage(with: url)
+                
+                cell.charactertImage.loadImage(with: character?.image)
                 return cell
 
             } else if let characterInfo = item as? CharactInfo {
@@ -120,8 +106,8 @@ extension DetailCharactertViewController {
                 cell.textLabel?.text = characterInfo.status
                 cell.detailTextLabel?.text = characterInfo.info
                 cell.detailTextLabel?.textColor = .systemOrange
+                
                 return cell
-
             } else {
                 fatalError("Unknown cell type")
             }

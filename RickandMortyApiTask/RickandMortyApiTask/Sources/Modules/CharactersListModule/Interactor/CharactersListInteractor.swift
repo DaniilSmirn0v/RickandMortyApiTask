@@ -11,7 +11,6 @@ final class CharactersListInteractor: CharactersListInteractorInputProtocol {
     // MARK: - Properties
 
     var presenter: CharactersListInteractorOutputProtocol?
-
     private var charactersModel: Characterss?
     private let network: DefaultNetworkClient
 
@@ -23,17 +22,18 @@ final class CharactersListInteractor: CharactersListInteractorInputProtocol {
     }
 
     // MARK: - Methods
-
+    
     func getCharactersModel() {
         Task {
             do {
                 let request = RickAndMortyRequestFactory.characters.urlReques
                 let data: Characterss = try await network.perform(request: request)
                 presenter?.getСharactersDataSuccess(data: data)
+                presenter?.getСharactersDataSuccess(data: data)
             } catch {
                 debugPrint(error)
             }
         }
     }
-
+    
 }

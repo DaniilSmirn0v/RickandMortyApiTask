@@ -23,7 +23,7 @@ class AssemblerBuilder: AssemblyBuilderProtocol {
         let network = DefaultNetworkClient()
         let view = CharactersListViewController()
         let router = CharactersListRouter(viewController: view, assemblyBuilder: self)
-        let presenter: CharactersListViewOutputProtocol & CharactersListInteractorOutputProtocol = CharactersListPresenter()
+        let presenter = CharactersListPresenter()
         view.presenter = presenter
         view.presenter?.router = router
         view.presenter?.interactor = CharactersListInteractor(network: network)
@@ -34,10 +34,14 @@ class AssemblerBuilder: AssemblyBuilderProtocol {
     func configureDetailCharactertModule(_ id: Int) -> UIViewController {
         let network = DefaultNetworkClient()
         let view = DetailCharactertViewController()
-        let presenter: DetailCharacterViewOutputProtocol & DetailCharactertInteractorOutputProtocol = DetailCharacterPresenter()
+        let router = DetailCharacterRouter(viewController: view, assemblyBuilder: self)
+        let interactor = DetailCharacterInteractor(network: network, id: id)
+        let presenter = DetailCharacterPresenter()
         view.presenter = presenter
-        view.presenter?.interactor = DetailCharacterInteractor(network: network, id: id)
-        view.presenter?.interactor?.presenter = presenter
+        presenter.router = router
+        presenter.view = view
+        presenter.interactor = interactor
+        interactor.presenter = presenter
         return view
     }
 

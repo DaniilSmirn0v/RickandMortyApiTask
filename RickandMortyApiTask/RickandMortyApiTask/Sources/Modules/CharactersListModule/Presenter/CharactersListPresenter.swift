@@ -15,14 +15,15 @@ final class CharactersListPresenter {
     weak var view: CharactersListViewInputProtocol?
     var router: CharactersListRouterProtocol?
 
-    private var charactersData: [Character]?
+    private var charactersData = [Character]()
+
 }
 
 // MARK: - CharactersListViewOutputProtocol
 
 extension CharactersListPresenter: CharactersListViewOutputProtocol {
 
-    func getCharacters() -> [Character]? {
+    func getCharacters() -> [Character] {
         charactersData
     }
 

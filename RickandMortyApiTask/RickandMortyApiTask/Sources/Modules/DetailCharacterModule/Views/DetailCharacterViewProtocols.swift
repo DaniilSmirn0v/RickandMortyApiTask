@@ -10,12 +10,14 @@ import Foundation
 protocol DetailCharacterViewOutputProtocol {
     var view: DetailCharacterViewInputProtocol? { get set }
     var interactor: DetailCharacterInteractorInputProtocol? { get set }
-
-    func getCharacterInfo() -> Character?
+    var router: DetailCharacterRouterProtocol? { get set }
+  
+    func getCharacterInfo() -> [CharactInfo]
+    func getCharacter() -> Character?
     func getCharacterName() -> String
 }
 
 protocol DetailCharacterViewInputProtocol: AnyObject  {
-  
+    var presenter: DetailCharacterViewOutputProtocol? { get set }
 }
 

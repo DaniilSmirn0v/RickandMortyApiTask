@@ -38,6 +38,10 @@ final class CharactersListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+
+    private func setupView() {
         charactersView?.collectionView.delegate = self
         characters = self.presenter?.getCharacters() ?? [Character]()
         title = "Characters"
@@ -53,8 +57,7 @@ extension CharactersListViewController {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharactersCollectionCell.identifier, for: indexPath) as? CharactersCollectionCell else { return UICollectionViewCell() }
             cell.characterNameLabel.text = self.characters[indexPath.row].name
             let stringURL = self.characters[indexPath.row].image
-            let url = URL(string: stringURL)
-            cell.characterImageView.kf.setImage(with: url)
+            cell.characterImageView.loadImage(with: stringURL)
             return cell
         }
         return dataSource

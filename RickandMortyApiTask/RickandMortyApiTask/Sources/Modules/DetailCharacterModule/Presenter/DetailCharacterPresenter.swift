@@ -12,9 +12,17 @@ final class DetailCharacterPresenter {
     // MARK: - Properties
 
     weak var view: DetailCharacterViewInputProtocol?
-    var interactor: DetailCharacterInteractorInputProtocol?
+    weak var interactor: DetailCharacterInteractorInputProtocol?
+    var router: DetailCharacterRouterProtocol?
 
-    var characterData: Character?
+    var characterData = Character(
+        id: 2,
+        name: "Нет",
+        status: .alive,
+        species: .human,
+        gender: .male,
+        image: "https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+    )
 
 }
 
@@ -22,12 +30,29 @@ final class DetailCharacterPresenter {
 
 extension DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
 
-    func getCharacterInfo() -> Character? {
+    func getCharacter() -> Character? {
         characterData
     }
 
     func getCharacterName() -> String {
-        characterData?.name ?? "Name"
+         return characterData.name
+    }
+
+   func getCharacterInfo() -> [CharactInfo] {
+        return [
+            CharactInfo(
+                status: "\(characterData.statusColor)  Status",
+                info: characterData.status.rawValue
+            ),
+            CharactInfo(
+                status: "🧬  Gender",
+                info: characterData.gender.rawValue
+            ),
+            CharactInfo(
+                status: "👤  Species",
+                info: characterData.species.rawValue
+            ),
+        ]
     }
 
 }
@@ -35,15 +60,11 @@ extension DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
 // MARK: - DetailCharactertInteractorOutputProtocol
 
 extension DetailCharacterPresenter: DetailCharactertInteractorOutputProtocol {
-
+    
     func getCharacterDataSuccess(data: Character) {
         characterData = data
-        
     }
 
-
-
-    
 }
 
 
