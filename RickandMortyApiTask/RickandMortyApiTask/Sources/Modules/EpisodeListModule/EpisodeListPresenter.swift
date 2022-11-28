@@ -25,7 +25,7 @@ class EpisodeListPresenter: EpisodeListViewInputProtocol {
     }
 
     func didSelectItem(_ id: Int) {
-        router.pushToEpisodeListModule(id: id)
+        router.pushToEpisodeDetailModule(id: id)
     }
 
     func getEpisode() -> [Episode] {

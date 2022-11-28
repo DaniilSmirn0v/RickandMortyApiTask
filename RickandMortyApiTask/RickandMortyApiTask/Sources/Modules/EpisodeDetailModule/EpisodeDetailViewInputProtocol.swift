@@ -11,5 +11,4 @@ protocol EpisodeDetailViewInputProtocol {
     func getData() 
     func selectCell(id: Int)
     func getCharacters() -> [DetailCharacter]
-
 }

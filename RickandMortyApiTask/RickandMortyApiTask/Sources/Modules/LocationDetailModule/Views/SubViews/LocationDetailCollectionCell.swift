@@ -8,6 +8,15 @@
 import UIKit
 import SnapKit
 
+struct LocationDetailCellViewModel: ViewModel {
+    let locationImageView: String
+    let locationLabel: String
+}
+
+protocol LocationDetailCellConfigurable where Self: UICollectionViewCell {
+    func configure(with viewModel: ViewModel)
+}
+
 class LocationDetailCell: UICollectionViewCell {
     // MARK: - Properties
 
@@ -59,3 +68,21 @@ extension LocationDetailCell {
     }
 }
 
+extension LocationDetailCell: LocationDetailCellConfigurable {
+    func configure(with viewModel: ViewModel) {
+        guard let vm = viewModel as? LocationDetailCellViewModel else { return }
+        let imageString = vm.locationImageView
+        guard let imageUrl = URL(string: imageString) else { return }
+
+        locationImageView.kf.setImage(with: imageUrl) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let value):
+                self.locationImageView.image = value.image
+            case .failure(_):
+                self.locationImageView.image = UIImage(named: "notFoundBlack")
+            }
+        }
+        locationLabel.text = vm.locationLabel
+    }
+}

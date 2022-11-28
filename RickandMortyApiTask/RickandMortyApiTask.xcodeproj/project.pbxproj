@@ -74,6 +74,23 @@
 		A5ACE671292DDF6C0066DC72 /* EpisodeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE670292DDF6C0066DC72 /* EpisodeDetailCell.swift */; };
 		A5ACE676292DE6A50066DC72 /* EpisodeCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE675292DE6A50066DC72 /* EpisodeCustomCell.swift */; };
 		A5ACE678292DE6CC0066DC72 /* EpisodeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ACE677292DE6CC0066DC72 /* EpisodeTableView.swift */; };
+		A5AE4225293499C100D1361D /* LocationListModuleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE4224293499C100D1361D /* LocationListModuleProtocol.swift */; };
+		A5AE422729349A2900D1361D /* LocationListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE422629349A2900D1361D /* LocationListRouter.swift */; };
+		A5AE422929349FEA00D1361D /* LocationListInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE422829349FEA00D1361D /* LocationListInteractorOutputProtocol.swift */; };
+		A5AE422B2934A00900D1361D /* LocationListInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE422A2934A00900D1361D /* LocationListInteractorInputProtocol.swift */; };
+		A5AE422D2934A02000D1361D /* LocationListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE422C2934A02000D1361D /* LocationListInteractor.swift */; };
+		A5AE422F2934A0E300D1361D /* LocationListViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE422E2934A0E300D1361D /* LocationListViewInputProtocol.swift */; };
+		A5AE42312934A0F500D1361D /* LocationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE42302934A0F500D1361D /* LocationListPresenter.swift */; };
+		A5AE42332934B21B00D1361D /* Locations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE42322934B21B00D1361D /* Locations.swift */; };
+		A5AE42352934B69F00D1361D /* LocationListViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE42342934B69F00D1361D /* LocationListViewOutputProtocol.swift */; };
+		A5AE423B2934D5A900D1361D /* LocationDetailViewOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE423A2934D5A900D1361D /* LocationDetailViewOutputProtocol.swift */; };
+		A5AE423D2934D67400D1361D /* LocationDetailInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE423C2934D67400D1361D /* LocationDetailInteractorInputProtocol.swift */; };
+		A5AE423F2934D68400D1361D /* LocationDetailInteractorOutputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE423E2934D68400D1361D /* LocationDetailInteractorOutputProtocol.swift */; };
+		A5AE42412934D68F00D1361D /* LocationDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE42402934D68F00D1361D /* LocationDetailInteractor.swift */; };
+		A5AE42432934D9B000D1361D /* LocationDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE42422934D9B000D1361D /* LocationDetailPresenter.swift */; };
+		A5AE42452934D9CD00D1361D /* LocationDetailViewInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE42442934D9CD00D1361D /* LocationDetailViewInputProtocol.swift */; };
+		A5AE42472934DA7800D1361D /* LocationDetailRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE42462934DA7800D1361D /* LocationDetailRouterProtocol.swift */; };
+		A5AE42492934DAAB00D1361D /* LocationDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE42482934DAAB00D1361D /* LocationDetailRouter.swift */; };
 		A5B5564E29335F120075DFDC /* DetailCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B5564D29335F120075DFDC /* DetailCharacter.swift */; };
 		A5ED44942930FEC20065A0B0 /* Charact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED44932930FEC20065A0B0 /* Charact.swift */; };
 		A5F2E9402930AC2D001C171E /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E93F2930AC2D001C171E /* Episodes.swift */; };
@@ -150,6 +167,23 @@
 		A5ACE670292DDF6C0066DC72 /* EpisodeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailCell.swift; sourceTree = "<group>"; };
 		A5ACE675292DE6A50066DC72 /* EpisodeCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCustomCell.swift; sourceTree = "<group>"; };
 		A5ACE677292DE6CC0066DC72 /* EpisodeTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableView.swift; sourceTree = "<group>"; };
+		A5AE4224293499C100D1361D /* LocationListModuleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListModuleProtocol.swift; sourceTree = "<group>"; };
+		A5AE422629349A2900D1361D /* LocationListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListRouter.swift; sourceTree = "<group>"; };
+		A5AE422829349FEA00D1361D /* LocationListInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		A5AE422A2934A00900D1361D /* LocationListInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		A5AE422C2934A02000D1361D /* LocationListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListInteractor.swift; sourceTree = "<group>"; };
+		A5AE422E2934A0E300D1361D /* LocationListViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewInputProtocol.swift; sourceTree = "<group>"; };
+		A5AE42302934A0F500D1361D /* LocationListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListPresenter.swift; sourceTree = "<group>"; };
+		A5AE42322934B21B00D1361D /* Locations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Locations.swift; sourceTree = "<group>"; };
+		A5AE42342934B69F00D1361D /* LocationListViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListViewOutputProtocol.swift; sourceTree = "<group>"; };
+		A5AE423A2934D5A900D1361D /* LocationDetailViewOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewOutputProtocol.swift; sourceTree = "<group>"; };
+		A5AE423C2934D67400D1361D /* LocationDetailInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailInteractorInputProtocol.swift; sourceTree = "<group>"; };
+		A5AE423E2934D68400D1361D /* LocationDetailInteractorOutputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailInteractorOutputProtocol.swift; sourceTree = "<group>"; };
+		A5AE42402934D68F00D1361D /* LocationDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailInteractor.swift; sourceTree = "<group>"; };
+		A5AE42422934D9B000D1361D /* LocationDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailPresenter.swift; sourceTree = "<group>"; };
+		A5AE42442934D9CD00D1361D /* LocationDetailViewInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailViewInputProtocol.swift; sourceTree = "<group>"; };
+		A5AE42462934DA7800D1361D /* LocationDetailRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailRouterProtocol.swift; sourceTree = "<group>"; };
+		A5AE42482934DAAB00D1361D /* LocationDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailRouter.swift; sourceTree = "<group>"; };
 		A5B5564D29335F120075DFDC /* DetailCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacter.swift; sourceTree = "<group>"; };
 		A5ED44932930FEC20065A0B0 /* Charact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Charact.swift; path = RickandMortyApiTask/Charact.swift; sourceTree = SOURCE_ROOT; };
 		A5F2E93F2930AC2D001C171E /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
@@ -171,20 +205,20 @@
 		0448A982292F5748006F49DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0448A983292F5748006F49DD /* LocationDetailHeader.swift */,
-				0448A984292F5748006F49DD /* LocationDetailCollectionCell.swift */,
-				0448A985292F5748006F49DD /* LocationDetailView.swift */,
+				A5AE423A2934D5A900D1361D /* LocationDetailViewOutputProtocol.swift */,
+				0448A97E292F55BD006F49DD /* LocationDetailViewController.swift */,
+				A5AE42362934D44000D1361D /* SubViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		0448A989292F5752006F49DD /* Views */ = {
+		0448A989292F5752006F49DD /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
 				0448A98A292F5752006F49DD /* LocationListCell.swift */,
 				0448A98B292F5752006F49DD /* LocationListView.swift */,
 			);
-			path = Views;
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		0448A997292FAA2C006F49DD /* Assembler */ = {
@@ -229,6 +263,7 @@
 				A56DA0D2292F774E004F5AB3 /* Characterss.swift */,
 				A5F2E93F2930AC2D001C171E /* Episodes.swift */,
 				A5B5564D29335F120075DFDC /* DetailCharacter.swift */,
+				A5AE42322934B21B00D1361D /* Locations.swift */,
 			);
 			path = NetworkModels;
 			sourceTree = "<group>";
@@ -554,8 +589,10 @@
 		A5AA82FE292CCF3100B47692 /* LocationListModule */ = {
 			isa = PBXGroup;
 			children = (
-				A5AA8311292CEA1500B47692 /* LocationListViewController.swift */,
-				0448A989292F5752006F49DD /* Views */,
+				A5AE42232934993C00D1361D /* Router */,
+				A5AE42222934993300D1361D /* Interactor */,
+				A5AE42212934992800D1361D /* Presenter */,
+				A5AE42202934988B00D1361D /* Views */,
 			);
 			path = LocationListModule;
 			sourceTree = "<group>";
@@ -599,7 +636,9 @@
 			isa = PBXGroup;
 			children = (
 				0448A982292F5748006F49DD /* Views */,
-				0448A97E292F55BD006F49DD /* LocationDetailViewController.swift */,
+				A5AE42372934D46F00D1361D /* Interactor */,
+				A5AE42382934D47B00D1361D /* Presenter */,
+				A5AE42392934D48500D1361D /* Router */,
 			);
 			path = LocationDetailModule;
 			sourceTree = "<group>";
@@ -622,6 +661,82 @@
 				A56DA0DF2930A3C2004F5AB3 /* SubViews */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		A5AE42202934988B00D1361D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5AE42342934B69F00D1361D /* LocationListViewOutputProtocol.swift */,
+				A5AA8311292CEA1500B47692 /* LocationListViewController.swift */,
+				0448A989292F5752006F49DD /* Subviews */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A5AE42212934992800D1361D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A5AE422E2934A0E300D1361D /* LocationListViewInputProtocol.swift */,
+				A5AE42302934A0F500D1361D /* LocationListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A5AE42222934993300D1361D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A5AE422829349FEA00D1361D /* LocationListInteractorOutputProtocol.swift */,
+				A5AE422A2934A00900D1361D /* LocationListInteractorInputProtocol.swift */,
+				A5AE422C2934A02000D1361D /* LocationListInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A5AE42232934993C00D1361D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A5AE4224293499C100D1361D /* LocationListModuleProtocol.swift */,
+				A5AE422629349A2900D1361D /* LocationListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		A5AE42362934D44000D1361D /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				0448A983292F5748006F49DD /* LocationDetailHeader.swift */,
+				0448A984292F5748006F49DD /* LocationDetailCollectionCell.swift */,
+				0448A985292F5748006F49DD /* LocationDetailView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		A5AE42372934D46F00D1361D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				A5AE423C2934D67400D1361D /* LocationDetailInteractorInputProtocol.swift */,
+				A5AE423E2934D68400D1361D /* LocationDetailInteractorOutputProtocol.swift */,
+				A5AE42402934D68F00D1361D /* LocationDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A5AE42382934D47B00D1361D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A5AE42422934D9B000D1361D /* LocationDetailPresenter.swift */,
+				A5AE42442934D9CD00D1361D /* LocationDetailViewInputProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A5AE42392934D48500D1361D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A5AE42462934DA7800D1361D /* LocationDetailRouterProtocol.swift */,
+				A5AE42482934DAAB00D1361D /* LocationDetailRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -738,22 +853,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5AE42412934D68F00D1361D /* LocationDetailInteractor.swift in Sources */,
 				04A89CD929335DAB00B06410 /* TabBarController+Configure.swift in Sources */,
 				A5ACE676292DE6A50066DC72 /* EpisodeCustomCell.swift in Sources */,
 				A5031A14292E6DD20098551F /* UIView+Autolayout.swift in Sources */,
 				0448A988292F5748006F49DD /* LocationDetailView.swift in Sources */,
 				A5F2E9402930AC2D001C171E /* Episodes.swift in Sources */,
+				A5AE42492934DAAB00D1361D /* LocationDetailRouter.swift in Sources */,
 				A56DA0EF2930A6CF004F5AB3 /* EpisodeListInteractor.swift in Sources */,
 				A5031A05292E6B720098551F /* CharactersCollectionCell.swift in Sources */,
+				A5AE422D2934A02000D1361D /* LocationListInteractor.swift in Sources */,
 				0448A999292FAA44006F49DD /* AssemblerBuilder.swift in Sources */,
 				A5ACE669292DCA510066DC72 /* EpisodeDetailViewController.swift in Sources */,
+				A5AE422F2934A0E300D1361D /* LocationListViewInputProtocol.swift in Sources */,
 				A590E7912931180D00D65037 /* EpisodeDetailInteractor.swift in Sources */,
 				A56DA0D0292F723B004F5AB3 /* NetworkError.swift in Sources */,
 				A56DA0ED2930A6BF004F5AB3 /* EpisodeListInteractorOutputProtocol.swift in Sources */,
+				A5AE423B2934D5A900D1361D /* LocationDetailViewOutputProtocol.swift in Sources */,
 				0448A9B0292FC55B006F49DD /* CharactersListViewProtocols.swift in Sources */,
 				A590E7972931184300D65037 /* EpisodeDetailRouter.swift in Sources */,
 				A56DA0AA292E7178004F5AB3 /* DetailCharacterViewController.swift in Sources */,
 				0448A9AB292FB11E006F49DD /* BaseRouter.swift in Sources */,
+				A5AE42352934B69F00D1361D /* LocationListViewOutputProtocol.swift in Sources */,
+				A5AE42452934D9CD00D1361D /* LocationDetailViewInputProtocol.swift in Sources */,
 				A590E7952931183500D65037 /* EpisodeDetailRouterProtocol.swift in Sources */,
 				0448A987292F5748006F49DD /* LocationDetailCollectionCell.swift in Sources */,
 				A50319FD292E6A630098551F /* CharactersCollectionView.swift in Sources */,
@@ -765,6 +887,7 @@
 				0448A9B2292FD685006F49DD /* CharactersListRouterProtocol.swift in Sources */,
 				A590E7992931186E00D65037 /* EpisodeDetailViewOutputProtocol.swift in Sources */,
 				0448A9A1292FAE8E006F49DD /* DetailCharacterViewProtocols.swift in Sources */,
+				A5AE42432934D9B000D1361D /* LocationDetailPresenter.swift in Sources */,
 				0448A99F292FAE73006F49DD /* DetailCharacterPresenter.swift in Sources */,
 				A5AA8310292CE9E700B47692 /* EpisodeListViewController.swift in Sources */,
 				04A89CDF2933A03700B06410 /* DetailCharacterRouterProtocol.swift in Sources */,
@@ -778,33 +901,42 @@
 				A56DA0C9292F6F10004F5AB3 /* RickAndMortyRequestFactory.swift in Sources */,
 				A5ACE66D292DCCB90066DC72 /* EpisodeDetailHeaderView.swift in Sources */,
 				A5AA82E8292CCB9200B47692 /* CharactersListViewController.swift in Sources */,
+				A5AE422929349FEA00D1361D /* LocationListInteractorOutputProtocol.swift in Sources */,
 				A5ACE66F292DDE3D0066DC72 /* EpisodeDetailCollectionView.swift in Sources */,
 				A5AA8312292CEA1500B47692 /* LocationListViewController.swift in Sources */,
 				0448A98C292F5752006F49DD /* LocationListCell.swift in Sources */,
 				0448A97F292F55BD006F49DD /* LocationDetailViewController.swift in Sources */,
+				A5AE423D2934D67400D1361D /* LocationDetailInteractorInputProtocol.swift in Sources */,
 				A5ED44942930FEC20065A0B0 /* Charact.swift in Sources */,
+				A5AE42332934B21B00D1361D /* Locations.swift in Sources */,
 				A5031A0D292E6CC20098551F /* DetailCharactertCell.swift in Sources */,
 				A56DA0F12930A6E9004F5AB3 /* EpisodeListPresenter.swift in Sources */,
 				A590E7892931179D00D65037 /* EpisodeDetailViewInputProtocol.swift in Sources */,
 				04A89CDD2933A01E00B06410 /* DetailCharacterRouter.swift in Sources */,
 				A5ACE671292DDF6C0066DC72 /* EpisodeDetailCell.swift in Sources */,
 				A56DA0CE292F71C6004F5AB3 /* DefaultNetworkClient.swift in Sources */,
+				A5AE422B2934A00900D1361D /* LocationListInteractorInputProtocol.swift in Sources */,
 				A5B5564E29335F120075DFDC /* DetailCharacter.swift in Sources */,
+				A5AE4225293499C100D1361D /* LocationListModuleProtocol.swift in Sources */,
 				04A89CE52933D7B000B06410 /* DetailTableCell.swift in Sources */,
 				A56DA0DA292FA1DF004F5AB3 /* CharactersListInteractor.swift in Sources */,
+				A5AE42312934A0F500D1361D /* LocationListPresenter.swift in Sources */,
 				A56DA0AB292E717B004F5AB3 /* DetailCharactertView.swift in Sources */,
 				A5AA82E4292CCB9200B47692 /* AppDelegate.swift in Sources */,
+				A5AE423F2934D68400D1361D /* LocationDetailInteractorOutputProtocol.swift in Sources */,
 				A590E78D293117D800D65037 /* EpisodeDetailInteractorOutputProtocol.swift in Sources */,
 				A5031A12292E6DD20098551F /* UIImageView+Configure.swift in Sources */,
 				A56DA0CC292F7190004F5AB3 /* NetworkClient.swift in Sources */,
 				04A89CDB293369C900B06410 /* UIImageView+Loading.swift in Sources */,
 				A56DA0E92930A4E1004F5AB3 /* EpisodeListRouter.swift in Sources */,
 				A56DA0DD292FA23D004F5AB3 /* CharactersListRouter.swift in Sources */,
+				A5AE42472934DA7800D1361D /* LocationDetailRouterProtocol.swift in Sources */,
 				0448A986292F5748006F49DD /* LocationDetailHeader.swift in Sources */,
 				A56DA0E72930A4CF004F5AB3 /* EpisodeListRouterProtocol.swift in Sources */,
 				0448A9A5292FAF8B006F49DD /* DetailCharacterInteractor.swift in Sources */,
 				A56DA0D3292F774E004F5AB3 /* Characterss.swift in Sources */,
 				A56DA0F32930A726004F5AB3 /* EpisodeListViewInputProtocol.swift in Sources */,
+				A5AE422729349A2900D1361D /* LocationListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

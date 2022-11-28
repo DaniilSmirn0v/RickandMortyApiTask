@@ -104,7 +104,7 @@ extension DetailCharactertViewController {
 
                 let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
 
-                let model = self.tableViewModelCell[indexPath.row]
+                let model = self.tableViewModelCell[indexPath.item]
 
                 cell.configureCell(with: model)
                 cell.detailTextLabel?.textColor = .systemOrange

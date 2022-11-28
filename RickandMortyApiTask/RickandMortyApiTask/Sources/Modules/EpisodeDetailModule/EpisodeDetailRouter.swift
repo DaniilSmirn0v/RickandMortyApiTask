@@ -9,7 +9,7 @@ import UIKit
 
 class EpisodeDetailRouter: BaseRouter, EpisodeDetailRouterProtocol {
 
-    func pushToEpisodeDetail(_ id: Int) {
+    func pushToCharacterDetail(_ id: Int) {
         guard let detailCharacterViewController = assemblyBuilder?.configureDetailCharactertModule(id) else { return }
         viewController?.navigationController?.present(detailCharacterViewController, animated: true)
     }
