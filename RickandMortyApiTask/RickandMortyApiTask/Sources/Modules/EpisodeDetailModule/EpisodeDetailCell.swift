@@ -80,17 +80,7 @@ extension EpisodeDetailCell: EpisodeCellConfigurable {
     func configure(with viewModel: ViewModel) {
         guard let vm = viewModel as? EpisodeDetailCellViewModel  else { return }
         let imageString = vm.characterImageView
-        guard let imageUrl = URL(string: imageString) else { return }
-
-         characterImageView.kf.setImage(with: imageUrl) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let value):
-                self.characterImageView.image = value.image
-            case .failure(_):
-                self.characterImageView.image = UIImage(named: "notFoundBlack")
-            }
-        }
+        characterImageView.loadImage(with: imageString)
         characterNameLabel.text = vm.characterNameLabel
     }
 }

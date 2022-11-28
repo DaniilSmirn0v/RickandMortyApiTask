@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let tabBarController = UITabBarController()
             .setup(assembly: assembly)
+        tabBarController.tabBar.tintColor = .systemOrange
         
         window?.overrideUserInterfaceStyle = .dark
         window?.rootViewController = tabBarController

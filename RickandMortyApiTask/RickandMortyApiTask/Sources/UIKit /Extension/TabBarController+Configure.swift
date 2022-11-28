@@ -35,7 +35,9 @@ extension UITabBarController {
         navLocationListViewController.navigationBar.isTranslucent = false
         navLocationListViewController.navigationBar.tintColor = .systemOrange
 
-       self.viewControllers = [navCharactersViewController, navLocationListViewController, navEpisodeListViewController]
+       self.viewControllers = [navCharactersViewController,
+            navLocationListViewController,
+            navEpisodeListViewController]
 
         return self
     }

@@ -12,23 +12,28 @@ final class DetailCharacterPresenter {
 
     // MARK: - Properties
 
-    weak var view: DetailCharacterViewInputProtocol?
-    weak var interactor: DetailCharacterInteractorInputProtocol?
+    var view: DetailCharacterViewInputProtocol?
+    var interactor: DetailCharacterInteractorInputProtocol?
     var router: DetailCharacterRouterProtocol?
 
     var characterData: Character?
+    private var id: Int
 
+    // MARK: - Initialize
 
+    init(id: Int) {
+        self.id = id
+    }
 }
 
 // MARK: - DetailCharacterViewOutputProtocol
 
 extension DetailCharacterPresenter: DetailCharacterViewOutputProtocol {
-
-    func getCharacter() -> Character? {
-        characterData
+    
+    func getData() {
+        interactor?.getCharactersModel(id: id)
     }
-
+    
 }
 
 // MARK: - DetailCharactertInteractorOutputProtocol

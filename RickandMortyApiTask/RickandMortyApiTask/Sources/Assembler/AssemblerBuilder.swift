@@ -39,8 +39,8 @@ class AssemblerBuilder: AssemblyBuilderProtocol {
         let network = DefaultNetworkClient()
         let view = DetailCharactertViewController()
         let router = DetailCharacterRouter(viewController: view, assemblyBuilder: self)
-        let interactor = DetailCharacterInteractor(network: network, id: id)
-        let presenter = DetailCharacterPresenter()
+        let interactor = DetailCharacterInteractor(network: network)
+        let presenter = DetailCharacterPresenter(id: id)
         view.presenter = presenter
         presenter.router = router
         presenter.view = view

@@ -12,7 +12,9 @@ final class CharactersListRouter: BaseRouter, CharactersListRouterProtocol {
     
     func openDetailCharactertVC(_ id: Int) {
         guard let detailCharactertVC = assemblyBuilder?.configureDetailCharactertModule(id) else { return }
-        viewController?.navigationController?.present(detailCharactertVC, animated: true)
+        viewController?.navigationController?.pushViewController(detailCharactertVC, animated: true)
+
+
     }
     
 }

@@ -9,6 +9,7 @@ import Foundation
 
 protocol DetailCharacterInteractorInputProtocol: AnyObject {
     var presenter: DetailCharactertInteractorOutputProtocol? { get set }
+    func getCharactersModel(id: Int)
 }
 
 protocol DetailCharactertInteractorOutputProtocol {

@@ -13,6 +13,7 @@ final class CharactersListInteractor: CharactersListInteractorInputProtocol {
     var presenter: CharactersListInteractorOutputProtocol?
     private var charactersModel: Characterss?
     private let network: DefaultNetworkClient
+    private var isLoadingPage = false
 
     // MARK: - Initialize
 

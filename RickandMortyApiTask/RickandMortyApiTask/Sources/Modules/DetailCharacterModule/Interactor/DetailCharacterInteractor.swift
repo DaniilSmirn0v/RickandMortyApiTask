@@ -11,16 +11,12 @@ final class DetailCharacterInteractor: DetailCharacterInteractorInputProtocol {
     // MARK: - Properties
     
     var presenter: DetailCharactertInteractorOutputProtocol?
-    private let id: Int
     private let network: DefaultNetworkClient
     
     // MARK: - Initializate
     
-    init(network: DefaultNetworkClient,
-         id: Int) {
+    init(network: DefaultNetworkClient) {
         self.network = network
-        self.id = id
-        getCharactersModel(id: id)
     }
     
     // MARK: - Methods

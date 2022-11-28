@@ -11,8 +11,7 @@ protocol DetailCharacterViewOutputProtocol {
     var view: DetailCharacterViewInputProtocol? { get set }
     var interactor: DetailCharacterInteractorInputProtocol? { get set }
     var router: DetailCharacterRouterProtocol? { get set }
-  
-    func getCharacter() -> Character?
+    func getData()
 }
 
 protocol DetailCharacterViewInputProtocol: AnyObject  {

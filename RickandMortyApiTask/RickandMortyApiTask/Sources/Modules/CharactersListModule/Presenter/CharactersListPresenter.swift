@@ -12,7 +12,7 @@ final class CharactersListPresenter {
     // MARK: - Properties
 
     var interactor: CharactersListInteractorInputProtocol?
-    weak var view: CharactersListViewInputProtocol?
+    var view: CharactersListViewInputProtocol?
     var router: CharactersListRouterProtocol?
 
     private var charactersData = [Character]()
