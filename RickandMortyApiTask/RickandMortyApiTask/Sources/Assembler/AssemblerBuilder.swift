@@ -13,6 +13,8 @@ protocol AssemblyBuilderProtocol {
     func configureDetailCharactertModule(_ id: Int) -> UIViewController
     func configureEpisodeListModule() -> UIViewController
     func configureEpisodeDetailModule(_ id: Int) -> UIViewController
+    func configureLocationListModule() -> UIViewController
+    func configureLocationDetailModule(_ id: Int) -> UIViewController
 }
 
 // MARK: - AssemblyBuilder
@@ -75,7 +77,32 @@ class AssemblerBuilder: AssemblyBuilderProtocol {
         return view
     }
 
+    func configureLocationListModule() -> UIViewController {
+        let networkService = DefaultNetworkClient()
+        let interactor = LocationListInteractor(networkService: networkService)
+        let view = LocationListViewController()
+        let router = LocationListRouter(viewController: view, assemblyBuilder: self)
+        let presenter = LocationListPresenter(interactor: interactor, router: router)
+        view.presenter = presenter
+        presenter.router = router
+        presenter.view = view
+        interactor.presenter = presenter
 
+        return view
+    }
 
+    func configureLocationDetailModule(_ id: Int) -> UIViewController {
+        let networkService = DefaultNetworkClient()
+        let interactor = LocationDetailInteractor(networkService: networkService, id: id)
+        let view = LocationDetailViewController()
+        let router = LocationDetailRouter(viewController: view, assemblyBuilder: self)
+        let presenter = LocationDetailPresenter(interactor: interactor, router: router)
+        view.presenter = presenter
+        presenter.router = router
+        presenter.view = view
+        interactor.presenter = presenter
+
+        return view
+    }
 }
 

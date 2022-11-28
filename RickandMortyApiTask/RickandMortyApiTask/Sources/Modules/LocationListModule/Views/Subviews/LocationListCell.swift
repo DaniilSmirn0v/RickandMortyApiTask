@@ -8,6 +8,16 @@
 import UIKit
 import SnapKit
 
+
+struct LocationListCellViewModel: ViewModel {
+    let locationImageView: String
+    let locationNameLabel: String
+}
+
+protocol LocationListCellConfigurable where Self: UICollectionViewCell {
+    func configure(with viewModel: ViewModel)
+}
+
 class LocationListCell: UICollectionViewCell {
     // MARK: - Properties
 
@@ -57,3 +67,14 @@ extension LocationListCell {
         }
     }
 }
+
+extension LocationListCell: LocationListCellConfigurable {
+    func configure(with viewModel: ViewModel) {
+        guard let vm = viewModel as? LocationListCellViewModel else { return }
+
+        let image = vm.locationNameLabel
+        locationImageView.image = UIImage(named: image)
+        locationNameLabel.text = vm.locationNameLabel
+    }
+}
+

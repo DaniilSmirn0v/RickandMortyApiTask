@@ -27,7 +27,7 @@ extension UITabBarController {
         navEpisodeListViewController.navigationBar.isTranslucent = false
         navEpisodeListViewController.navigationBar.tintColor = .systemOrange
 
-        let locationListViewController = LocationListViewController()
+        let locationListViewController = assembly.configureLocationListModule()
         locationListViewController.tabBarItem.image = UIImage(systemName: "map.fill")
         locationListViewController.tabBarItem.title = "Locations"
         let navLocationListViewController = UINavigationController(rootViewController: locationListViewController)

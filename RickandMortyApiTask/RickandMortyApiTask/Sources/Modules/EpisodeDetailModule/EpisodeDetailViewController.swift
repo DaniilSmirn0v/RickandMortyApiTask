@@ -54,7 +54,7 @@ extension EpisodeDetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let characters = presenter?.getCharacters() else { return }
         let id = characters[indexPath.row].id
-        presenter?.selectCell(id: id)
+        selectCell(id: id)
     }
 }
 

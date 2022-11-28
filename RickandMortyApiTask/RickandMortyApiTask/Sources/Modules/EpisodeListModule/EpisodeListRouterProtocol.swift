@@ -8,5 +8,5 @@
 import Foundation
 
 protocol EpisodeListRouterProtocol {
-    func pushToEpisodeListModule(id: Int)
+    func pushToEpisodeDetailModule(id: Int)
 }

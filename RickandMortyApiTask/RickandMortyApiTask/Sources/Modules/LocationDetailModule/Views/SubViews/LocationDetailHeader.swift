@@ -8,6 +8,15 @@
 import UIKit
 import SnapKit
 
+struct LocationDetailHeaderViewModel: ViewModel {
+    let episodeNameLabel: String
+    let episodeDateLabel: String
+}
+
+protocol LocationDetailHeaderViewConfigurable where Self: UICollectionReusableView {
+    func configure(with viewModel: ViewModel)
+}
+
 class LocationDetailHeader: UICollectionReusableView {
     // MARK: - Properties
 
@@ -86,5 +95,15 @@ class LocationDetailHeader: UICollectionReusableView {
             make.left.right.equalToSuperview().inset(0)
             make.top.equalTo(lineSeparators.snp.bottom).offset(8)
         }
+    }
+}
+
+extension LocationDetailHeader: LocationDetailHeaderViewConfigurable {
+    func configure(with viewModel: ViewModel) {
+        guard let vm = viewModel as? LocationDetailHeaderViewModel else { return }
+        let image = vm.episodeNameLabel
+        charactertImage.image = UIImage(named: image)
+        title.text = vm.episodeNameLabel
+        title1.text = vm.episodeDateLabel
     }
 }

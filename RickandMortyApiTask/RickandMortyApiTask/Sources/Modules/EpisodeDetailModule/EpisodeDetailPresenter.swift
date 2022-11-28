@@ -25,7 +25,7 @@ class EpisodeDetailPresenter: EpisodeDetailViewInputProtocol {
     }
 
     func selectCell(id: Int) {
-        router.pushToEpisodeDetail(id)
+        router.pushToCharacterDetail(id)
     }
     
     func getCharacters() -> [DetailCharacter] {
