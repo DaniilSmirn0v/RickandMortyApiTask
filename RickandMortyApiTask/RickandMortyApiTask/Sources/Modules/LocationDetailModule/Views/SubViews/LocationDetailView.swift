@@ -40,7 +40,7 @@ extension LocationDetailView {
 
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(500))
+            heightDimension: .absolute(560))
 
         let headerElement = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -59,7 +59,7 @@ extension LocationDetailView {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
 
         item.contentInsets = NSDirectionalEdgeInsets(
-            top: 4,
+            top: 10,
             leading: .zero,
             bottom: 4,
             trailing: .zero)
@@ -90,7 +90,7 @@ extension LocationDetailView {
     private func setupLayout() {
         collectionView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.right.equalTo(safeAreaLayoutGuide).inset(8)
+            make.left.right.equalTo(safeAreaLayoutGuide)
         }
     }
 }

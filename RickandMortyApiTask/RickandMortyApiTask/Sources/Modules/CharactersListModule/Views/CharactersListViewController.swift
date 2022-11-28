@@ -11,7 +11,7 @@ import Kingfisher
 final class CharactersListViewController: UIViewController {
     // MARK: - Properties
 
-    var presenter: CharactersListViewOutputProtocol?
+    var presenter: CharactersListPresenterInputProtocol?
 
     private var charactersView: CharactersCollectionView? {
         guard isViewLoaded else { return nil }
@@ -72,7 +72,7 @@ extension CharactersListViewController: UICollectionViewDelegate {
 
 // MARK: - CharactersListViewInputProtocol
 
-extension CharactersListViewController: CharactersListViewInputProtocol {
+extension CharactersListViewController: CharactersListPresenterOutputProtocol {
 
     func tapItem(_ id: Int) {
         presenter?.didSelectItem(id)

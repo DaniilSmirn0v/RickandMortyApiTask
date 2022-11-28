@@ -17,32 +17,64 @@ protocol LocationDetailHeaderViewConfigurable where Self: UICollectionReusableVi
     func configure(with viewModel: ViewModel)
 }
 
-class LocationDetailHeader: UICollectionReusableView {
+final class LocationDetailHeader: UICollectionReusableView {
     // MARK: - Properties
 
-    lazy var charactertImage = UIImageView().setup().setupAutoLayout()
+    static let reuseId = "LocationDetailHeader"
 
-    var title = UILabel().setup(textAlignment: .left,
-                                font: 20,
-                                color: .white).setupAutoLayout()
+    lazy var charactertImage = UIImageView()
+        .setup()
+        .setupAutoLayout()
 
-    var title1 = UILabel().setup(textAlignment: .left,
-                                font: 20,
-                                color: .white).setupAutoLayout()
+    lazy var typeInfo = UILabel()
+        .setup(textAlignment: .left,
+               font: 20,
+               color: .systemOrange)
+        .setupAutoLayout()
 
-    lazy var lineSeparators: UIView = {
+    lazy var dimensionInfo = UILabel()
+        .setup(textAlignment: .left,
+               font: 20,
+               color: .systemOrange)
+        .setupAutoLayout()
+
+    private lazy var locationInfoLabel = UILabel()
+        .setup(textAlignment: .left,
+               font: 30,
+               fontWeight: .bold,
+               text: "Location",
+               color: .white)
+        .setupAutoLayout()
+
+    private lazy var type = UILabel()
+        .setup(textAlignment: .left,
+               font: 18,
+               fontWeight: .semibold,
+               text: "🪐 Type:",
+               color: .white)
+        .setupAutoLayout()
+
+    private lazy var dimension = UILabel()
+        .setup(textAlignment: .left,
+               font: 18,
+               fontWeight: .semibold,
+               text: "✨ Dimension:",
+               color: .white)
+        .setupAutoLayout()
+
+    private lazy var residentInfoLabel = UILabel()
+        .setup(textAlignment: .left,
+               font: 30,
+               fontWeight: .bold,
+               text: "Resident in This Location",
+               color: .white)
+        .setupAutoLayout()
+
+    private lazy var lineSeparators: UIView = {
         let line = UIView()
         line.backgroundColor = .systemOrange
         return line
     }()
-
-    var residentInfoLabel = UILabel().setup(textAlignment: .left,
-                                font: 30,
-                                fontWeight: .bold,
-                                text: "Resident in This Location",
-                                color: .white).setupAutoLayout()
-
-    static let reuseId = "LocationDetailHeader"
 
     // MARK: - Initialization
 
@@ -58,39 +90,57 @@ class LocationDetailHeader: UICollectionReusableView {
 
     // MARK: - Private
     private func  setupHierarchy() {
-        [charactertImage,
-         title,
-         title1,
+        [locationInfoLabel,
+         charactertImage,
+         type,
+         dimension,
+         typeInfo,
+         dimensionInfo,
          lineSeparators,
          residentInfoLabel,
         ].forEach { addSubview($0) }
     }
 
     private func setupLayout() {
+        locationInfoLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(10)
+            make.top.equalToSuperview()
+        }
+
         charactertImage.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(0)
-            make.top.equalToSuperview()
+            make.top.equalTo(locationInfoLabel.snp.bottom).offset(8)
             make.height.equalTo(charactertImage.snp.width)
         }
 
-        title.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(0)
+        type.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(10)
             make.top.equalTo(charactertImage.snp.bottom).offset(8)
         }
 
-        title1.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(0)
-            make.top.equalTo(title.snp.bottom).offset(8)
+        typeInfo.snp.makeConstraints { make in
+            make.left.equalTo(type.snp.right).offset(10)
+            make.top.equalTo(charactertImage.snp.bottom).offset(8)
+        }
+
+        dimension.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(10)
+            make.top.equalTo(typeInfo.snp.bottom).offset(8)
+        }
+
+        dimensionInfo.snp.makeConstraints { make in
+            make.left.equalTo(dimension.snp.right).offset(10)
+            make.top.equalTo(typeInfo.snp.bottom).offset(8)
         }
 
         lineSeparators.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(0)
-            make.top.equalTo(title1.snp.bottom).offset(8)
+            make.top.equalTo(dimensionInfo.snp.bottom).offset(8)
             make.height.equalTo(1)
         }
 
         residentInfoLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(0)
+            make.left.equalToSuperview().inset(10)
             make.top.equalTo(lineSeparators.snp.bottom).offset(8)
         }
     }
@@ -101,7 +151,7 @@ extension LocationDetailHeader: LocationDetailHeaderViewConfigurable {
         guard let vm = viewModel as? LocationDetailHeaderViewModel else { return }
         let image = vm.episodeNameLabel
         charactertImage.image = UIImage(named: image)
-        title.text =  " \(vm.episodeNameLabel)"
-        title1.text = vm.episodeDateLabel
+        typeInfo.text =  " \(vm.episodeNameLabel)"
+        dimensionInfo.text = vm.episodeDateLabel
     }
 }

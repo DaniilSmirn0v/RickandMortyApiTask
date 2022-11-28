@@ -53,7 +53,8 @@ final class DetailCharactertCell: UITableViewCell {
 extension DetailCharactertCell: DetailCharactertCellConfigurable {
     
     func configure(with viewModel: ViewModel) {
-        guard let vm = viewModel as? DetailCharactertCellViewModel else { return }
+        guard let vm = viewModel as? DetailCharactertCellViewModel else {
+            return }
         let imageString = vm.charactertImage
         charactertImage.loadImage(with: imageString)
     }

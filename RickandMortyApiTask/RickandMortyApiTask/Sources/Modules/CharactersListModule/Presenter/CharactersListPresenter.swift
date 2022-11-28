@@ -12,16 +12,14 @@ final class CharactersListPresenter {
     // MARK: - Properties
 
     var interactor: CharactersListInteractorInputProtocol?
-    var view: CharactersListViewInputProtocol?
+    var view: CharactersListPresenterOutputProtocol?
     var router: CharactersListRouterProtocol?
-
     private var charactersData = [Character]()
-
 }
 
 // MARK: - CharactersListViewOutputProtocol
 
-extension CharactersListPresenter: CharactersListViewOutputProtocol {
+extension CharactersListPresenter: CharactersListPresenterInputProtocol {
 
     func getCharacters() -> [Character] {
         charactersData

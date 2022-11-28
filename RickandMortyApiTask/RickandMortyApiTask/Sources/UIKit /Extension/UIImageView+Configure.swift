@@ -12,7 +12,7 @@ extension UIImageView {
     func setup(cornerRadius: CGFloat = 12) -> UIImageView {
         self.layer.cornerRadius = cornerRadius
         self.clipsToBounds = true
-        self.backgroundColor = .systemOrange
+//        self.backgroundColor = .black
         return self
     }
 }

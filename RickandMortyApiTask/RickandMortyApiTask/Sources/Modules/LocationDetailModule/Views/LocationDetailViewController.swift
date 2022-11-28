@@ -7,9 +7,10 @@
 
 import UIKit
 
-class LocationDetailViewController: UIViewController {
-
+final class LocationDetailViewController: UIViewController {
     // MARK: - Properties
+
+    var presenter: LocationDetailViewInputProtocol?
 
     private var locationDetailView: LocationDetailView? {
         guard isViewLoaded else { return nil }
@@ -18,9 +19,6 @@ class LocationDetailViewController: UIViewController {
 
     private var cellViewModel: [ViewModel] = []
     private var headerViewModel: ViewModel?
-    var presenter: LocationDetailViewInputProtocol?
-
-   
 
     // MARK: - Life Cycle
 
@@ -33,7 +31,6 @@ class LocationDetailViewController: UIViewController {
         presenter?.getData()
         locationDetailView?.collectionView.delegate = self
         locationDetailView?.collectionView.dataSource = self
-        title = "Characters"
     }
 }
 
@@ -41,8 +38,9 @@ class LocationDetailViewController: UIViewController {
 
 extension LocationDetailViewController: LocationDetailViewOutputProtocol {
     func configure(with viewModelsCell: [ViewModel], viewModelHeader: ViewModel, data: LocationData) {
-        Task {@MainActor in
+        Task { @MainActor in
             title = "Location - \(data.name)"
+            navigationController?.navigationBar.prefersLargeTitles = false
             cellViewModel = viewModelsCell
             headerViewModel = viewModelHeader
             locationDetailView?.collectionView.reloadData()
@@ -52,8 +50,6 @@ extension LocationDetailViewController: LocationDetailViewOutputProtocol {
     func selectCell(id: Int) {
         presenter?.selectCell(id: id)
     }
-
-
 }
 
 // MARK: - UICollectionViewDataSource

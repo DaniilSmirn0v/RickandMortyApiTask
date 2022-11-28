@@ -27,7 +27,6 @@ class EpisodeDetailCell: UICollectionViewCell {
         imageView.layer.cornerRadius = 13
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
-        imageView.backgroundColor = .systemOrange
         return imageView
     }()
 
@@ -38,7 +37,6 @@ class EpisodeDetailCell: UICollectionViewCell {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.text = "Тут будет какое то описание контента, если он подгрузится"
         label.backgroundColor = .black.withAlphaComponent(0.5)
         return label
     }()

@@ -37,6 +37,7 @@ extension EpisodeDetailViewController: EpisodeDetailViewOutputProtocol {
     func configure(with viewModelsCell: [ViewModel], viewModelHeader: ViewModel, data: Episode) {
         Task {@MainActor in
             title = "Episode - \(data.name)"
+            navigationController?.navigationBar.prefersLargeTitles = false
             cellViewModel = viewModelsCell
             headerViewModel = viewModelHeader
             episodeDetailCollectionView?.collectionView.reloadData()

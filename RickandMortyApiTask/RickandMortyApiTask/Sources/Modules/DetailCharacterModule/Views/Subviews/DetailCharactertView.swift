@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class DetailCharactertView: UIView {
+final class DetailCharactertView: UIView {
     // MARK: - Properties
 
     lazy var tableView: UITableView = {
@@ -16,6 +16,7 @@ class DetailCharactertView: UIView {
         tableView.register(DetailCharactertCell.self, forCellReuseIdentifier: DetailCharactertCell.reuseID)
         tableView.register(DetailCharactertHeader.self, forHeaderFooterViewReuseIdentifier: DetailCharactertHeader.reuseId)
         tableView.backgroundColor = .black
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }().setupAutoLayout()
 
@@ -37,7 +38,7 @@ class DetailCharactertView: UIView {
 
     // MARK: - Private
 
-    func setupTableView() {
+    private func setupTableView() {
         addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.top.right.left.bottom.equalToSuperview()

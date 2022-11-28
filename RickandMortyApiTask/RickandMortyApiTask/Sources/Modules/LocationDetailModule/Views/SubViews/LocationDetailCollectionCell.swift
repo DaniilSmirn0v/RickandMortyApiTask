@@ -26,11 +26,10 @@ class LocationDetailCell: UICollectionViewCell {
 
     var locationImageView = UIImageView().setup(cornerRadius: 13)
 
-    lazy var locationLabel = UILabel().setup(
-        font:  17,
-        text: "Привет как дела что нового илии не нового новейшего",
-        backgroundColor: .black.withAlphaComponent(0.5)
-    ).setupAutoLayout()
+    lazy var locationLabel = UILabel()
+        .setup(font:  17,
+               backgroundColor: .black.withAlphaComponent(0.5))
+        .setupAutoLayout()
 
     // MARK: - Initialization
     
@@ -50,8 +49,10 @@ class LocationDetailCell: UICollectionViewCell {
 extension LocationDetailCell {
 
     private func setupHierarchy() {
-        [locationImageView,
-         locationLabel].forEach { addSubview($0) }
+        [
+            locationImageView,
+            locationLabel
+        ].forEach { addSubview($0) }
     }
 
     private func setupLayout() {
@@ -68,21 +69,14 @@ extension LocationDetailCell {
     }
 }
 
+// MARK: - LocationDetailCellConfigurable
+
 extension LocationDetailCell: LocationDetailCellConfigurable {
+
     func configure(with viewModel: ViewModel) {
         guard let vm = viewModel as? LocationDetailCellViewModel else { return }
         let imageString = vm.locationImageView
-        guard let imageUrl = URL(string: imageString) else { return }
-
-        locationImageView.kf.setImage(with: imageUrl) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success(let value):
-                self.locationImageView.image = value.image
-            case .failure(_):
-                self.locationImageView.image = UIImage(named: "notFoundBlack")
-            }
-        }
+        locationImageView.loadImage(with: imageString)
         locationLabel.text = vm.locationLabel
     }
 }

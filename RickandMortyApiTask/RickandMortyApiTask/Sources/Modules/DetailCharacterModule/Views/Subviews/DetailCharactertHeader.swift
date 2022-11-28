@@ -8,17 +8,23 @@
 import UIKit
 import SnapKit
 
-class DetailCharactertHeader: UITableViewHeaderFooterView {
+final class DetailCharactertHeader: UITableViewHeaderFooterView {
     // MARK: - Properties
 
-    var title = UILabel().setup(
+    static let reuseId = "DetailCharactertHeader"
+
+    lazy var title = UILabel().setup(
         textAlignment: .left,
         font: 20,
         fontWeight: .regular,
         color: .orange
     ).setupAutoLayout()
 
-    static let reuseId = "DetailCharactertHeader"
+    lazy var lineSeparators: UIView = {
+        let line = UIView()
+        line.backgroundColor = .systemOrange
+        return line
+    }()
 
     // MARK: - Initialization
 
@@ -34,10 +40,19 @@ class DetailCharactertHeader: UITableViewHeaderFooterView {
     // MARK: - Private
 
     private func configure() {
-        addSubview(title)
+        [title,
+         lineSeparators,
+        ].forEach{ addSubview($0) }
+
+        lineSeparators.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(20)
+            make.height.equalTo(1)
+        }
+
         title.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(20)
             make.top.bottom.equalToSuperview().inset(12)
         }
+
     }
 }

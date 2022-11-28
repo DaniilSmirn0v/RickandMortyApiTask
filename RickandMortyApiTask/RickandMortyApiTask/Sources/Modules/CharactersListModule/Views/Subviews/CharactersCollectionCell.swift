@@ -92,13 +92,7 @@ extension CharactersCollectionCell: CharactersCellConfigurable {
 
 }
 
-extension ViewModel {
 
-    func giveId() -> Int? {
-        guard let vm = self as? CharactersCellViewModel else { return nil }
-        return vm.id
-    }
-}
 
 
 

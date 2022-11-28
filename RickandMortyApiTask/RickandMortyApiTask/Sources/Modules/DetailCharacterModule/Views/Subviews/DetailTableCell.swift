@@ -13,7 +13,7 @@ struct DetailTableCellViewModel: ViewModel {
 }
 
 extension UITableViewCell {
-
+    
     func configureCell(with viewModel: ViewModel) {
         guard let vm = viewModel as? DetailTableCellViewModel else { return }
         textLabel?.text = vm.textInfo

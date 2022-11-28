@@ -18,17 +18,11 @@ protocol EpisodeDetailHeaderViewConfigurable where Self: UICollectionReusableVie
 }
 
 class EpisodeDetailHeaderView: UICollectionReusableView {
-    //MARK: - Properties
+    // MARK: - Properties
+
     static let reuseId = "EpisodeDetailHeaderView"
 
-    //MARK: - Views
-    private lazy var episodeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
-        label.text = "📺 Episode:"
-        return label
-    }()
+    // MARK: - Views
 
     lazy var episodeNameLabel: UILabel = {
         let label = UILabel()
@@ -36,15 +30,6 @@ class EpisodeDetailHeaderView: UICollectionReusableView {
         label.text = "S01E01"
         label.textColor = .systemOrange
         label.font = .systemFont(ofSize: 18, weight: .medium)
-        return label
-    }()
-
-    private lazy var airDateLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 18, weight: .semibold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "📅 Air date:"
         return label
     }()
 
@@ -65,7 +50,33 @@ class EpisodeDetailHeaderView: UICollectionReusableView {
         return label
     }()
 
-    //MARK: - Initialize
+    private lazy var episodeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
+        label.text = "📺 Episode:"
+        return label
+    }()
+
+    private lazy var airDateLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "📅 Air date:"
+        return label
+    }()
+
+    private lazy var episodeInfoLabel = UILabel()
+        .setup(textAlignment: .left,
+               font: 30,
+               fontWeight: .bold,
+               text: "Episode",
+               color: .white)
+        .setupAutoLayout()
+
+    // MARK: - Initialize
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupHierarchy()
@@ -84,6 +95,7 @@ class EpisodeDetailHeaderView: UICollectionReusableView {
 extension EpisodeDetailHeaderView {
     private func setupHierarchy(){
         [
+            episodeInfoLabel,
             episodeLabel,
             airDateLabel,
             episodeNameLabel,
@@ -93,9 +105,14 @@ extension EpisodeDetailHeaderView {
     }
 
     private func setupLayout() {
+        episodeInfoLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(10)
+            make.top.equalToSuperview()
+        }
+
         episodeLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(10)
-            make.top.equalToSuperview().offset(10)
+            make.top.equalTo(episodeInfoLabel.snp.bottom).offset(10)
         }
 
         episodeNameLabel.snp.makeConstraints { make in

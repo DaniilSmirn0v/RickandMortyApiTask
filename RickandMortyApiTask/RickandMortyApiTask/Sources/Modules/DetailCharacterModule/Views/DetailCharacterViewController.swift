@@ -137,8 +137,10 @@ extension DetailCharactertViewController: UITableViewDelegate {
         switch tableSection {
         case .image:
             cell?.title.text = StringsConstants.titleInfo
+            cell?.lineSeparators.isHidden = true
         case .info:
             cell?.title.text = StringsConstants.titleAppearence
+            cell?.lineSeparators.isHidden = false
         case .none:
             fatalError(StringsConstants.fatalError)
         }

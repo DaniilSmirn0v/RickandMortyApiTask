@@ -19,7 +19,7 @@
 		0448A9A1292FAE8E006F49DD /* DetailCharacterViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9A0292FAE8E006F49DD /* DetailCharacterViewProtocols.swift */; };
 		0448A9A5292FAF8B006F49DD /* DetailCharacterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9A4292FAF8B006F49DD /* DetailCharacterInteractor.swift */; };
 		0448A9AB292FB11E006F49DD /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9AA292FB11E006F49DD /* BaseRouter.swift */; };
-		0448A9B0292FC55B006F49DD /* CharactersListViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9AF292FC55B006F49DD /* CharactersListViewProtocols.swift */; };
+		0448A9B0292FC55B006F49DD /* CharactersListPresenterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9AF292FC55B006F49DD /* CharactersListPresenterProtocols.swift */; };
 		0448A9B2292FD685006F49DD /* CharactersListRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0448A9B1292FD685006F49DD /* CharactersListRouterProtocol.swift */; };
 		04A89CD32932056800B06410 /* CharactersListInteractorInputProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A89CD22932056800B06410 /* CharactersListInteractorInputProtocol.swift */; };
 		04A89CD929335DAB00B06410 /* TabBarController+Configure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A89CD829335DAB00B06410 /* TabBarController+Configure.swift */; };
@@ -92,7 +92,6 @@
 		A5AE42472934DA7800D1361D /* LocationDetailRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE42462934DA7800D1361D /* LocationDetailRouterProtocol.swift */; };
 		A5AE42492934DAAB00D1361D /* LocationDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5AE42482934DAAB00D1361D /* LocationDetailRouter.swift */; };
 		A5B5564E29335F120075DFDC /* DetailCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B5564D29335F120075DFDC /* DetailCharacter.swift */; };
-		A5ED44942930FEC20065A0B0 /* Charact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED44932930FEC20065A0B0 /* Charact.swift */; };
 		A5F2E9402930AC2D001C171E /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2E93F2930AC2D001C171E /* Episodes.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,7 +108,7 @@
 		0448A9A0292FAE8E006F49DD /* DetailCharacterViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterViewProtocols.swift; sourceTree = "<group>"; };
 		0448A9A4292FAF8B006F49DD /* DetailCharacterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacterInteractor.swift; sourceTree = "<group>"; };
 		0448A9AA292FB11E006F49DD /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
-		0448A9AF292FC55B006F49DD /* CharactersListViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListViewProtocols.swift; sourceTree = "<group>"; };
+		0448A9AF292FC55B006F49DD /* CharactersListPresenterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListPresenterProtocols.swift; sourceTree = "<group>"; };
 		0448A9B1292FD685006F49DD /* CharactersListRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListRouterProtocol.swift; sourceTree = "<group>"; };
 		04A89CD22932056800B06410 /* CharactersListInteractorInputProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListInteractorInputProtocol.swift; sourceTree = "<group>"; };
 		04A89CD829335DAB00B06410 /* TabBarController+Configure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBarController+Configure.swift"; sourceTree = "<group>"; };
@@ -185,7 +184,6 @@
 		A5AE42462934DA7800D1361D /* LocationDetailRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailRouterProtocol.swift; sourceTree = "<group>"; };
 		A5AE42482934DAAB00D1361D /* LocationDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailRouter.swift; sourceTree = "<group>"; };
 		A5B5564D29335F120075DFDC /* DetailCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCharacter.swift; sourceTree = "<group>"; };
-		A5ED44932930FEC20065A0B0 /* Charact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Charact.swift; path = RickandMortyApiTask/Charact.swift; sourceTree = SOURCE_ROOT; };
 		A5F2E93F2930AC2D001C171E /* Episodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		DC0EF9EAEF2986BE69076A14 /* Pods-RickandMortyApiTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickandMortyApiTask.release.xcconfig"; path = "Target Support Files/Pods-RickandMortyApiTask/Pods-RickandMortyApiTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -338,7 +336,6 @@
 			children = (
 				A56DA0D4292FA12D004F5AB3 /* Subviews */,
 				A5AA82E7292CCB9200B47692 /* CharactersListViewController.swift */,
-				0448A9AF292FC55B006F49DD /* CharactersListViewProtocols.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -402,6 +399,7 @@
 		A56DA0D5292FA167004F5AB3 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				0448A9AF292FC55B006F49DD /* CharactersListPresenterProtocols.swift */,
 				A56DA0D6292FA17C004F5AB3 /* CharactersListPresenter.swift */,
 			);
 			path = Presenter;
@@ -540,7 +538,6 @@
 		A5AA82F8292CCD8900B47692 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				A5ED44932930FEC20065A0B0 /* Charact.swift */,
 				0448A9A9292FB108006F49DD /* Router */,
 				0448A997292FAA2C006F49DD /* Assembler */,
 				A56DA0C3292F6D80004F5AB3 /* Helpers */,
@@ -870,7 +867,7 @@
 				A56DA0D0292F723B004F5AB3 /* NetworkError.swift in Sources */,
 				A56DA0ED2930A6BF004F5AB3 /* EpisodeListInteractorOutputProtocol.swift in Sources */,
 				A5AE423B2934D5A900D1361D /* LocationDetailViewOutputProtocol.swift in Sources */,
-				0448A9B0292FC55B006F49DD /* CharactersListViewProtocols.swift in Sources */,
+				0448A9B0292FC55B006F49DD /* CharactersListPresenterProtocols.swift in Sources */,
 				A590E7972931184300D65037 /* EpisodeDetailRouter.swift in Sources */,
 				A56DA0AA292E7178004F5AB3 /* DetailCharacterViewController.swift in Sources */,
 				0448A9AB292FB11E006F49DD /* BaseRouter.swift in Sources */,
@@ -907,7 +904,6 @@
 				0448A98C292F5752006F49DD /* LocationListCell.swift in Sources */,
 				0448A97F292F55BD006F49DD /* LocationDetailViewController.swift in Sources */,
 				A5AE423D2934D67400D1361D /* LocationDetailInteractorInputProtocol.swift in Sources */,
-				A5ED44942930FEC20065A0B0 /* Charact.swift in Sources */,
 				A5AE42332934B21B00D1361D /* Locations.swift in Sources */,
 				A5031A0D292E6CC20098551F /* DetailCharactertCell.swift in Sources */,
 				A56DA0F12930A6E9004F5AB3 /* EpisodeListPresenter.swift in Sources */,

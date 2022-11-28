@@ -34,7 +34,7 @@ class CharactersCollectionView: UIView {
 // MARK: - Private methods
 extension CharactersCollectionView {
     private func setupCompositionalLayout() -> UICollectionViewLayout {
-        let spacing: CGFloat = 10
+        let spacing: CGFloat = 8
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
             heightDimension: .fractionalHeight(1)
@@ -45,7 +45,6 @@ extension CharactersCollectionView {
             leading: 2,
             bottom: 2,
             trailing: 2)
-
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.5),
             heightDimension: .fractionalHeight(0.25)
@@ -55,12 +54,9 @@ extension CharactersCollectionView {
             repeatingSubitem: item, count: 2
         )
         group.interItemSpacing = .fixed(spacing)
-
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = spacing
-
         let layout = UICollectionViewCompositionalLayout(section: section)
-
         return layout
     }
 
@@ -71,7 +67,7 @@ extension CharactersCollectionView {
     private func setupLayout() {
         collectionView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.right.equalTo(safeAreaLayoutGuide)
+            make.left.right.equalToSuperview()
         }
     }
 }
