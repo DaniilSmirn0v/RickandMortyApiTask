@@ -16,7 +16,7 @@ class EpisodeTableView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(EpisodeCustomCell.self, forCellReuseIdentifier: EpisodeCustomCell.reuseId)
         tableView.showsVerticalScrollIndicator = false
-        tableView.separatorStyle = .none
+        tableView.separatorColor = .systemOrange
         return tableView
     }()
 

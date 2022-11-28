@@ -100,7 +100,7 @@ extension EpisodeCustomCell {
         episodeNumberLable.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(13)
             make.bottom.equalToSuperview().offset(-13)
-            make.left.equalToSuperview().offset(13)
+            make.left.equalToSuperview()
             make.width.equalTo(140)
         }
         stackView.snp.makeConstraints { make in

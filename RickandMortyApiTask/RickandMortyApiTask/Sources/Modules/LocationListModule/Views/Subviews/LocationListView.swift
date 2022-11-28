@@ -82,7 +82,7 @@ extension LocationListView {
 
     private func setupLayout() {
         collectionView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalToSuperview().inset(16)
+            make.top.left.right.bottom.equalToSuperview()
         }
     }
 }

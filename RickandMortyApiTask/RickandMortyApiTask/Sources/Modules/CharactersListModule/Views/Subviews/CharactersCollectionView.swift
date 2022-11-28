@@ -71,7 +71,7 @@ extension CharactersCollectionView {
     private func setupLayout() {
         collectionView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.right.equalTo(safeAreaLayoutGuide).inset(8)
+            make.left.right.equalTo(safeAreaLayoutGuide)
         }
     }
 }

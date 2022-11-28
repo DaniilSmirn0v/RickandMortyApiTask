@@ -48,7 +48,6 @@ class EpisodeDetailHeaderView: UICollectionReusableView {
         return label
     }()
 
-
     lazy var episodeDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

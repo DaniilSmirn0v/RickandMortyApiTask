@@ -24,12 +24,10 @@ class LocationDetailHeader: UICollectionReusableView {
 
     var title = UILabel().setup(textAlignment: .left,
                                 font: 20,
-                                text: "ссccccc",
                                 color: .white).setupAutoLayout()
 
     var title1 = UILabel().setup(textAlignment: .left,
                                 font: 20,
-                                text: "ссccccc",
                                 color: .white).setupAutoLayout()
 
     lazy var lineSeparators: UIView = {
@@ -103,7 +101,7 @@ extension LocationDetailHeader: LocationDetailHeaderViewConfigurable {
         guard let vm = viewModel as? LocationDetailHeaderViewModel else { return }
         let image = vm.episodeNameLabel
         charactertImage.image = UIImage(named: image)
-        title.text = vm.episodeNameLabel
+        title.text =  " \(vm.episodeNameLabel)"
         title1.text = vm.episodeDateLabel
     }
 }

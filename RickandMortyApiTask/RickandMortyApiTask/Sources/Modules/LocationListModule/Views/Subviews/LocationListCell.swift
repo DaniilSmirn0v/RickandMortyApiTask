@@ -30,7 +30,7 @@ class LocationListCell: UICollectionViewCell {
     lazy var locationNameLabel = UILabel().setup(
         font:  17,
         text: "Тут будет какое то описание контента, если он подгрузится",
-        color: .black,
+        color: .white,
         backgroundColor: .black.withAlphaComponent(0.5)
     ).setupAutoLayout()
 

@@ -73,6 +73,7 @@ extension CharactersCollectionCell {
         characterNameLabel.snp.makeConstraints { make in
             make.bottom.equalToSuperview()
             make.left.right.equalToSuperview()
+            make.height.equalTo(34)
         }
     }
 }
